@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,14 +13,19 @@ import {
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
 
   const navItems = [
-    { path: "/", label: "Home" },
-    { path: "/offerings", label: "What We Offer" },
-    { path: "/jobs", label: "Job Offering" },
-    { path: "/members", label: "Member Introduction" },
-    { path: "/performance", label: "Our Performance" },
+    { path: "/", label: t("nav.home") },
+    { path: "/offerings", label: t("nav.offerings") },
+    { path: "/jobs", label: t("nav.jobs") },
+    { path: "/members", label: t("nav.members") },
+    { path: "/performance", label: t("nav.performance") },
   ];
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -61,14 +67,20 @@ const Header = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem>EN - English</DropdownMenuItem>
-              <DropdownMenuItem>繁 - 繁體中文</DropdownMenuItem>
-              <DropdownMenuItem>简 - 简体中文</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => changeLanguage('en')}>
+                EN - English {i18n.language === 'en' && '✓'}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => changeLanguage('zh-HK')}>
+                繁 - 繁體中文 {i18n.language === 'zh-HK' && '✓'}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => changeLanguage('zh-CN')}>
+                简 - 简体中文 {i18n.language === 'zh-CN' && '✓'}
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
           <Link to="/login" className="hidden md:block">
-            <Button variant="outline">Login</Button>
+            <Button variant="outline">{t("nav.login")}</Button>
           </Link>
 
           {/* Mobile Menu Toggle */}
@@ -104,7 +116,7 @@ const Header = () => {
             ))}
             <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
               <Button variant="outline" className="w-full justify-start">
-                Login
+                {t("nav.login")}
               </Button>
             </Link>
           </div>

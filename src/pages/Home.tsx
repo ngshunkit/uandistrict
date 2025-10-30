@@ -10,38 +10,41 @@ import {
   Target,
   ChevronRight,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Home = () => {
+  const { t } = useTranslation();
+  
   const highlights = [
     {
       icon: GraduationCap,
-      title: "World-Class Training",
-      description: "Comprehensive programs designed to transform you into a top-performing agent with proven sales methodologies.",
+      title: t("home.highlights.training.title"),
+      description: t("home.highlights.training.description"),
     },
     {
       icon: Users,
-      title: "Expert Mentorship",
-      description: "Learn from MDRT and COT qualifiers who have built successful careers and are committed to your growth.",
+      title: t("home.highlights.mentorship.title"),
+      description: t("home.highlights.mentorship.description"),
     },
     {
       icon: TrendingUp,
-      title: "Marketing Excellence",
-      description: "Access cutting-edge marketing tools, campaigns, and materials to help you connect with clients effectively.",
+      title: t("home.highlights.marketing.title"),
+      description: t("home.highlights.marketing.description"),
     },
     {
       icon: Award,
-      title: "Career Advancement",
-      description: "Clear pathways to professional recognition with support for MDRT, COT, and TOT qualifications.",
+      title: t("home.highlights.career.title"),
+      description: t("home.highlights.career.description"),
     },
   ];
 
   const stats = [
-    { value: "15+", label: "MDRT Qualifiers", icon: Award },
-    { value: "500+", label: "Active Members", icon: Users },
-    { value: "98%", label: "Satisfaction Rate", icon: Target },
-    { value: "10+", label: "Years Excellence", icon: Briefcase },
+    { value: "15+", label: t("home.stats.mdrt"), icon: Award },
+    { value: "500+", label: t("home.stats.members"), icon: Users },
+    { value: "98%", label: t("home.stats.awards"), icon: Target },
+    { value: "10+", label: t("home.stats.growth"), icon: Briefcase },
   ];
 
   return (
@@ -56,21 +59,21 @@ const Home = () => {
           <div className="container relative mx-auto px-4">
             <div className="mx-auto max-w-4xl text-center">
               <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-                Build Your Career with UAN District
+                {t("home.hero.title")}
               </h1>
               <p className="mb-8 text-lg text-primary-foreground/90 md:text-xl">
-                Join Hong Kong's premier insurance district at AIA. Transform your potential into success with comprehensive training, expert mentorship, and proven systems.
+                {t("home.hero.subtitle")}
               </p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link to="/jobs">
                   <Button size="lg" className="bg-background text-primary hover:bg-background/90">
-                    Explore Opportunities
+                    {t("home.hero.viewJobs")}
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link to="/offerings">
                   <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                    Learn More
+                    {t("home.hero.learnMore")}
                   </Button>
                 </Link>
               </div>
@@ -96,10 +99,10 @@ const Home = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl">
-                Welcome to UAN District
+                {t("home.hero.title")}
               </h2>
               <p className="text-lg text-muted-foreground">
-                At UAN District, we don't just recruit agents—we build careers. As a leading district within AIA Hong Kong, we combine the strength of a global insurance leader with personalized support, cutting-edge training, and a culture of excellence. Our mission is to empower you with the skills, knowledge, and resources needed to serve clients exceptionally and achieve your professional goals.
+                {t("home.hero.subtitle")}
               </p>
             </div>
           </div>
@@ -110,10 +113,10 @@ const Home = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                Why Choose UAN District?
+                {t("home.highlights.title")}
               </h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                We provide everything you need to thrive in the insurance industry
+                {t("home.hero.subtitle")}
               </p>
             </div>
 
@@ -145,15 +148,15 @@ const Home = () => {
                 <CardContent className="p-8 md:p-12">
                   <div className="mb-6 text-6xl text-primary">"</div>
                   <blockquote className="mb-6 text-lg italic text-foreground md:text-xl">
-                    Joining UAN District was the best career decision I've made. The training is exceptional, the support is genuine, and the opportunities are limitless. Within my first year, I achieved MDRT qualification and built lasting relationships with clients.
+                    {t("home.testimonial.quote")}
                   </blockquote>
                   <div className="flex items-center">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-primary text-lg font-bold text-primary-foreground">
-                      JC
+                      {t("home.testimonial.name").charAt(0)}
                     </div>
                     <div className="ml-4">
-                      <div className="font-semibold text-foreground">Jennifer Chan</div>
-                      <div className="text-sm text-muted-foreground">MDRT Qualifier, Senior Agent</div>
+                      <div className="font-semibold text-foreground">{t("home.testimonial.name")}</div>
+                      <div className="text-sm text-muted-foreground">{t("home.testimonial.role")}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -166,21 +169,21 @@ const Home = () => {
         <section className="bg-gradient-primary py-16 text-primary-foreground md:py-24">
           <div className="container mx-auto px-4 text-center">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Ready to Start Your Journey?
+              {t("home.cta.title")}
             </h2>
             <p className="mb-8 text-lg text-primary-foreground/90">
-              Join our team and discover what you're truly capable of achieving
+              {t("home.cta.subtitle")}
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link to="/jobs">
                 <Button size="lg" className="bg-background text-primary hover:bg-background/90">
-                  View Open Positions
+                  {t("home.hero.viewJobs")}
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link to="/members">
                 <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                  Meet Our Team
+                  {t("home.cta.contact")}
                 </Button>
               </Link>
             </div>
