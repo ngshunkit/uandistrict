@@ -1,22 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Award, TrendingUp, Users, Target, Trophy, Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Performance = () => {
+  const { t } = useTranslation();
+  
   const kpis = [
     {
       icon: Award,
       value: "15+",
-      label: "MDRT Qualifiers",
+      label: t("performance.kpis.mdrt"),
       period: "2024",
       trend: "+25%",
     },
     {
       icon: Trophy,
       value: "5",
-      label: "COT Qualifiers",
+      label: t("performance.kpis.cot"),
       period: "2024",
       trend: "+40%",
     },
@@ -39,8 +42,8 @@ const Performance = () => {
   const milestones = [
     {
       year: "2024",
-      title: "Record-Breaking Year",
-      description: "Achieved highest district performance in AIA Hong Kong with 15 MDRT and 5 COT qualifiers.",
+      title: t("performance.milestones.items.award.title"),
+      description: t("performance.milestones.items.award.description"),
       icon: Trophy,
     },
     {
@@ -52,7 +55,7 @@ const Performance = () => {
     {
       year: "2022",
       title: "500 Agent Milestone",
-      description: "Reached 500 active agents, marking significant growth and expansion.",
+      description: t("performance.milestones.items.expansion.description"),
       icon: Users,
     },
     {
@@ -71,15 +74,15 @@ const Performance = () => {
 
   const achievements = [
     {
-      category: "Team Growth",
+      category: t("performance.achievements.title"),
       stats: [
         { label: "New Recruits (2024)", value: "120+" },
-        { label: "Retention Rate", value: "92%" },
+        { label: t("performance.kpis.retention"), value: "92%" },
         { label: "Promotion Rate", value: "35%" },
       ],
     },
     {
-      category: "Performance Excellence",
+      category: t("performance.achievements.sales.title"),
       stats: [
         { label: "Average Productivity Growth", value: "3x" },
         { label: "Client Satisfaction", value: "96%" },
@@ -87,7 +90,7 @@ const Performance = () => {
       ],
     },
     {
-      category: "Recognition",
+      category: t("performance.achievements.recognition.title"),
       stats: [
         { label: "District Awards", value: "8" },
         { label: "Individual Awards", value: "45+" },
@@ -106,10 +109,10 @@ const Performance = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="mb-6 text-4xl font-bold md:text-5xl">
-                Our Performance
+                {t("performance.hero.title")}
               </h1>
               <p className="text-lg text-primary-foreground/90 md:text-xl">
-                Excellence through results, growth through dedication
+                {t("performance.hero.subtitle")}
               </p>
             </div>
           </div>
@@ -120,10 +123,10 @@ const Performance = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                2024 Key Performance Indicators
+                {t("performance.kpis.title")}
               </h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                Measurable results that demonstrate our commitment to excellence
+                {t("performance.hero.subtitle")}
               </p>
             </div>
 
@@ -154,7 +157,7 @@ const Performance = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                Achievements by Category
+                {t("performance.achievements.title")}
               </h2>
             </div>
 
@@ -185,10 +188,10 @@ const Performance = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                Milestones & Recognition
+                {t("performance.milestones.title")}
               </h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                A journey of consistent excellence and breakthrough achievements
+                {t("performance.hero.subtitle")}
               </p>
             </div>
 

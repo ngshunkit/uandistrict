@@ -12,88 +12,55 @@ import {
   BarChart,
   ChevronRight,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Offerings = () => {
+  const { t } = useTranslation();
+  
   const offerings = [
     {
       icon: GraduationCap,
-      title: "Sales Coaching & Training",
-      subtitle: "Learn from the Best",
-      description: "Our comprehensive training programs teach you how to serve clients effectively and close sales with confidence. From fundamental techniques to advanced strategies, we equip you with proven methodologies used by top performers.",
-      features: [
-        "Client relationship building techniques",
-        "Needs analysis and solution design",
-        "Objection handling and closing strategies",
-        "Product knowledge workshops",
-        "Role-playing and practical simulations",
-      ],
+      title: t("offerings.categories.coaching.title"),
+      subtitle: t("offerings.categories.coaching.title"),
+      description: t("offerings.categories.coaching.description"),
+      features: t("offerings.categories.coaching.points", { returnObjects: true }) as string[],
     },
     {
       icon: BookOpen,
-      title: "Continuous Learning Programs",
-      subtitle: "Never Stop Growing",
-      description: "Access a structured curriculum designed to support your development at every career stage. Our programs combine classroom learning, online resources, and practical application.",
-      features: [
-        "New agent onboarding bootcamp",
-        "Monthly skill-building workshops",
-        "Industry certification support",
-        "Leadership development track",
-        "Advanced sales masterclasses",
-      ],
+      title: t("offerings.categories.training.title"),
+      subtitle: t("offerings.categories.training.title"),
+      description: t("offerings.categories.training.description"),
+      features: t("offerings.categories.training.points", { returnObjects: true }) as string[],
     },
     {
       icon: Megaphone,
-      title: "Latest Marketing Intelligence",
-      subtitle: "Stay Ahead of the Curve",
-      description: "Get instant access to cutting-edge marketing campaigns, proven materials, and best practices from across the industry. We keep you informed about trends, regulations, and opportunities.",
-      features: [
-        "Weekly market insights and updates",
-        "Proven marketing campaign templates",
-        "Digital marketing toolkit",
-        "Social media content library",
-        "Compliance-approved materials",
-      ],
+      title: t("offerings.categories.marketing.title"),
+      subtitle: t("offerings.categories.marketing.title"),
+      description: t("offerings.categories.marketing.description"),
+      features: t("offerings.categories.marketing.points", { returnObjects: true }) as string[],
     },
     {
       icon: Wrench,
-      title: "Professional Tools & Systems",
-      subtitle: "Work Smarter, Not Harder",
-      description: "Leverage state-of-the-art technology and systems to streamline your workflow, manage client relationships, and maximize your productivity.",
-      features: [
-        "Advanced CRM platform",
-        "Lead generation tools",
-        "Automated follow-up systems",
-        "Performance analytics dashboard",
-        "Mobile app for on-the-go access",
-      ],
+      title: t("offerings.categories.tools.title"),
+      subtitle: t("offerings.categories.tools.title"),
+      description: t("offerings.categories.tools.description"),
+      features: t("offerings.categories.tools.points", { returnObjects: true }) as string[],
     },
     {
       icon: Users2,
-      title: "Mentorship & Peer Support",
-      subtitle: "You're Never Alone",
-      description: "Connect with experienced mentors and a supportive peer network. Learn from those who have achieved what you aspire to, and grow alongside ambitious colleagues.",
-      features: [
-        "One-on-one mentor assignment",
-        "Weekly team huddles",
-        "Success story sharing sessions",
-        "Peer accountability groups",
-        "District-wide networking events",
-      ],
+      title: t("offerings.categories.support.title"),
+      subtitle: t("offerings.categories.support.title"),
+      description: t("offerings.categories.support.description"),
+      features: t("offerings.categories.support.points", { returnObjects: true }) as string[],
     },
     {
       icon: Award,
-      title: "Recognition & Incentives",
-      subtitle: "Celebrate Your Success",
-      description: "We celebrate achievements at every level. Our recognition programs and incentives motivate you to reach new heights while enjoying the rewards of your hard work.",
-      features: [
-        "MDRT/COT/TOT qualification support",
-        "Monthly and annual awards",
-        "Performance-based bonuses",
-        "International convention opportunities",
-        "Career milestone celebrations",
-      ],
+      title: t("offerings.categories.development.title"),
+      subtitle: t("offerings.categories.development.title"),
+      description: t("offerings.categories.development.description"),
+      features: t("offerings.categories.development.points", { returnObjects: true }) as string[],
     },
   ];
 
@@ -107,10 +74,10 @@ const Offerings = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="mb-6 text-4xl font-bold md:text-5xl">
-                What We Offer
+                {t("offerings.hero.title")}
               </h1>
               <p className="text-lg text-primary-foreground/90 md:text-xl">
-                Comprehensive support designed to help you excel at every stage of your insurance career
+                {t("offerings.hero.subtitle")}
               </p>
             </div>
           </div>
@@ -161,10 +128,10 @@ const Offerings = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                Proven Results
+                {t("offerings.hero.title")}
               </h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                Our comprehensive support system delivers measurable outcomes
+                {t("offerings.hero.subtitle")}
               </p>
             </div>
 
@@ -206,21 +173,21 @@ const Offerings = () => {
             <Card className="bg-gradient-primary text-primary-foreground">
               <CardContent className="p-8 text-center md:p-12">
                 <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-                  Ready to Access These Resources?
+                  {t("offerings.cta.title")}
                 </h2>
                 <p className="mb-8 text-lg text-primary-foreground/90">
-                  Join UAN District and start benefiting from our comprehensive support system
+                  {t("offerings.hero.subtitle")}
                 </p>
                 <div className="flex flex-col justify-center gap-4 sm:flex-row">
                   <Link to="/jobs">
                     <Button size="lg" className="bg-background text-primary hover:bg-background/90">
-                      View Open Positions
+                      {t("offerings.cta.apply")}
                       <ChevronRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Link to="/">
                     <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                      Learn More About Us
+                      {t("offerings.cta.contact")}
                     </Button>
                   </Link>
                 </div>

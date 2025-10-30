@@ -1,15 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, Mail } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Members = () => {
+  const { t } = useTranslation();
+  
   const leadership = [
     {
       name: "David Wong",
       title: "District Manager",
-      specialties: ["Leadership", "Team Building", "MDRT"],
+      specialties: [t("members.leadership.specialty.leadership"), "Team Building", t("members.leadership.specialty.mdrt")],
       bio: "With over 15 years in the insurance industry, David has built UAN District into one of AIA Hong Kong's top-performing districts. A 10-time MDRT qualifier and 3-time COT achiever, he is passionate about developing future leaders.",
       initials: "DW",
       linkedin: "#",
@@ -18,7 +21,7 @@ const Members = () => {
     {
       name: "Sarah Chen",
       title: "Senior Unit Manager",
-      specialties: ["Training", "Mentorship", "MDRT"],
+      specialties: ["Training", "Mentorship", t("members.leadership.specialty.mdrt")],
       bio: "Sarah leads our flagship training programs and has personally mentored over 50 agents to MDRT qualification. Her innovative approach to sales coaching has become a model across the organization.",
       initials: "SC",
       linkedin: "#",
@@ -27,7 +30,7 @@ const Members = () => {
     {
       name: "Michael Lee",
       title: "Senior Unit Manager",
-      specialties: ["Business Development", "High Net Worth", "COT"],
+      specialties: ["Business Development", "High Net Worth", t("members.leadership.specialty.cot")],
       bio: "Specializing in high-net-worth clientele, Michael brings expertise in sophisticated financial planning and wealth management. A consistent COT qualifier, he shares his strategies with the team.",
       initials: "ML",
       linkedin: "#",
@@ -40,28 +43,28 @@ const Members = () => {
       name: "Jennifer Chan",
       role: "Senior Financial Consultant",
       team: "Sales Excellence",
-      achievements: ["MDRT 2024", "Top Recruiter"],
+      achievements: [t("members.team.achievements.mdrt"), "Top Recruiter"],
       initials: "JC",
     },
     {
       name: "Kevin Tam",
       role: "Financial Consultant",
       team: "Growth Team",
-      achievements: ["Rising Star 2024"],
+      achievements: [t("members.team.achievements.rising")],
       initials: "KT",
     },
     {
       name: "Amy Liu",
       role: "Senior Financial Consultant",
       team: "Professional Development",
-      achievements: ["MDRT 2024", "Mentor Award"],
+      achievements: [t("members.team.achievements.mdrt"), "Mentor Award"],
       initials: "AL",
     },
     {
       name: "Raymond Ng",
       role: "Unit Manager",
       team: "Leadership Track",
-      achievements: ["COT 2024", "Team Leader"],
+      achievements: [t("members.leadership.specialty.cot"), "Team Leader"],
       initials: "RN",
     },
     {
@@ -75,7 +78,7 @@ const Members = () => {
       name: "Peter Lam",
       role: "Senior Financial Consultant",
       team: "Business Development",
-      achievements: ["MDRT 2024"],
+      achievements: [t("members.team.achievements.mdrt")],
       initials: "PL",
     },
   ];
@@ -90,10 +93,10 @@ const Members = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="mb-6 text-4xl font-bold md:text-5xl">
-                Meet Our Team
+                {t("members.hero.title")}
               </h1>
               <p className="text-lg text-primary-foreground/90 md:text-xl">
-                Driven professionals committed to excellence and your success
+                {t("members.hero.subtitle")}
               </p>
             </div>
           </div>
@@ -104,10 +107,10 @@ const Members = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                Leadership Team
+                {t("members.leadership.title")}
               </h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                Our experienced leaders are here to guide, support, and inspire you
+                {t("members.hero.subtitle")}
               </p>
             </div>
 
@@ -165,10 +168,10 @@ const Members = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                Our Team Members
+                {t("members.team.title")}
               </h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                High-performing professionals making a difference every day
+                {t("members.hero.subtitle")}
               </p>
             </div>
 

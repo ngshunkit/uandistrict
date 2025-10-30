@@ -5,11 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Lock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
 
 const Login = () => {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -19,7 +21,7 @@ const Login = () => {
     // Simulate login
     setTimeout(() => {
       setIsLoading(false);
-      toast.error("Please connect Lovable Cloud to enable authentication");
+      toast.error(t("login.error"));
     }, 1000);
   };
 
@@ -37,49 +39,49 @@ const Login = () => {
                     <Lock className="h-8 w-8 text-primary-foreground" />
                   </div>
                 </div>
-                <CardTitle className="text-2xl">Member Login</CardTitle>
+                <CardTitle className="text-2xl">{t("login.title")}</CardTitle>
                 <CardDescription>
-                  Access private resources and training materials
+                  {t("login.subtitle")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <Label htmlFor="username">Username</Label>
+                    <Label htmlFor="username">{t("login.username")}</Label>
                     <Input
                       id="username"
                       type="text"
-                      placeholder="Enter your username"
+                      placeholder={t("login.username")}
                       required
                     />
                   </div>
                   
                   <div>
-                    <Label htmlFor="password">Password</Label>
+                    <Label htmlFor="password">{t("login.password")}</Label>
                     <Input
                       id="password"
                       type="password"
-                      placeholder="Enter your password"
+                      placeholder={t("login.password")}
                       required
                     />
                   </div>
 
                   <div className="flex items-center justify-between text-sm">
                     <a href="#" className="text-primary hover:underline">
-                      Forgot password?
+                      {t("login.forgot")}
                     </a>
                   </div>
 
                   <Button type="submit" className="w-full" disabled={isLoading}>
-                    {isLoading ? "Signing in..." : "Sign In"}
+                    {isLoading ? "Signing in..." : t("login.submit")}
                   </Button>
                 </form>
 
                 <div className="mt-6 text-center text-sm text-muted-foreground">
                   <p>
-                    Don't have access?{" "}
+                    Don&apos;t have access?{" "}
                     <Link to="/jobs" className="text-primary hover:underline">
-                      Join our team
+                      {t("nav.jobs")}
                     </Link>
                   </p>
                 </div>

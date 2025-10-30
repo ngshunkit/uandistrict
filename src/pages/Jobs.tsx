@@ -14,113 +14,61 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Briefcase, MapPin, Clock, DollarSign, ChevronRight, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
 
 const Jobs = () => {
+  const { t } = useTranslation();
   const [selectedJob, setSelectedJob] = useState<any>(null);
   const [showApplicationForm, setShowApplicationForm] = useState(false);
 
   const jobs = [
     {
       id: 1,
-      title: "Financial Services Consultant",
-      location: "Hong Kong",
-      type: "Full-time",
+      title: t("jobs.positions.advisor.title"),
+      location: t("jobs.positions.advisor.location"),
+      type: t("jobs.positions.advisor.type"),
       experience: "Entry Level",
       salary: "Competitive + Commission",
       postedDate: "2 days ago",
       status: "Open",
-      summary: "Join our team as a Financial Services Consultant and help clients secure their financial future.",
-      description: "We're seeking motivated individuals to join UAN District as Financial Services Consultants. You'll work with clients to understand their needs, recommend suitable insurance and financial solutions, and build long-term relationships.",
-      responsibilities: [
-        "Conduct comprehensive needs analysis with prospective clients",
-        "Present and explain insurance products and financial planning solutions",
-        "Develop and maintain a strong client base through networking and referrals",
-        "Achieve sales targets while maintaining high ethical standards",
-        "Participate in ongoing training and professional development",
-      ],
-      requirements: [
-        "Bachelor's degree or equivalent work experience",
-        "Strong communication and interpersonal skills",
-        "Self-motivated with entrepreneurial mindset",
-        "Willingness to obtain necessary industry licenses",
-        "Fluency in English; Cantonese/Mandarin highly preferred",
-      ],
-      benefits: [
-        "Comprehensive training program",
-        "Unlimited earning potential with competitive commission structure",
-        "Medical and life insurance coverage",
-        "MDRT/COT/TOT qualification support",
-        "Ongoing mentorship and career development",
-      ],
+      summary: t("jobs.positions.advisor.summary"),
+      description: t("jobs.positions.advisor.summary"),
+      responsibilities: t("jobs.positions.advisor.responsibilities").split(","),
+      requirements: t("jobs.positions.advisor.requirements").split(","),
+      benefits: t("jobs.positions.advisor.benefits").split(","),
     },
     {
       id: 2,
-      title: "Senior Insurance Advisor",
-      location: "Hong Kong",
-      type: "Full-time",
+      title: t("jobs.positions.senior.title"),
+      location: t("jobs.positions.senior.location"),
+      type: t("jobs.positions.senior.type"),
       experience: "3+ years",
       salary: "HKD 30K - 50K + Commission",
       postedDate: "1 week ago",
       status: "Open",
-      summary: "Experienced insurance professional wanted to lead client relationships and mentor junior team members.",
-      description: "We're looking for an experienced Senior Insurance Advisor to join our high-performing team. You'll manage a portfolio of high-net-worth clients while mentoring new consultants.",
-      responsibilities: [
-        "Manage relationships with high-net-worth clients",
-        "Develop sophisticated insurance and wealth management strategies",
-        "Mentor and support junior team members",
-        "Represent UAN District at networking and industry events",
-        "Contribute to team sales targets and strategic initiatives",
-      ],
-      requirements: [
-        "Minimum 3 years of proven success in insurance or financial services",
-        "IIQE/HKCSI licenses (or equivalent)",
-        "Established client network preferred",
-        "MDRT qualification or track record of high performance",
-        "Excellent presentation and relationship management skills",
-      ],
-      benefits: [
-        "Leadership development opportunities",
-        "Premium commission structure",
-        "Comprehensive benefits package",
-        "International convention trips",
-        "Executive-level recognition programs",
-      ],
+      summary: t("jobs.positions.senior.summary"),
+      description: t("jobs.positions.senior.summary"),
+      responsibilities: t("jobs.positions.senior.responsibilities").split(","),
+      requirements: t("jobs.positions.senior.requirements").split(","),
+      benefits: t("jobs.positions.senior.benefits").split(","),
     },
     {
       id: 3,
-      title: "Team Leader / Unit Manager",
-      location: "Hong Kong",
-      type: "Full-time",
+      title: t("jobs.positions.manager.title"),
+      location: t("jobs.positions.manager.location"),
+      type: t("jobs.positions.manager.type"),
       experience: "5+ years",
       salary: "HKD 50K+ Base + Override",
       postedDate: "3 days ago",
       status: "Open",
-      summary: "Build and lead your own team while growing your personal practice in a supportive district environment.",
-      description: "Are you ready to take your career to the next level? As a Team Leader, you'll recruit, develop, and manage your own team of consultants while continuing to serve your own client base.",
-      responsibilities: [
-        "Recruit, train, and develop a team of financial consultants",
-        "Set team goals and drive performance to achieve targets",
-        "Provide ongoing coaching and mentorship",
-        "Maintain and grow your personal client relationships",
-        "Represent the team at district leadership meetings",
-      ],
-      requirements: [
-        "Minimum 5 years in insurance with proven leadership ability",
-        "Track record of MDRT/COT qualification",
-        "Strong network and recruitment capabilities",
-        "Relevant management certifications preferred",
-        "Passion for developing others and building teams",
-      ],
-      benefits: [
-        "Override commission on team production",
-        "Management training and support",
-        "Equity and profit-sharing opportunities",
-        "District leadership role",
-        "Priority access to company resources",
-      ],
+      summary: t("jobs.positions.manager.summary"),
+      description: t("jobs.positions.manager.summary"),
+      responsibilities: t("jobs.positions.manager.responsibilities").split(","),
+      requirements: t("jobs.positions.manager.requirements").split(","),
+      benefits: t("jobs.positions.manager.benefits").split(","),
     },
   ];
 
@@ -131,7 +79,7 @@ const Jobs = () => {
 
   const handleSubmitApplication = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Application submitted successfully! We'll be in touch soon.");
+    toast.success(t("jobs.form.success"));
     setShowApplicationForm(false);
     setSelectedJob(null);
   };
@@ -146,10 +94,10 @@ const Jobs = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="mb-6 text-4xl font-bold md:text-5xl">
-                Career Opportunities
+                {t("jobs.hero.title")}
               </h1>
               <p className="text-lg text-primary-foreground/90 md:text-xl">
-                Find your perfect role and start building the career you've always wanted
+                {t("jobs.hero.subtitle")}
               </p>
             </div>
           </div>
@@ -160,8 +108,8 @@ const Jobs = () => {
           <div className="container mx-auto px-4">
             <div className="mb-8 flex items-center justify-between">
               <div>
-                <h2 className="text-2xl font-bold text-foreground">Open Positions</h2>
-                <p className="text-muted-foreground">{jobs.length} opportunities available</p>
+                <h2 className="text-2xl font-bold text-foreground">{t("jobs.hero.title")}</h2>
+                <p className="text-muted-foreground">{jobs.length} {t("jobs.hero.subtitle")}</p>
               </div>
             </div>
 
@@ -209,7 +157,7 @@ const Jobs = () => {
                           className="flex-1"
                           onClick={() => setSelectedJob(job)}
                         >
-                          View Details
+                          {t("jobs.apply")}
                           <ChevronRight className="ml-2 h-4 w-4" />
                         </Button>
                         <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
@@ -269,7 +217,7 @@ const Jobs = () => {
                                   setShowApplicationForm(true);
                                 }}
                               >
-                                Apply for this Position
+                                {t("jobs.apply")}
                                 <Send className="ml-2 h-4 w-4" />
                               </Button>
                             </div>
@@ -278,7 +226,7 @@ const Jobs = () => {
                       </Dialog>
                       
                       <Button variant="outline" onClick={() => handleApply(job)}>
-                        Apply Now
+                        {t("jobs.apply")}
                       </Button>
                     </div>
                   </CardContent>
@@ -292,48 +240,48 @@ const Jobs = () => {
         <Dialog open={showApplicationForm} onOpenChange={setShowApplicationForm}>
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
-              <DialogTitle>Apply for {selectedJob?.title}</DialogTitle>
+              <DialogTitle>{t("jobs.form.title")} {selectedJob?.title}</DialogTitle>
               <DialogDescription>
-                Fill out the form below and we'll get back to you soon
+                {t("jobs.hero.subtitle")}
               </DialogDescription>
             </DialogHeader>
             
             <form onSubmit={handleSubmitApplication} className="space-y-4">
               <div>
-                <Label htmlFor="name">Full Name *</Label>
-                <Input id="name" required placeholder="John Doe" />
+                <Label htmlFor="name">{t("jobs.form.name")}</Label>
+                <Input id="name" required placeholder={t("jobs.form.name")} />
               </div>
               
               <div>
-                <Label htmlFor="email">Email Address *</Label>
-                <Input id="email" type="email" required placeholder="john@example.com" />
+                <Label htmlFor="email">{t("jobs.form.email")}</Label>
+                <Input id="email" type="email" required placeholder={t("jobs.form.email")} />
               </div>
               
               <div>
-                <Label htmlFor="phone">Phone Number *</Label>
-                <Input id="phone" type="tel" required placeholder="+852 XXXX XXXX" />
+                <Label htmlFor="phone">{t("jobs.form.phone")}</Label>
+                <Input id="phone" type="tel" required placeholder={t("jobs.form.phone")} />
               </div>
               
               <div>
-                <Label htmlFor="resume">Resume/CV *</Label>
+                <Label htmlFor="resume">{t("jobs.form.resume")}</Label>
                 <Input id="resume" type="file" required accept=".pdf,.doc,.docx" />
               </div>
               
               <div>
-                <Label htmlFor="message">Why are you interested in this position?</Label>
+                <Label htmlFor="message">{t("jobs.form.message")}</Label>
                 <Textarea
                   id="message"
-                  placeholder="Tell us about your interest and relevant experience..."
+                  placeholder={t("jobs.form.message")}
                   rows={4}
                 />
               </div>
 
               <div className="text-xs text-muted-foreground">
-                By submitting this form, you consent to the collection and use of your personal data in accordance with Hong Kong's Personal Data (Privacy) Ordinance.
+                {t("jobs.form.consent")}
               </div>
               
               <Button type="submit" className="w-full">
-                Submit Application
+                {t("jobs.form.submit")}
                 <Send className="ml-2 h-4 w-4" />
               </Button>
             </form>
