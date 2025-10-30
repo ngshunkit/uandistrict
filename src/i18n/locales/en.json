@@ -43,7 +43,8 @@
       "messagePlaceholder": "Tell us how we can help you",
       "submit": "Send Message",
       "sending": "Sending...",
-      "success": "Thank you! We'll get back to you soon."
+      "success": "Thank you! We'll get back to you soon.",
+      "error": "Sorry, there was an error. Please try again."
     },
     "social": {
       "title": "Follow Us",

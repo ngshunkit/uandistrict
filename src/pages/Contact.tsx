@@ -102,25 +102,28 @@ const Contact = () => {
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      phone: formData.get('phone') as string || null,
-      message: formData.get('message') as string,
-    };
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const message = formData.get("message") as string;
 
     try {
       const { error } = await supabase
-        .from('contact_submissions')
-        .insert([data]);
+        .from("contact_submissions")
+        .insert({
+          name,
+          email,
+          phone: phone || null,
+          message,
+        });
 
       if (error) throw error;
 
       toast.success(t("contact.form.success"));
       e.currentTarget.reset();
     } catch (error) {
-      console.error('Error submitting contact form:', error);
-      toast.error('Failed to submit. Please try again.');
+      console.error("Error submitting contact form:", error);
+      toast.error(t("contact.form.error"));
     } finally {
       setIsSubmitting(false);
     }
@@ -233,8 +236,8 @@ const Contact = () => {
                       
                       <Button 
                         type="submit" 
-                        disabled={isSubmitting}
                         className="w-full transition-all duration-300 hover:scale-105"
+                        disabled={isSubmitting}
                       >
                         {isSubmitting ? t("contact.form.sending") : t("contact.form.submit")}
                         <Send className="ml-2 h-4 w-4" />

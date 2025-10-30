@@ -43,7 +43,8 @@
       "messagePlaceholder": "告诉我们如何协助您",
       "submit": "发送消息",
       "sending": "发送中...",
-      "success": "谢谢！我们将尽快回复您。"
+      "success": "谢谢！我们将尽快回复您。",
+      "error": "抱歉，发生错误。请重试。"
     },
     "social": {
       "title": "关注我们",

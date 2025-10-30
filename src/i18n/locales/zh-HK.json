@@ -43,7 +43,8 @@
       "messagePlaceholder": "告訴我們如何協助您",
       "submit": "發送訊息",
       "sending": "發送中...",
-      "success": "謝謝！我們將盡快回覆您。"
+      "success": "謝謝！我們將盡快回覆您。",
+      "error": "抱歉，發生錯誤。請重試。"
     },
     "social": {
       "title": "關注我們",
