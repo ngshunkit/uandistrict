@@ -22,7 +22,7 @@ const Header = () => {
     path: "/jobs",
     label: t("nav.jobs")
   }, {
-    path: "/members",
+    path: "/members-team",
     label: t("nav.members")
   }, {
     path: "/performance",
@@ -75,7 +75,7 @@ const Header = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Link to="/login" className="hidden md:block">
+          <Link to="/auth" className="hidden md:block">
             <Button variant="outline">{t("nav.login")}</Button>
           </Link>
 
@@ -94,7 +94,7 @@ const Header = () => {
                   {item.label}
                 </Button>
               </Link>)}
-            <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
+            <Link to="/auth" onClick={() => setMobileMenuOpen(false)}>
               <Button variant="outline" className="w-full justify-start">
                 {t("nav.login")}
               </Button>
