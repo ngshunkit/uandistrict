@@ -19,6 +19,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { contactSchema } from "@/lib/validation";
 
 // Rednote/小紅書 icon component (custom SVG)
 const RednoteIcon = ({ className }: { className?: string }) => (
@@ -102,19 +103,24 @@ const Contact = () => {
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-    const message = formData.get("message") as string;
+    const rawData = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+    };
 
     try {
+      // Validate input data
+      const validated = contactSchema.parse(rawData);
+
       const { error } = await supabase
         .from("contact_submissions")
         .insert({
-          name,
-          email,
-          phone: phone || null,
-          message,
+          name: validated.name,
+          email: validated.email,
+          phone: validated.phone || null,
+          message: validated.message,
         });
 
       if (error) throw error;
@@ -122,8 +128,14 @@ const Contact = () => {
       toast.success(t("contact.form.success"));
       e.currentTarget.reset();
     } catch (error) {
-      console.error("Error submitting contact form:", error);
-      toast.error(t("contact.form.error"));
+      if (error instanceof Error && 'issues' in error) {
+        // Zod validation error
+        const firstError = (error as any).issues[0];
+        toast.error(firstError?.message || "Invalid form data");
+      } else {
+        console.error("Error submitting contact form:", error);
+        toast.error(t("contact.form.error"));
+      }
     } finally {
       setIsSubmitting(false);
     }

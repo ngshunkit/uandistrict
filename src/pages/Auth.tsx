@@ -13,6 +13,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { authSignupSchema, authSigninSchema, signupRequestSchema } from "@/lib/validation";
 
 const Auth = () => {
   const { t } = useTranslation();
@@ -26,29 +27,34 @@ const Auth = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [signupRequests, setSignupRequests] = useState<any[]>([]);
 
-  // Check if current user is admin
+  // Check if current user is admin using server-side verification
   useEffect(() => {
     const checkAdmin = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       if (session) {
-        const { data: roles } = await supabase
-          .from("user_roles")
-          .select("role")
-          .eq("user_id", session.user.id)
-          .eq("role", "admin")
-          .maybeSingle();
-        
-        setIsAdmin(!!roles);
-        
-        if (roles) {
-          // Fetch pending signup requests
-          const { data: requests } = await supabase
-            .from("signup_requests")
-            .select("*")
-            .eq("status", "pending")
-            .order("created_at", { ascending: false });
+        try {
+          const { data, error } = await supabase.functions.invoke('verify-admin');
           
-          setSignupRequests(requests || []);
+          if (error) {
+            console.error('Error verifying admin status:', error);
+            setIsAdmin(false);
+          } else {
+            setIsAdmin(!!data?.isAdmin);
+            
+            if (data?.isAdmin) {
+              // Fetch pending signup requests
+              const { data: requests } = await supabase
+                .from("signup_requests")
+                .select("*")
+                .eq("status", "pending")
+                .order("created_at", { ascending: false });
+              
+              setSignupRequests(requests || []);
+            }
+          }
+        } catch (err) {
+          console.error('Error in admin check:', err);
+          setIsAdmin(false);
         }
       }
     };
@@ -79,13 +85,20 @@ const Auth = () => {
     setIsLoading(true);
 
     try {
-      const { data, error } = await supabase.auth.signUp({
+      // Validate input data
+      const validated = authSignupSchema.parse({
         email: email.trim(),
         password,
+        full_name: fullName.trim()
+      });
+
+      const { data, error } = await supabase.auth.signUp({
+        email: validated.email,
+        password: validated.password,
         options: {
           emailRedirectTo: `${window.location.origin}/members`,
           data: {
-            full_name: fullName.trim()
+            full_name: validated.full_name
           }
         }
       });
@@ -103,7 +116,13 @@ const Auth = () => {
         toast.success("Account created successfully! Redirecting to members area...");
       }
     } catch (error: any) {
-      toast.error(error.message || "An error occurred during signup");
+      if (error.issues) {
+        // Zod validation error
+        const firstError = error.issues[0];
+        toast.error(firstError?.message || "Invalid form data");
+      } else {
+        toast.error(error.message || "An error occurred during signup");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -114,9 +133,15 @@ const Auth = () => {
     setIsLoading(true);
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      // Validate input data
+      const validated = authSigninSchema.parse({
         email: email.trim(),
-        password,
+        password
+      });
+
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: validated.email,
+        password: validated.password,
       });
 
       if (error) {
@@ -129,7 +154,13 @@ const Auth = () => {
         navigate("/members");
       }
     } catch (error: any) {
-      toast.error(error.message || "An error occurred during login");
+      if (error.issues) {
+        // Zod validation error
+        const firstError = error.issues[0];
+        toast.error(firstError?.message || "Invalid form data");
+      } else {
+        toast.error(error.message || "An error occurred during login");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -140,13 +171,21 @@ const Auth = () => {
     setIsLoading(true);
 
     try {
+      // Validate input data
+      const validated = signupRequestSchema.parse({
+        email: email.trim(),
+        full_name: fullName.trim(),
+        phone: phone || '',
+        message: message || ''
+      });
+
       const { error } = await supabase
         .from("signup_requests")
         .insert({
-          email: email.trim(),
-          full_name: fullName.trim(),
-          phone: phone || null,
-          message: message || null,
+          email: validated.email,
+          full_name: validated.full_name,
+          phone: validated.phone || null,
+          message: validated.message || null,
         });
 
       if (error) {
@@ -165,7 +204,13 @@ const Auth = () => {
       setPhone("");
       setMessage("");
     } catch (error: any) {
-      toast.error(error.message || "An error occurred while submitting your request");
+      if (error.issues) {
+        // Zod validation error
+        const firstError = error.issues[0];
+        toast.error(firstError?.message || "Invalid form data");
+      } else {
+        toast.error(error.message || "An error occurred while submitting your request");
+      }
     } finally {
       setIsLoading(false);
     }

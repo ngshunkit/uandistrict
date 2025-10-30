@@ -49,17 +49,19 @@ const MembersDashboard = () => {
         if (session && isMounted) {
           setUser(session.user);
           
-          // Check if user is admin
+          // Check if user is admin using server-side verification
           setTimeout(async () => {
-            const { data: roles } = await supabase
-              .from("user_roles")
-              .select("role")
-              .eq("user_id", session.user.id)
-              .eq("role", "admin")
-              .maybeSingle();
-            
-            if (isMounted) {
-              setIsAdmin(!!roles);
+            try {
+              const { data, error } = await supabase.functions.invoke('verify-admin');
+              
+              if (isMounted) {
+                setIsAdmin(!error && !!data?.isAdmin);
+              }
+            } catch (err) {
+              console.error('Error verifying admin status:', err);
+              if (isMounted) {
+                setIsAdmin(false);
+              }
             }
             
             // Fetch user profile

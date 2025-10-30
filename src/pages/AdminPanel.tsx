@@ -38,19 +38,21 @@ const AdminPanel = () => {
       return;
     }
 
-    const { data: roles } = await supabase
-      .from("user_roles")
-      .select("role")
-      .eq("user_id", user.id)
-      .single();
+    try {
+      const { data, error } = await supabase.functions.invoke('verify-admin');
+      
+      if (error || !data?.isAdmin) {
+        toast.error("Access denied. Admin privileges required.");
+        navigate("/members");
+        return;
+      }
 
-    if (roles?.role !== "admin") {
+      setIsAdmin(true);
+    } catch (err) {
+      console.error('Error verifying admin access:', err);
       toast.error("Access denied. Admin privileges required.");
       navigate("/members");
-      return;
     }
-
-    setIsAdmin(true);
   };
 
   const loadRequests = async () => {
