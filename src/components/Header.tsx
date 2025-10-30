@@ -38,7 +38,9 @@ const Header = () => {
         <Link to="/" className="flex items-center space-x-3">
           <img src={uanLogo} alt="UAN District" className="h-12 w-auto" />
           <div className="hidden md:block">
-            <div className="text-xs text-muted-foreground rounded-lg">UAN District</div>
+            <div className="text-lg font-semibold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              UAN District
+            </div>
           </div>
         </Link>
 
