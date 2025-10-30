@@ -1,22 +1,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  GraduationCap,
-  Users,
-  TrendingUp,
-  Award,
-  Briefcase,
-  Target,
-  ChevronRight,
-} from "lucide-react";
+import { GraduationCap, Users, TrendingUp, Award, Briefcase, Target, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Home = () => {
   const { t } = useTranslation();
-  
+
   const highlights = [
     {
       icon: GraduationCap,
@@ -42,7 +34,7 @@ const Home = () => {
 
   const stats = [
     { value: "15+", label: t("home.stats.mdrt"), icon: Award },
-    { value: "500+", label: t("home.stats.members"), icon: Users },
+    { value: "30+", label: t("home.stats.members"), icon: Users },
     { value: "98%", label: t("home.stats.awards"), icon: Target },
     { value: "10+", label: t("home.stats.growth"), icon: Briefcase },
   ];
@@ -50,20 +42,16 @@ const Home = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-hero py-20 text-primary-foreground md:py-32">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
-          
+
           <div className="container relative mx-auto px-4">
             <div className="mx-auto max-w-4xl text-center">
-              <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-                {t("home.hero.title")}
-              </h1>
-              <p className="mb-8 text-lg text-primary-foreground/90 md:text-xl">
-                {t("home.hero.subtitle")}
-              </p>
+              <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">{t("home.hero.title")}</h1>
+              <p className="mb-8 text-lg text-primary-foreground/90 md:text-xl">{t("home.hero.subtitle")}</p>
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link to="/jobs">
                   <Button size="lg" className="bg-background text-primary hover:bg-background/90">
@@ -72,7 +60,11 @@ const Home = () => {
                   </Button>
                 </Link>
                 <Link to="/offerings">
-                  <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                  >
                     {t("home.hero.learnMore")}
                   </Button>
                 </Link>
@@ -98,12 +90,8 @@ const Home = () => {
         <section className="bg-gradient-subtle py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl">
-                {t("home.hero.title")}
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                {t("home.hero.subtitle")}
-              </p>
+              <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl">{t("home.hero.title")}</h2>
+              <p className="text-lg text-muted-foreground">{t("home.hero.subtitle")}</p>
             </div>
           </div>
         </section>
@@ -112,12 +100,8 @@ const Home = () => {
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                {t("home.highlights.title")}
-              </h2>
-              <p className="mx-auto max-w-2xl text-muted-foreground">
-                {t("home.hero.subtitle")}
-              </p>
+              <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">{t("home.highlights.title")}</h2>
+              <p className="mx-auto max-w-2xl text-muted-foreground">{t("home.hero.subtitle")}</p>
             </div>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -127,12 +111,8 @@ const Home = () => {
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary">
                       <highlight.icon className="h-6 w-6 text-primary transition-colors group-hover:text-primary-foreground" />
                     </div>
-                    <h3 className="mb-2 text-lg font-semibold text-foreground">
-                      {highlight.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {highlight.description}
-                    </p>
+                    <h3 className="mb-2 text-lg font-semibold text-foreground">{highlight.title}</h3>
+                    <p className="text-sm text-muted-foreground">{highlight.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -168,12 +148,8 @@ const Home = () => {
         {/* CTA Section */}
         <section className="bg-gradient-primary py-16 text-primary-foreground md:py-24">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              {t("home.cta.title")}
-            </h2>
-            <p className="mb-8 text-lg text-primary-foreground/90">
-              {t("home.cta.subtitle")}
-            </p>
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">{t("home.cta.title")}</h2>
+            <p className="mb-8 text-lg text-primary-foreground/90">{t("home.cta.subtitle")}</p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link to="/jobs">
                 <Button size="lg" className="bg-background text-primary hover:bg-background/90">
@@ -182,7 +158,11 @@ const Home = () => {
                 </Button>
               </Link>
               <Link to="/members">
-                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                >
                   {t("home.cta.contact")}
                 </Button>
               </Link>
