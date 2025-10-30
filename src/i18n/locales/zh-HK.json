@@ -217,7 +217,7 @@
       "error": "請填寫所有必填欄位"
     }
   },
-  "members": {
+  "membersTeam": {
     "hero": {
       "title": "我們的團隊",
       "subtitle": "認識 UAN 區域的領袖和成員"

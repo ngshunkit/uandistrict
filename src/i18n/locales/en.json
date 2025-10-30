@@ -217,7 +217,7 @@
       "error": "Please fill in all required fields"
     }
   },
-  "members": {
+  "membersTeam": {
     "hero": {
       "title": "Our Team",
       "subtitle": "Meet the leaders and members of UAN District"

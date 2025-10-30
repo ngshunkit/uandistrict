@@ -217,7 +217,7 @@
       "error": "请填写所有必填栏位"
     }
   },
-  "members": {
+  "membersTeam": {
     "hero": {
       "title": "我们的团队",
       "subtitle": "认识 UAN 团队的领袖和成员"
