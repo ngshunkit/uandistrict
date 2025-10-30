@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Lock, Mail, User, ArrowRight } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Lock, Mail, User, ArrowRight, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -19,6 +20,8 @@ const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     // Check if user is already logged in
@@ -99,6 +102,42 @@ const Auth = () => {
     }
   };
 
+  const handleRequestAccess = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const { error } = await supabase
+        .from("signup_requests")
+        .insert({
+          email: email.trim(),
+          full_name: fullName.trim(),
+          phone: phone || null,
+          message: message || null,
+        });
+
+      if (error) {
+        if (error.code === '23505') { // Unique constraint violation
+          toast.error("A request with this email already exists.");
+        } else {
+          toast.error(error.message);
+        }
+        return;
+      }
+
+      toast.success("Access request submitted! An admin will review your request soon.");
+      // Reset form
+      setEmail("");
+      setFullName("");
+      setPhone("");
+      setMessage("");
+    } catch (error: any) {
+      toast.error(error.message || "An error occurred while submitting your request");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -119,9 +158,10 @@ const Auth = () => {
             <Card>
               <CardContent className="p-6">
                 <Tabs defaultValue="signin" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2">
+                  <TabsList className="grid w-full grid-cols-3">
                     <TabsTrigger value="signin">Sign In</TabsTrigger>
                     <TabsTrigger value="signup">Sign Up</TabsTrigger>
+                    <TabsTrigger value="request">Request Access</TabsTrigger>
                   </TabsList>
                   
                   <TabsContent value="signin">
@@ -225,6 +265,78 @@ const Auth = () => {
 
                       <Button type="submit" className="w-full" disabled={isLoading}>
                         {isLoading ? "Creating account..." : "Create Account"}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </form>
+                  </TabsContent>
+                  
+                  <TabsContent value="request">
+                    <div className="mb-4 rounded-lg bg-muted p-4">
+                      <p className="text-sm text-foreground">
+                        <strong>New to UAN District?</strong> Submit an access request and our team will review your application. You'll receive an email confirmation once approved.
+                      </p>
+                    </div>
+                    <form onSubmit={handleRequestAccess} className="space-y-4">
+                      <div>
+                        <Label htmlFor="request-name">Full Name</Label>
+                        <div className="relative">
+                          <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                          <Input
+                            id="request-name"
+                            type="text"
+                            placeholder="John Doe"
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
+                            className="pl-10"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="request-email">Email</Label>
+                        <div className="relative">
+                          <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                          <Input
+                            id="request-email"
+                            type="email"
+                            placeholder="your.email@example.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="pl-10"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="request-phone">Phone Number</Label>
+                        <div className="relative">
+                          <Phone className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                          <Input
+                            id="request-phone"
+                            type="tel"
+                            placeholder="+852 1234 5678"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            className="pl-10"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="request-message">Why do you want to join?</Label>
+                        <Textarea
+                          id="request-message"
+                          placeholder="Tell us about your interest in joining UAN District..."
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                          rows={4}
+                        />
+                      </div>
+
+                      <Button type="submit" className="w-full" disabled={isLoading}>
+                        {isLoading ? "Submitting..." : "Request Access"}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </form>
