@@ -268,6 +268,87 @@
     "submit": "登录",
     "error": "请连接 Lovable Cloud 以启用认证"
   },
+  "members": {
+    "header": {
+      "title": "会员专区",
+      "subtitle": "UAN 团队"
+    },
+    "nav": {
+      "dashboard": "主页",
+      "training": "培训",
+      "events": "活动",
+      "resources": "资源",
+      "team": "团队",
+      "profile": "我的档案",
+      "signout": "登出"
+    },
+    "signout": {
+      "success": "成功登出",
+      "error": "登出时发生错误"
+    },
+    "dashboard": {
+      "welcome": "欢迎回来",
+      "subtitle": "访问您的专属会员资源和培训资料",
+      "quickAccess": "快速访问",
+      "cards": {
+        "training": {
+          "title": "培训资料",
+          "description": "访问全面的培训指南、视频和资源",
+          "action": "查看资料"
+        },
+        "events": {
+          "title": "活动与工作坊",
+          "description": "即将举行的培训课程、网络研讨会和团队会议",
+          "action": "查看日程"
+        },
+        "directory": {
+          "title": "团队目录",
+          "description": "与其他会员和导师联系",
+          "action": "浏览目录"
+        },
+        "resources": {
+          "title": "资源",
+          "description": "市场推广资料、模板和销售工具",
+          "action": "访问资源"
+        },
+        "performance": {
+          "title": "绩效追踪器",
+          "description": "监控您的进度和成就",
+          "action": "查看统计"
+        },
+        "profile": {
+          "title": "我的档案",
+          "description": "更新您的信息和偏好设置",
+          "action": "编辑档案"
+        }
+      },
+      "guidelines": {
+        "title": "会员指南",
+        "included": {
+          "title": "包含内容",
+          "items": [
+            "专属培训资料和认证的访问权限",
+            "每月与行业专家举办的网络研讨会和工作坊",
+            "市场推广资源和活动模板",
+            "绩效追踪和分析工具",
+            "与导师和团队领袖的直接沟通",
+            "优先参加团队活动和会议的机会"
+          ]
+        },
+        "started": {
+          "title": "入门指南",
+          "steps": [
+            "完成您的档案并填写准确的联系信息",
+            "在培训部分查看入职资料",
+            "安排与您指定的导师会面",
+            "加入即将举行的迎新网络研讨会",
+            "探索市场推广资源并下载模板",
+            "在绩效追踪器中设定您的季度目标"
+          ]
+        }
+      }
+    }
+  },
   "footer": {
     "description": "致力于在香港建立职业并赋能代理，提供世界级培训和支持。",
     "quickLinks": "快速链接",

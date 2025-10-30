@@ -268,6 +268,87 @@
     "submit": "Sign In",
     "error": "Please connect Lovable Cloud to enable authentication"
   },
+  "members": {
+    "header": {
+      "title": "Members Portal",
+      "subtitle": "UAN District"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "training": "Training",
+      "events": "Events",
+      "resources": "Resources",
+      "team": "Team",
+      "profile": "My Profile",
+      "signout": "Sign Out"
+    },
+    "signout": {
+      "success": "Signed out successfully",
+      "error": "Error signing out"
+    },
+    "dashboard": {
+      "welcome": "Welcome back",
+      "subtitle": "Access your exclusive member resources and training materials",
+      "quickAccess": "Quick Access",
+      "cards": {
+        "training": {
+          "title": "Training Materials",
+          "description": "Access comprehensive training guides, videos, and resources",
+          "action": "View Materials"
+        },
+        "events": {
+          "title": "Events & Workshops",
+          "description": "Upcoming training sessions, webinars, and team meetings",
+          "action": "View Schedule"
+        },
+        "directory": {
+          "title": "Team Directory",
+          "description": "Connect with other members and mentors",
+          "action": "Browse Directory"
+        },
+        "resources": {
+          "title": "Resources",
+          "description": "Marketing materials, templates, and sales tools",
+          "action": "Access Resources"
+        },
+        "performance": {
+          "title": "Performance Tracker",
+          "description": "Monitor your progress and achievements",
+          "action": "View Stats"
+        },
+        "profile": {
+          "title": "My Profile",
+          "description": "Update your information and preferences",
+          "action": "Edit Profile"
+        }
+      },
+      "guidelines": {
+        "title": "Member Guidelines",
+        "included": {
+          "title": "What's Included",
+          "items": [
+            "Access to exclusive training materials and certifications",
+            "Monthly webinars and workshops with industry experts",
+            "Marketing resources and campaign templates",
+            "Performance tracking and analytics tools",
+            "Direct communication with mentors and team leaders",
+            "Priority access to district events and conventions"
+          ]
+        },
+        "started": {
+          "title": "Getting Started",
+          "steps": [
+            "Complete your profile with accurate contact information",
+            "Review the onboarding materials in Training section",
+            "Schedule a meeting with your assigned mentor",
+            "Join the upcoming orientation webinar",
+            "Explore marketing resources and download templates",
+            "Set your quarterly goals in the Performance Tracker"
+          ]
+        }
+      }
+    }
+  },
   "footer": {
     "description": "Building careers and empowering agents across Hong Kong with world-class training and support.",
     "quickLinks": "Quick Links",
