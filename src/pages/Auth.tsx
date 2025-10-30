@@ -13,7 +13,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { authSignupSchema, authSigninSchema, signupRequestSchema } from "@/lib/validation";
+import { authSchema, signupRequestSchema } from "@/lib/validationSchemas";
+import { verifyAdminStatus } from "@/lib/adminCheck";
+import { z } from "zod";
 
 const Auth = () => {
   const { t } = useTranslation();
@@ -86,7 +88,7 @@ const Auth = () => {
 
     try {
       // Validate input data
-      const validated = authSignupSchema.parse({
+      const validated = authSchema.parse({
         email: email.trim(),
         password,
         full_name: fullName.trim()
@@ -134,7 +136,7 @@ const Auth = () => {
 
     try {
       // Validate input data
-      const validated = authSigninSchema.parse({
+      const validated = authSchema.parse({
         email: email.trim(),
         password
       });

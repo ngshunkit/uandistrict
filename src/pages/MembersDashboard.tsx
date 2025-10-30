@@ -20,6 +20,7 @@ import type { User } from "@supabase/supabase-js";
 import MembersHeader from "@/components/MembersHeader";
 import Footer from "@/components/Footer";
 import { SignupRequests } from "@/components/admin/SignupRequests";
+import { verifyAdminStatus } from "@/lib/adminCheck";
 
 interface Profile {
   full_name: string | null;

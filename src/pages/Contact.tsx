@@ -19,7 +19,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
-import { contactSchema } from "@/lib/validation";
+import { contactSchema } from "@/lib/validationSchemas";
+import { z } from "zod";
 
 // Rednote/小紅書 icon component (custom SVG)
 const RednoteIcon = ({ className }: { className?: string }) => (
