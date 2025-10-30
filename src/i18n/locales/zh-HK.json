@@ -1,0 +1,296 @@
+{
+  "nav": {
+    "home": "主頁",
+    "offerings": "我們的支援",
+    "jobs": "職位空缺",
+    "members": "成員介紹",
+    "performance": "我們的表現",
+    "login": "登入"
+  },
+  "home": {
+    "hero": {
+      "title": "與 UAN 區域共創職涯",
+      "subtitle": "加入友邦香港首屈一指的區域，享受世界級培訓、專業指導及資源，助您在保險行業取得成功。",
+      "learnMore": "了解更多",
+      "viewJobs": "查看職位"
+    },
+    "stats": {
+      "members": "活躍成員",
+      "mdrt": "MDRT 資格",
+      "awards": "行業獎項",
+      "growth": "年增長率"
+    },
+    "highlights": {
+      "title": "選擇 UAN 區域的理由",
+      "training": {
+        "title": "全面培訓",
+        "description": "獲得世界級培訓課程，加速您的職涯發展和專業成長。"
+      },
+      "mentorship": {
+        "title": "專業指導",
+        "description": "向保險及金融服務行業的資深領袖學習，他們擁有卓越的成功記錄。"
+      },
+      "marketing": {
+        "title": "市場推廣支援",
+        "description": "運用最先進的市場推廣資源和策略，有效接觸及服務客戶。"
+      },
+      "career": {
+        "title": "職涯發展",
+        "description": "清晰的晉升途徑，包括認可計劃及基於表現的機會。"
+      }
+    },
+    "testimonial": {
+      "quote": "加入 UAN 區域是我職涯中最好的決定。培訓和支援都非常出色。",
+      "name": "陳小姐",
+      "role": "高級理財顧問"
+    },
+    "cta": {
+      "title": "準備好開展您的旅程了嗎？",
+      "subtitle": "加入我們敬業的專業團隊，在保險行業建立豐盛事業。",
+      "contact": "聯絡我們",
+      "apply": "立即申請"
+    }
+  },
+  "offerings": {
+    "hero": {
+      "title": "我們的支援",
+      "subtitle": "全面支援和資源助您成功"
+    },
+    "categories": {
+      "coaching": {
+        "title": "銷售指導",
+        "description": "學習經過驗證的技巧，有效服務客戶並充滿信心地促成銷售。",
+        "points": [
+          "一對一指導課程",
+          "客戶關係管理",
+          "銷售技巧與策略",
+          "產品知識培訓"
+        ]
+      },
+      "training": {
+        "title": "培訓課程",
+        "description": "從入職到持續專業發展的全面培訓。",
+        "points": [
+          "新代理入職培訓",
+          "進階銷售培訓",
+          "專業認證",
+          "行業合規課程"
+        ]
+      },
+      "marketing": {
+        "title": "市場推廣資訊",
+        "description": "緊貼最新的市場推廣活動、資料和最佳實踐。",
+        "points": [
+          "宣傳資料",
+          "數碼市場推廣資源",
+          "社交媒體策略",
+          "品牌指引"
+        ]
+      },
+      "tools": {
+        "title": "工具與系統",
+        "description": "使用強大工具管理業務和服務客戶。",
+        "points": [
+          "客戶關係管理系統",
+          "潛在客戶開發工具",
+          "客戶門戶",
+          "績效分析"
+        ]
+      },
+      "support": {
+        "title": "行政支援",
+        "description": "專注銷售，我們處理行政事務。",
+        "points": [
+          "申請處理",
+          "文件支援",
+          "合規協助",
+          "後勤運作"
+        ]
+      },
+      "development": {
+        "title": "職涯發展",
+        "description": "清晰的成長路徑，包括認可和晉升機會。",
+        "points": [
+          "績效認可",
+          "領導力發展",
+          "晉升途徑",
+          "導師計劃"
+        ]
+      }
+    },
+    "cta": {
+      "title": "準備好開始了嗎？",
+      "apply": "立即申請",
+      "contact": "聯絡我們"
+    }
+  },
+  "jobs": {
+    "hero": {
+      "title": "職位空缺",
+      "subtitle": "加入我們的團隊，建立豐盛事業"
+    },
+    "positions": {
+      "advisor": {
+        "title": "理財顧問",
+        "type": "全職",
+        "location": "香港",
+        "summary": "加入我們成為理財顧問，協助客戶實現財務目標。",
+        "responsibilities": "為客戶提供理財規劃和保險方案，建立及維護客戶關係，達成銷售目標及績效指標，緊貼行業趨勢和法規",
+        "requirements": "學士學位優先，出色的溝通及人際技巧，具自我激勵及創業精神，願意考取所需牌照",
+        "benefits": "具競爭力的佣金結構，全面培訓計劃，市場推廣及行政支援，職涯晉升機會"
+      },
+      "senior": {
+        "title": "高級理財顧問",
+        "type": "全職",
+        "location": "香港",
+        "summary": "誠邀經驗豐富的專業人士加入我們的精英顧問團隊。",
+        "responsibilities": "管理高淨值客戶組合，制定精密的理財策略，指導初級顧問，代表 UAN 區域出席行業活動",
+        "requirements": "金融服務業至少 3 年經驗，已證實的成功記錄，MDRT 資格優先，出色的領導能力",
+        "benefits": "優厚佣金率，領導力發展機會，國際會議出席，行政支援團隊"
+      },
+      "manager": {
+        "title": "組別經理",
+        "type": "全職",
+        "location": "香港",
+        "summary": "領導及發展理財顧問團隊，同時發展您的業務。",
+        "responsibilities": "招聘及培育團隊成員，提供指導及輔導，推動團隊績效及文化，策略性業務規劃",
+        "requirements": "5 年以上行業經驗，已證實的領導成就，出色的商業頭腦，MDRT 或 COT 資格",
+        "benefits": "額外佣金，管理獎金，領導力培訓，策略規劃支援"
+      }
+    },
+    "apply": "立即申請",
+    "form": {
+      "title": "申請職位",
+      "name": "全名",
+      "email": "電郵地址",
+      "phone": "電話號碼",
+      "resume": "上載履歷",
+      "message": "為何您想加入 UAN 區域？",
+      "consent": "我同意根據私隱政策收集和使用我的個人資料",
+      "submit": "提交申請",
+      "cancel": "取消",
+      "success": "申請已成功提交！我們會盡快聯絡您。",
+      "error": "請填寫所有必填欄位"
+    }
+  },
+  "members": {
+    "hero": {
+      "title": "我們的團隊",
+      "subtitle": "認識 UAN 區域的領袖和成員"
+    },
+    "leadership": {
+      "title": "領導團隊",
+      "specialty": {
+        "mdrt": "MDRT",
+        "cot": "COT",
+        "tot": "TOT",
+        "leadership": "領導力"
+      }
+    },
+    "team": {
+      "title": "我們的團隊成員",
+      "achievements": {
+        "newAgent": "新人獎",
+        "topSales": "2024 年銷售冠軍",
+        "mdrt": "MDRT 資格",
+        "rising": "新星"
+      }
+    }
+  },
+  "performance": {
+    "hero": {
+      "title": "我們的表現",
+      "subtitle": "卓越及增長的往績記錄"
+    },
+    "kpis": {
+      "title": "關鍵績效指標",
+      "mdrt": "MDRT 資格",
+      "cot": "COT 成員",
+      "tot": "TOT 達標者",
+      "retention": "代理保留率"
+    },
+    "achievements": {
+      "title": "各類別成就",
+      "sales": {
+        "title": "銷售卓越",
+        "items": [
+          "2024 年香港頂級區域",
+          "2024 年第四季最高增長率",
+          "創紀錄保費收入"
+        ]
+      },
+      "training": {
+        "title": "培訓與發展",
+        "items": [
+          "100% 牌照合格率",
+          "進階認證課程",
+          "每月領導力工作坊"
+        ]
+      },
+      "recognition": {
+        "title": "行業認可",
+        "items": [
+          "2024 年友邦卓越獎",
+          "最佳區域文化獎",
+          "培訓創新獎"
+        ]
+      }
+    },
+    "milestones": {
+      "title": "重要里程碑",
+      "items": {
+        "established": {
+          "title": "區域成立",
+          "description": "UAN 區域以卓越願景成立"
+        },
+        "expansion": {
+          "title": "大規模擴展",
+          "description": "成長至 50 多名活躍代理"
+        },
+        "mdrt": {
+          "title": "20 名 MDRT 資格",
+          "description": "創紀錄的 MDRT 資格數量"
+        },
+        "award": {
+          "title": "頂級區域獎",
+          "description": "獲認可為香港第一區域"
+        }
+      }
+    }
+  },
+  "login": {
+    "title": "成員登入",
+    "subtitle": "存取專屬資源和成員專區",
+    "username": "用戶名稱",
+    "password": "密碼",
+    "remember": "記住我",
+    "forgot": "忘記密碼？",
+    "submit": "登入",
+    "error": "請連接 Lovable Cloud 以啟用認證"
+  },
+  "footer": {
+    "about": {
+      "title": "關於 UAN 區域",
+      "description": "友邦香港領先區域，致力通過全面培訓、指導和支援，培育卓越保險專業人士。"
+    },
+    "quickLinks": {
+      "title": "快速連結"
+    },
+    "resources": {
+      "title": "資源",
+      "careers": "職位",
+      "training": "培訓門戶",
+      "news": "新聞及更新",
+      "privacy": "私隱政策",
+      "terms": "服務條款"
+    },
+    "contact": {
+      "title": "聯絡資訊",
+      "address": "香港中環商業街 123 號",
+      "phone": "+852 1234 5678",
+      "email": "info@uandistrict.com"
+    },
+    "copyright": "© 2024 UAN 區域，友邦香港。版權所有。",
+    "disclaimer": "本網站僅供參考。保險產品和服務需經批准並受條款約束。"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "nav": {
+    "home": "主页",
+    "offerings": "我们的支持",
+    "jobs": "职位空缺",
+    "members": "成员介绍",
+    "performance": "我们的表现",
+    "login": "登录"
+  },
+  "home": {
+    "hero": {
+      "title": "与 UAN 团队共创职业",
+      "subtitle": "加入友邦香港首屈一指的团队，享受世界级培训、专业指导及资源，助您在保险行业取得成功。",
+      "learnMore": "了解更多",
+      "viewJobs": "查看职位"
+    },
+    "stats": {
+      "members": "活跃成员",
+      "mdrt": "MDRT 资格",
+      "awards": "行业奖项",
+      "growth": "年增长率"
+    },
+    "highlights": {
+      "title": "选择 UAN 团队的理由",
+      "training": {
+        "title": "全面培训",
+        "description": "获得世界级培训课程，加速您的职业发展和专业成长。"
+      },
+      "mentorship": {
+        "title": "专业指导",
+        "description": "向保险及金融服务行业的资深领袖学习，他们拥有卓越的成功记录。"
+      },
+      "marketing": {
+        "title": "市场推广支持",
+        "description": "运用最先进的市场推广资源和策略，有效接触及服务客户。"
+      },
+      "career": {
+        "title": "职业发展",
+        "description": "清晰的晋升途径，包括认可计划及基于表现的机会。"
+      }
+    },
+    "testimonial": {
+      "quote": "加入 UAN 团队是我职业生涯中最好的决定。培训和支持都非常出色。",
+      "name": "陈女士",
+      "role": "高级理财顾问"
+    },
+    "cta": {
+      "title": "准备好开展您的旅程了吗？",
+      "subtitle": "加入我们敬业的专业团队，在保险行业建立丰盛事业。",
+      "contact": "联系我们",
+      "apply": "立即申请"
+    }
+  },
+  "offerings": {
+    "hero": {
+      "title": "我们的支持",
+      "subtitle": "全面支持和资源助您成功"
+    },
+    "categories": {
+      "coaching": {
+        "title": "销售指导",
+        "description": "学习经过验证的技巧，有效服务客户并充满信心地促成销售。",
+        "points": [
+          "一对一指导课程",
+          "客户关系管理",
+          "销售技巧与策略",
+          "产品知识培训"
+        ]
+      },
+      "training": {
+        "title": "培训课程",
+        "description": "从入职到持续专业发展的全面培训。",
+        "points": [
+          "新代理入职培训",
+          "进阶销售培训",
+          "专业认证",
+          "行业合规课程"
+        ]
+      },
+      "marketing": {
+        "title": "市场推广信息",
+        "description": "紧跟最新的市场推广活动、资料和最佳实践。",
+        "points": [
+          "宣传资料",
+          "数字市场推广资源",
+          "社交媒体策略",
+          "品牌指引"
+        ]
+      },
+      "tools": {
+        "title": "工具与系统",
+        "description": "使用强大工具管理业务和服务客户。",
+        "points": [
+          "客户关系管理系统",
+          "潜在客户开发工具",
+          "客户门户",
+          "绩效分析"
+        ]
+      },
+      "support": {
+        "title": "行政支持",
+        "description": "专注销售，我们处理行政事务。",
+        "points": [
+          "申请处理",
+          "文件支持",
+          "合规协助",
+          "后勤运作"
+        ]
+      },
+      "development": {
+        "title": "职业发展",
+        "description": "清晰的成长路径，包括认可和晋升机会。",
+        "points": [
+          "绩效认可",
+          "领导力发展",
+          "晋升途径",
+          "导师计划"
+        ]
+      }
+    },
+    "cta": {
+      "title": "准备好开始了吗？",
+      "apply": "立即申请",
+      "contact": "联系我们"
+    }
+  },
+  "jobs": {
+    "hero": {
+      "title": "职位空缺",
+      "subtitle": "加入我们的团队，建立丰盛事业"
+    },
+    "positions": {
+      "advisor": {
+        "title": "理财顾问",
+        "type": "全职",
+        "location": "香港",
+        "summary": "加入我们成为理财顾问，协助客户实现财务目标。",
+        "responsibilities": "为客户提供理财规划和保险方案，建立及维护客户关系，达成销售目标及绩效指标，紧跟行业趋势和法规",
+        "requirements": "学士学位优先，出色的沟通及人际技巧，具自我激励及创业精神，愿意考取所需牌照",
+        "benefits": "具竞争力的佣金结构，全面培训计划，市场推广及行政支持，职业晋升机会"
+      },
+      "senior": {
+        "title": "高级理财顾问",
+        "type": "全职",
+        "location": "香港",
+        "summary": "诚邀经验丰富的专业人士加入我们的精英顾问团队。",
+        "responsibilities": "管理高净值客户组合，制定精密的理财策略，指导初级顾问，代表 UAN 团队出席行业活动",
+        "requirements": "金融服务业至少 3 年经验，已证实的成功记录，MDRT 资格优先，出色的领导能力",
+        "benefits": "优厚佣金率，领导力发展机会，国际会议出席，行政支持团队"
+      },
+      "manager": {
+        "title": "组别经理",
+        "type": "全职",
+        "location": "香港",
+        "summary": "领导及发展理财顾问团队，同时发展您的业务。",
+        "responsibilities": "招聘及培育团队成员，提供指导及辅导，推动团队绩效及文化，策略性业务规划",
+        "requirements": "5 年以上行业经验，已证实的领导成就，出色的商业头脑，MDRT 或 COT 资格",
+        "benefits": "额外佣金，管理奖金，领导力培训，策略规划支持"
+      }
+    },
+    "apply": "立即申请",
+    "form": {
+      "title": "申请职位",
+      "name": "全名",
+      "email": "邮箱地址",
+      "phone": "电话号码",
+      "resume": "上传简历",
+      "message": "为何您想加入 UAN 团队？",
+      "consent": "我同意根据隐私政策收集和使用我的个人资料",
+      "submit": "提交申请",
+      "cancel": "取消",
+      "success": "申请已成功提交！我们会尽快联系您。",
+      "error": "请填写所有必填栏位"
+    }
+  },
+  "members": {
+    "hero": {
+      "title": "我们的团队",
+      "subtitle": "认识 UAN 团队的领袖和成员"
+    },
+    "leadership": {
+      "title": "领导团队",
+      "specialty": {
+        "mdrt": "MDRT",
+        "cot": "COT",
+        "tot": "TOT",
+        "leadership": "领导力"
+      }
+    },
+    "team": {
+      "title": "我们的团队成员",
+      "achievements": {
+        "newAgent": "新人奖",
+        "topSales": "2024 年销售冠军",
+        "mdrt": "MDRT 资格",
+        "rising": "新星"
+      }
+    }
+  },
+  "performance": {
+    "hero": {
+      "title": "我们的表现",
+      "subtitle": "卓越及增长的往绩记录"
+    },
+    "kpis": {
+      "title": "关键绩效指标",
+      "mdrt": "MDRT 资格",
+      "cot": "COT 成员",
+      "tot": "TOT 达标者",
+      "retention": "代理保留率"
+    },
+    "achievements": {
+      "title": "各类别成就",
+      "sales": {
+        "title": "销售卓越",
+        "items": [
+          "2024 年香港顶级团队",
+          "2024 年第四季最高增长率",
+          "创纪录保费收入"
+        ]
+      },
+      "training": {
+        "title": "培训与发展",
+        "items": [
+          "100% 牌照合格率",
+          "进阶认证课程",
+          "每月领导力工作坊"
+        ]
+      },
+      "recognition": {
+        "title": "行业认可",
+        "items": [
+          "2024 年友邦卓越奖",
+          "最佳团队文化奖",
+          "培训创新奖"
+        ]
+      }
+    },
+    "milestones": {
+      "title": "重要里程碑",
+      "items": {
+        "established": {
+          "title": "团队成立",
+          "description": "UAN 团队以卓越愿景成立"
+        },
+        "expansion": {
+          "title": "大规模扩展",
+          "description": "成长至 50 多名活跃代理"
+        },
+        "mdrt": {
+          "title": "20 名 MDRT 资格",
+          "description": "创纪录的 MDRT 资格数量"
+        },
+        "award": {
+          "title": "顶级团队奖",
+          "description": "获认可为香港第一团队"
+        }
+      }
+    }
+  },
+  "login": {
+    "title": "成员登录",
+    "subtitle": "访问专属资源和成员专区",
+    "username": "用户名称",
+    "password": "密码",
+    "remember": "记住我",
+    "forgot": "忘记密码？",
+    "submit": "登录",
+    "error": "请连接 Lovable Cloud 以启用认证"
+  },
+  "footer": {
+    "about": {
+      "title": "关于 UAN 团队",
+      "description": "友邦香港领先团队，致力通过全面培训、指导和支持，培育卓越保险专业人士。"
+    },
+    "quickLinks": {
+      "title": "快速链接"
+    },
+    "resources": {
+      "title": "资源",
+      "careers": "职位",
+      "training": "培训门户",
+      "news": "新闻及更新",
+      "privacy": "隐私政策",
+      "terms": "服务条款"
+    },
+    "contact": {
+      "title": "联系信息",
+      "address": "香港中环商业街 123 号",
+      "phone": "+852 1234 5678",
+      "email": "info@uandistrict.com"
+    },
+    "copyright": "© 2024 UAN 团队，友邦香港。版权所有。",
+    "disclaimer": "本网站仅供参考。保险产品和服务需经批准并受条款约束。"
+  }
+}

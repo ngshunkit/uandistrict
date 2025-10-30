@@ -1,0 +1,296 @@
+{
+  "nav": {
+    "home": "Home",
+    "offerings": "What We Offer",
+    "jobs": "Job Offering",
+    "members": "Member Introduction",
+    "performance": "Our Performance",
+    "login": "Login"
+  },
+  "home": {
+    "hero": {
+      "title": "Build Your Career with UAN District",
+      "subtitle": "Join AIA Hong Kong's premier district offering world-class training, mentorship, and resources to help you succeed in the insurance industry.",
+      "learnMore": "Learn More",
+      "viewJobs": "View Jobs"
+    },
+    "stats": {
+      "members": "Active Members",
+      "mdrt": "MDRT Qualifiers",
+      "awards": "Industry Awards",
+      "growth": "YoY Growth"
+    },
+    "highlights": {
+      "title": "Why Choose UAN District",
+      "training": {
+        "title": "Comprehensive Training",
+        "description": "Access world-class training programs designed to accelerate your career growth and professional development."
+      },
+      "mentorship": {
+        "title": "Expert Mentorship",
+        "description": "Learn from industry leaders with proven track records of success in the insurance and financial services sector."
+      },
+      "marketing": {
+        "title": "Marketing Support",
+        "description": "Leverage cutting-edge marketing resources and strategies to reach and serve your clients effectively."
+      },
+      "career": {
+        "title": "Career Growth",
+        "description": "Clear pathways for advancement with recognition programs and performance-based opportunities."
+      }
+    },
+    "testimonial": {
+      "quote": "Joining UAN District was the best career decision I've made. The training and support have been exceptional.",
+      "name": "Sarah Chen",
+      "role": "Senior Financial Advisor"
+    },
+    "cta": {
+      "title": "Ready to Start Your Journey?",
+      "subtitle": "Join our team of dedicated professionals and build a rewarding career in insurance.",
+      "contact": "Contact Us",
+      "apply": "Apply Now"
+    }
+  },
+  "offerings": {
+    "hero": {
+      "title": "What We Offer",
+      "subtitle": "Comprehensive support and resources to help you succeed"
+    },
+    "categories": {
+      "coaching": {
+        "title": "Sales Coaching",
+        "description": "Learn proven techniques to serve clients effectively and close sales with confidence.",
+        "points": [
+          "One-on-one coaching sessions",
+          "Client relationship management",
+          "Sales techniques and strategies",
+          "Product knowledge training"
+        ]
+      },
+      "training": {
+        "title": "Training Programs",
+        "description": "Comprehensive training from onboarding through continuous professional development.",
+        "points": [
+          "New agent onboarding",
+          "Advanced sales training",
+          "Professional certifications",
+          "Industry compliance courses"
+        ]
+      },
+      "marketing": {
+        "title": "Marketing Information",
+        "description": "Stay ahead with the latest marketing campaigns, materials, and best practices.",
+        "points": [
+          "Campaign materials",
+          "Digital marketing resources",
+          "Social media strategies",
+          "Brand guidelines"
+        ]
+      },
+      "tools": {
+        "title": "Tools & Systems",
+        "description": "Access powerful tools to manage your business and serve your clients.",
+        "points": [
+          "CRM system access",
+          "Lead generation tools",
+          "Client portal",
+          "Performance analytics"
+        ]
+      },
+      "support": {
+        "title": "Administrative Support",
+        "description": "Focus on sales while we handle the administrative tasks.",
+        "points": [
+          "Application processing",
+          "Documentation support",
+          "Compliance assistance",
+          "Back-office operations"
+        ]
+      },
+      "development": {
+        "title": "Career Development",
+        "description": "Clear pathways for growth with recognition and advancement opportunities.",
+        "points": [
+          "Performance recognition",
+          "Leadership development",
+          "Promotion pathways",
+          "Mentorship programs"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "apply": "Apply Now",
+      "contact": "Contact Us"
+    }
+  },
+  "jobs": {
+    "hero": {
+      "title": "Career Opportunities",
+      "subtitle": "Join our team and build a rewarding career"
+    },
+    "positions": {
+      "advisor": {
+        "title": "Financial Advisor",
+        "type": "Full-time",
+        "location": "Hong Kong",
+        "summary": "Join our team as a Financial Advisor and help clients achieve their financial goals.",
+        "responsibilities": "Provide financial planning and insurance solutions to clients, Build and maintain client relationships, Meet sales targets and performance metrics, Stay current with industry trends and regulations",
+        "requirements": "Bachelor's degree preferred, Strong communication and interpersonal skills, Self-motivated with entrepreneurial mindset, Willingness to obtain required licenses",
+        "benefits": "Competitive commission structure, Comprehensive training program, Marketing and administrative support, Career advancement opportunities"
+      },
+      "senior": {
+        "title": "Senior Financial Consultant",
+        "type": "Full-time",
+        "location": "Hong Kong",
+        "summary": "Experienced professionals wanted to join our elite team of senior consultants.",
+        "responsibilities": "Manage high-net-worth client portfolios, Develop sophisticated financial strategies, Mentor junior advisors, Represent UAN District at industry events",
+        "requirements": "Minimum 3 years in financial services, Proven track record of success, MDRT qualification preferred, Strong leadership abilities",
+        "benefits": "Premium commission rates, Leadership development opportunities, International conference attendance, Executive support team"
+      },
+      "manager": {
+        "title": "Unit Manager",
+        "type": "Full-time",
+        "location": "Hong Kong",
+        "summary": "Lead and develop a team of financial advisors while growing your own business.",
+        "responsibilities": "Recruit and develop team members, Provide coaching and mentorship, Drive team performance and culture, Strategic business planning",
+        "requirements": "5+ years industry experience, Demonstrated leadership success, Strong business acumen, MDRT or COT qualifier",
+        "benefits": "Override commissions, Management bonuses, Leadership training, Strategic planning support"
+      }
+    },
+    "apply": "Apply Now",
+    "form": {
+      "title": "Apply for",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "resume": "Upload Resume",
+      "message": "Why do you want to join UAN District?",
+      "consent": "I consent to the collection and use of my personal data in accordance with the Privacy Policy",
+      "submit": "Submit Application",
+      "cancel": "Cancel",
+      "success": "Application submitted successfully! We'll be in touch soon.",
+      "error": "Please fill in all required fields"
+    }
+  },
+  "members": {
+    "hero": {
+      "title": "Our Team",
+      "subtitle": "Meet the leaders and members of UAN District"
+    },
+    "leadership": {
+      "title": "Leadership Team",
+      "specialty": {
+        "mdrt": "MDRT",
+        "cot": "COT",
+        "tot": "TOT",
+        "leadership": "Leadership"
+      }
+    },
+    "team": {
+      "title": "Our Team Members",
+      "achievements": {
+        "newAgent": "New Agent Award",
+        "topSales": "Top Sales 2024",
+        "mdrt": "MDRT Qualifier",
+        "rising": "Rising Star"
+      }
+    }
+  },
+  "performance": {
+    "hero": {
+      "title": "Our Performance",
+      "subtitle": "Track record of excellence and growth"
+    },
+    "kpis": {
+      "title": "Key Performance Indicators",
+      "mdrt": "MDRT Qualifiers",
+      "cot": "COT Members",
+      "tot": "TOT Achievers",
+      "retention": "Agent Retention Rate"
+    },
+    "achievements": {
+      "title": "Achievements by Category",
+      "sales": {
+        "title": "Sales Excellence",
+        "items": [
+          "Top District in Hong Kong 2024",
+          "Highest Growth Rate - Q4 2024",
+          "Record Breaking Premium Volume"
+        ]
+      },
+      "training": {
+        "title": "Training & Development",
+        "items": [
+          "100% License Pass Rate",
+          "Advanced Certification Program",
+          "Monthly Leadership Workshops"
+        ]
+      },
+      "recognition": {
+        "title": "Industry Recognition",
+        "items": [
+          "AIA Excellence Award 2024",
+          "Best District Culture Award",
+          "Innovation in Training Award"
+        ]
+      }
+    },
+    "milestones": {
+      "title": "Key Milestones",
+      "items": {
+        "established": {
+          "title": "District Established",
+          "description": "UAN District founded with vision for excellence"
+        },
+        "expansion": {
+          "title": "Major Expansion",
+          "description": "Grew to 50+ active agents"
+        },
+        "mdrt": {
+          "title": "20 MDRT Qualifiers",
+          "description": "Record number of MDRT qualifications"
+        },
+        "award": {
+          "title": "Top District Award",
+          "description": "Recognized as #1 district in Hong Kong"
+        }
+      }
+    }
+  },
+  "login": {
+    "title": "Member Login",
+    "subtitle": "Access exclusive resources and member area",
+    "username": "Username",
+    "password": "Password",
+    "remember": "Remember me",
+    "forgot": "Forgot password?",
+    "submit": "Sign In",
+    "error": "Please connect Lovable Cloud to enable authentication"
+  },
+  "footer": {
+    "about": {
+      "title": "About UAN District",
+      "description": "Leading district of AIA Hong Kong, committed to developing exceptional insurance professionals through comprehensive training, mentorship, and support."
+    },
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "resources": {
+      "title": "Resources",
+      "careers": "Careers",
+      "training": "Training Portal",
+      "news": "News & Updates",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "contact": {
+      "title": "Contact Info",
+      "address": "123 Business Street, Central, Hong Kong",
+      "phone": "+852 1234 5678",
+      "email": "info@uandistrict.com"
+    },
+    "copyright": "© 2024 UAN District, AIA Hong Kong. All rights reserved.",
+    "disclaimer": "This website is for informational purposes only. Insurance products and services are subject to approval and terms."
+  }
+}
