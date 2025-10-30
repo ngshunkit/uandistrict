@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import uanLogo from "@/assets/uan-logo.png";
 
 const Footer = () => {
   return (
@@ -9,9 +10,7 @@ const Footer = () => {
           {/* About Section */}
           <div>
             <div className="mb-4 flex items-center space-x-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-primary">
-                <span className="text-xl font-bold text-primary-foreground">UAN</span>
-              </div>
+              <img src={uanLogo} alt="UAN District" className="h-12 w-auto" />
               <div>
                 <div className="font-bold text-foreground">UAN District</div>
                 <div className="text-xs text-muted-foreground">AIA Hong Kong</div>
