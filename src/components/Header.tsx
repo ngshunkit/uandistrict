@@ -27,6 +27,9 @@ const Header = () => {
   }, {
     path: "/performance",
     label: t("nav.performance")
+  }, {
+    path: "/contact",
+    label: t("nav.contact")
   }];
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);

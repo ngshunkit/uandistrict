@@ -5,7 +5,49 @@
     "jobs": "Job Offering",
     "members": "Member Introduction",
     "performance": "Our Performance",
+    "contact": "Contact Us",
     "login": "Login"
+  },
+  "contact": {
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "We'd love to hear from you. Reach out to us for any questions or to start your journey with UAN District."
+    },
+    "info": {
+      "address": {
+        "title": "Our Office",
+        "content": "123 Business Tower, Central, Hong Kong"
+      },
+      "phone": {
+        "title": "Phone",
+        "content": "+852 1234 5678"
+      },
+      "email": {
+        "title": "Email",
+        "content": "info@uandistrict.com"
+      },
+      "hours": {
+        "title": "Business Hours",
+        "content": "Mon-Fri: 9:00 AM - 6:00 PM"
+      }
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "message": "Message",
+      "messagePlaceholder": "Tell us how we can help you",
+      "submit": "Send Message",
+      "success": "Thank you! We'll get back to you soon."
+    },
+    "social": {
+      "title": "Follow Us",
+      "subtitle": "Stay connected with us on social media for the latest updates and insights."
+    }
   },
   "home": {
     "hero": {

@@ -5,7 +5,49 @@
     "jobs": "职位空缺",
     "members": "成员介绍",
     "performance": "我们的表现",
+    "contact": "联系我们",
     "login": "登录"
+  },
+  "contact": {
+    "hero": {
+      "title": "联系我们",
+      "subtitle": "我们非常乐意听取您的意见。如有任何问题或想开始您的 UAN 团队之旅，请与我们联系。"
+    },
+    "info": {
+      "address": {
+        "title": "办公室地址",
+        "content": "香港中环商业大厦123号"
+      },
+      "phone": {
+        "title": "电话",
+        "content": "+852 1234 5678"
+      },
+      "email": {
+        "title": "电邮",
+        "content": "info@uandistrict.com"
+      },
+      "hours": {
+        "title": "营业时间",
+        "content": "星期一至五：上午9时至下午6时"
+      }
+    },
+    "form": {
+      "title": "发送消息",
+      "name": "全名",
+      "namePlaceholder": "请输入您的全名",
+      "email": "电邮地址",
+      "emailPlaceholder": "请输入您的电邮",
+      "phone": "电话号码",
+      "phonePlaceholder": "请输入您的电话号码",
+      "message": "消息",
+      "messagePlaceholder": "告诉我们如何协助您",
+      "submit": "发送消息",
+      "success": "谢谢！我们将尽快回复您。"
+    },
+    "social": {
+      "title": "关注我们",
+      "subtitle": "在社交媒体上关注我们，获取最新消息和见解。"
+    }
   },
   "home": {
     "hero": {

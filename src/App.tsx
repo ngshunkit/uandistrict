@@ -8,6 +8,7 @@ import Offerings from "./pages/Offerings";
 import Jobs from "./pages/Jobs";
 import Members from "./pages/Members";
 import Performance from "./pages/Performance";
+import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Auth from "./pages/Auth";
 import MembersDashboard from "./pages/MembersDashboard";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/members-team" element={<Members />} />
           <Route path="/performance" element={<Performance />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/members" element={<MembersDashboard />} />
