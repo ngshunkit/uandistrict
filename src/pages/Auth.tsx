@@ -6,7 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { Lock, Mail, User, ArrowRight, Phone } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Lock, Mail, User, ArrowRight, Phone, Check, X, Shield } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -22,6 +23,38 @@ const Auth = () => {
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [signupRequests, setSignupRequests] = useState<any[]>([]);
+
+  // Check if current user is admin
+  useEffect(() => {
+    const checkAdmin = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) {
+        const { data: roles } = await supabase
+          .from("user_roles")
+          .select("role")
+          .eq("user_id", session.user.id)
+          .eq("role", "admin")
+          .maybeSingle();
+        
+        setIsAdmin(!!roles);
+        
+        if (roles) {
+          // Fetch pending signup requests
+          const { data: requests } = await supabase
+            .from("signup_requests")
+            .select("*")
+            .eq("status", "pending")
+            .order("created_at", { ascending: false });
+          
+          setSignupRequests(requests || []);
+        }
+      }
+    };
+    
+    checkAdmin();
+  }, []);
 
   useEffect(() => {
     // Check if user is already logged in
@@ -138,6 +171,70 @@ const Auth = () => {
     }
   };
 
+  const handleApproveRequest = async (request: any) => {
+    try {
+      // Add email to whitelist
+      const { error: whitelistError } = await supabase
+        .from("email_whitelist")
+        .insert({
+          email: request.email,
+          notes: `Approved from signup request - ${request.full_name}`,
+        });
+
+      if (whitelistError && whitelistError.code !== '23505') {
+        throw whitelistError;
+      }
+
+      // Update request status
+      const { error: updateError } = await supabase
+        .from("signup_requests")
+        .update({
+          status: "approved",
+          approved_at: new Date().toISOString(),
+        })
+        .eq("id", request.id);
+
+      if (updateError) throw updateError;
+
+      toast.success(`Approved ${request.email}!`);
+      
+      // Refresh requests list
+      const { data: requests } = await supabase
+        .from("signup_requests")
+        .select("*")
+        .eq("status", "pending")
+        .order("created_at", { ascending: false });
+      
+      setSignupRequests(requests || []);
+    } catch (error: any) {
+      toast.error(error.message || "Failed to approve request");
+    }
+  };
+
+  const handleRejectRequest = async (request: any) => {
+    try {
+      const { error } = await supabase
+        .from("signup_requests")
+        .update({ status: "rejected" })
+        .eq("id", request.id);
+
+      if (error) throw error;
+
+      toast.success(`Rejected request from ${request.email}`);
+      
+      // Refresh requests list
+      const { data: requests } = await supabase
+        .from("signup_requests")
+        .select("*")
+        .eq("status", "pending")
+        .order("created_at", { ascending: false });
+      
+      setSignupRequests(requests || []);
+    } catch (error: any) {
+      toast.error("Failed to reject request");
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -157,11 +254,17 @@ const Auth = () => {
 
             <Card>
               <CardContent className="p-6">
-                <Tabs defaultValue="signin" className="w-full">
-                  <TabsList className="grid w-full grid-cols-3">
+                <Tabs defaultValue={isAdmin && signupRequests.length > 0 ? "admin" : "signin"} className="w-full">
+                  <TabsList className={`grid w-full ${isAdmin && signupRequests.length > 0 ? 'grid-cols-4' : 'grid-cols-3'}`}>
                     <TabsTrigger value="signin">Sign In</TabsTrigger>
                     <TabsTrigger value="signup">Sign Up</TabsTrigger>
                     <TabsTrigger value="request">Request Access</TabsTrigger>
+                    {isAdmin && signupRequests.length > 0 && (
+                      <TabsTrigger value="admin">
+                        <Shield className="h-4 w-4 mr-1" />
+                        Admin ({signupRequests.length})
+                      </TabsTrigger>
+                    )}
                   </TabsList>
                   
                   <TabsContent value="signin">
@@ -340,6 +443,79 @@ const Auth = () => {
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                     </form>
+                  </TabsContent>
+                  
+                  <TabsContent value="admin">
+                    <div className="space-y-4">
+                      <div className="mb-4 rounded-lg bg-muted p-4">
+                        <p className="text-sm font-semibold text-foreground flex items-center">
+                          <Shield className="h-4 w-4 mr-2 text-primary" />
+                          Admin: Pending Signup Requests
+                        </p>
+                      </div>
+                      
+                      {signupRequests.length === 0 ? (
+                        <p className="text-center text-muted-foreground py-8">No pending requests</p>
+                      ) : (
+                        <div className="space-y-3 max-h-96 overflow-y-auto">
+                          {signupRequests.map((request) => (
+                            <Card key={request.id} className="border-2">
+                              <CardContent className="p-4">
+                                <div className="space-y-3">
+                                  <div className="flex items-start justify-between">
+                                    <div className="flex-1">
+                                      <div className="flex items-center gap-2 mb-1">
+                                        <User className="h-4 w-4 text-muted-foreground" />
+                                        <span className="font-semibold text-sm">{request.full_name}</span>
+                                      </div>
+                                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                                        <Mail className="h-3 w-3" />
+                                        <span>{request.email}</span>
+                                      </div>
+                                      {request.phone && (
+                                        <div className="flex items-center gap-2 text-xs text-muted-foreground mt-1">
+                                          <Phone className="h-3 w-3" />
+                                          <span>{request.phone}</span>
+                                        </div>
+                                      )}
+                                    </div>
+                                    <Badge variant="secondary" className="text-xs">
+                                      {new Date(request.created_at).toLocaleDateString()}
+                                    </Badge>
+                                  </div>
+                                  
+                                  {request.message && (
+                                    <div className="rounded-md bg-muted p-2 text-xs">
+                                      <p className="text-muted-foreground">{request.message}</p>
+                                    </div>
+                                  )}
+                                  
+                                  <div className="flex gap-2">
+                                    <Button
+                                      size="sm"
+                                      onClick={() => handleApproveRequest(request)}
+                                      className="flex-1 bg-green-600 hover:bg-green-700 text-xs h-8"
+                                    >
+                                      <Check className="h-3 w-3 mr-1" />
+                                      Approve
+                                    </Button>
+                                    <Button
+                                      size="sm"
+                                      variant="destructive"
+                                      onClick={() => handleRejectRequest(request)}
+                                      className="flex-1 text-xs h-8"
+                                    >
+                                      <X className="h-3 w-3 mr-1" />
+                                      Reject
+                                    </Button>
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </TabsContent>
                 </Tabs>
               </CardContent>
