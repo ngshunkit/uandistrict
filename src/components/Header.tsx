@@ -37,7 +37,7 @@ const Header = () => {
         <Link to="/" className="flex items-center space-x-3">
           <img src={uanLogo} alt="UAN District" className="h-12 w-auto" />
           <div className="hidden md:block">
-            <div className="text-xs text-muted-foreground">AIA Hong Kong</div>
+            <div className="text-xs text-muted-foreground">UAN District</div>
           </div>
         </Link>
 
@@ -45,10 +45,7 @@ const Header = () => {
         <div className="hidden items-center space-x-1 lg:flex">
           {navItems.map((item) => (
             <Link key={item.path} to={item.path}>
-              <Button
-                variant={isActive(item.path) ? "default" : "ghost"}
-                className="text-sm"
-              >
+              <Button variant={isActive(item.path) ? "default" : "ghost"} className="text-sm">
                 {item.label}
               </Button>
             </Link>
@@ -65,14 +62,14 @@ const Header = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => changeLanguage('en')}>
-                EN - English {i18n.language === 'en' && '✓'}
+              <DropdownMenuItem onClick={() => changeLanguage("en")}>
+                EN - English {i18n.language === "en" && "✓"}
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => changeLanguage('zh-HK')}>
-                繁 - 繁體中文 {i18n.language === 'zh-HK' && '✓'}
+              <DropdownMenuItem onClick={() => changeLanguage("zh-HK")}>
+                繁 - 繁體中文 {i18n.language === "zh-HK" && "✓"}
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => changeLanguage('zh-CN')}>
-                简 - 简体中文 {i18n.language === 'zh-CN' && '✓'}
+              <DropdownMenuItem onClick={() => changeLanguage("zh-CN")}>
+                简 - 简体中文 {i18n.language === "zh-CN" && "✓"}
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -99,15 +96,8 @@ const Header = () => {
         <div className="border-t border-border bg-background lg:hidden">
           <div className="container mx-auto space-y-1 px-4 py-4">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Button
-                  variant={isActive(item.path) ? "default" : "ghost"}
-                  className="w-full justify-start"
-                >
+              <Link key={item.path} to={item.path} onClick={() => setMobileMenuOpen(false)}>
+                <Button variant={isActive(item.path) ? "default" : "ghost"} className="w-full justify-start">
                   {item.label}
                 </Button>
               </Link>
