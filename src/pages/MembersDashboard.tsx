@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   BookOpen, 
   Users, 
@@ -9,13 +10,16 @@ import {
   FileText, 
   Award, 
   TrendingUp, 
-  User
+  User as UserIcon,
+  Shield
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import type { User } from "@supabase/supabase-js";
 import MembersHeader from "@/components/MembersHeader";
 import Footer from "@/components/Footer";
+import { SignupRequests } from "@/components/admin/SignupRequests";
 
 interface Profile {
   full_name: string | null;
@@ -25,6 +29,8 @@ interface Profile {
 const MembersDashboard = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [user, setUser] = useState<User | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -41,8 +47,22 @@ const MembersDashboard = () => {
         }
 
         if (session && isMounted) {
-          // Fetch user profile
+          setUser(session.user);
+          
+          // Check if user is admin
           setTimeout(async () => {
+            const { data: roles } = await supabase
+              .from("user_roles")
+              .select("role")
+              .eq("user_id", session.user.id)
+              .eq("role", "admin")
+              .maybeSingle();
+            
+            if (isMounted) {
+              setIsAdmin(!!roles);
+            }
+            
+            // Fetch user profile
             const { data, error } = await supabase
               .from('profiles')
               .select('full_name, email')
@@ -125,9 +145,19 @@ const MembersDashboard = () => {
         {/* Main Content */}
         <section className="py-12">
           <div className="container mx-auto px-4">
-            {/* Quick Access Cards */}
-            <div className="mb-12">
-              <h2 className="mb-6 text-2xl font-bold text-foreground">{t("members.dashboard.quickAccess")}</h2>
+            <Tabs defaultValue={isAdmin ? "admin" : "dashboard"} className="w-full">
+              <TabsList className={isAdmin ? "grid w-full grid-cols-2 mb-8" : "hidden"}>
+                <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
+                <TabsTrigger value="admin">
+                  <Shield className="h-4 w-4 mr-2" />
+                  Admin Panel
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="dashboard">
+                {/* Quick Access Cards */}
+                <div className="mb-12">
+                  <h2 className="mb-6 text-2xl font-bold text-foreground">{t("members.dashboard.quickAccess")}</h2>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 <Card className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                   <CardHeader>
@@ -217,7 +247,7 @@ const MembersDashboard = () => {
                 <Card className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                   <CardHeader>
                     <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                      <User className="h-6 w-6 text-primary" />
+                      <UserIcon className="h-6 w-6 text-primary" />
                     </div>
                     <CardTitle>{t("members.dashboard.cards.profile.title")}</CardTitle>
                     <CardDescription>
@@ -276,6 +306,12 @@ const MembersDashboard = () => {
                 </Card>
               </div>
             </div>
+          </TabsContent>
+
+          <TabsContent value="admin">
+            {isAdmin && <SignupRequests />}
+          </TabsContent>
+        </Tabs>
           </div>
         </section>
       </main>
