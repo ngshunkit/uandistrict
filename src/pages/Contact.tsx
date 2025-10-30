@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,6 +18,7 @@ import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 // Rednote icon component (custom SVG)
 const RednoteIcon = ({ className }: { className?: string }) => (
@@ -31,6 +33,7 @@ const RednoteIcon = ({ className }: { className?: string }) => (
 
 const Contact = () => {
   const { t } = useTranslation();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactInfo = [
     {
@@ -94,9 +97,33 @@ const Contact = () => {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success(t("contact.form.success"));
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string || null,
+      message: formData.get('message') as string,
+    };
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([data]);
+
+      if (error) throw error;
+
+      toast.success(t("contact.form.success"));
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      toast.error('Failed to submit. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -161,7 +188,8 @@ const Contact = () => {
                       <div className="space-y-2">
                         <Label htmlFor="name">{t("contact.form.name")}</Label>
                         <Input 
-                          id="name" 
+                          id="name"
+                          name="name"
                           required 
                           placeholder={t("contact.form.namePlaceholder")}
                           className="transition-all duration-200 focus:scale-[1.02]"
@@ -171,7 +199,8 @@ const Contact = () => {
                       <div className="space-y-2">
                         <Label htmlFor="email">{t("contact.form.email")}</Label>
                         <Input 
-                          id="email" 
+                          id="email"
+                          name="email"
                           type="email" 
                           required 
                           placeholder={t("contact.form.emailPlaceholder")}
@@ -182,7 +211,8 @@ const Contact = () => {
                       <div className="space-y-2">
                         <Label htmlFor="phone">{t("contact.form.phone")}</Label>
                         <Input 
-                          id="phone" 
+                          id="phone"
+                          name="phone"
                           type="tel" 
                           placeholder={t("contact.form.phonePlaceholder")}
                           className="transition-all duration-200 focus:scale-[1.02]"
@@ -193,6 +223,7 @@ const Contact = () => {
                         <Label htmlFor="message">{t("contact.form.message")}</Label>
                         <Textarea
                           id="message"
+                          name="message"
                           required
                           placeholder={t("contact.form.messagePlaceholder")}
                           rows={5}
@@ -202,9 +233,10 @@ const Contact = () => {
                       
                       <Button 
                         type="submit" 
+                        disabled={isSubmitting}
                         className="w-full transition-all duration-300 hover:scale-105"
                       >
-                        {t("contact.form.submit")}
+                        {isSubmitting ? t("contact.form.sending") : t("contact.form.submit")}
                         <Send className="ml-2 h-4 w-4" />
                       </Button>
                     </form>
