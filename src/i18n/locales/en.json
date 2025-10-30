@@ -269,28 +269,17 @@
     "error": "Please connect Lovable Cloud to enable authentication"
   },
   "footer": {
-    "about": {
-      "title": "About UAN District",
-      "description": "Leading district of AIA Hong Kong, committed to developing exceptional insurance professionals through comprehensive training, mentorship, and support."
-    },
-    "quickLinks": {
-      "title": "Quick Links"
-    },
-    "resources": {
-      "title": "Resources",
-      "careers": "Careers",
-      "training": "Training Portal",
-      "news": "News & Updates",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
-    },
-    "contact": {
-      "title": "Contact Info",
-      "address": "123 Business Street, Central, Hong Kong",
-      "phone": "+852 1234 5678",
-      "email": "info@uandistrict.com"
-    },
-    "copyright": "© 2024 UAN District, AIA Hong Kong. All rights reserved.",
-    "disclaimer": "This website is for informational purposes only. Insurance products and services are subject to approval and terms."
+    "description": "Building careers and empowering agents across Hong Kong with world-class training and support.",
+    "quickLinks": "Quick Links",
+    "resources": "Resources",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "disclaimer": "Disclaimer",
+    "contactTitle": "Contact Us",
+    "location": "Hong Kong",
+    "phone": "+852 XXXX XXXX",
+    "email": "info@uan-district.com",
+    "copyright": "© 2025 UAN District, AIA Hong Kong. All rights reserved.",
+    "disclaimerText": "Disclaimer: This website is for informational purposes only and does not constitute an offer of insurance products or employment contract."
   }
 }

@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import uanLogo from "@/assets/uan-logo.png";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="border-t border-border bg-muted/30">
       <div className="container mx-auto px-4 py-12">
@@ -17,32 +20,32 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
-              Building careers and empowering agents across Hong Kong with world-class training and support.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Quick Links</h3>
+            <h3 className="mb-4 font-semibold text-foreground">{t("footer.quickLinks")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/" className="text-muted-foreground transition-colors hover:text-primary">
-                  Home
+                  {t("nav.home")}
                 </Link>
               </li>
               <li>
                 <Link to="/offerings" className="text-muted-foreground transition-colors hover:text-primary">
-                  What We Offer
+                  {t("nav.offerings")}
                 </Link>
               </li>
               <li>
                 <Link to="/jobs" className="text-muted-foreground transition-colors hover:text-primary">
-                  Job Offering
+                  {t("nav.jobs")}
                 </Link>
               </li>
               <li>
                 <Link to="/members" className="text-muted-foreground transition-colors hover:text-primary">
-                  Member Introduction
+                  {t("nav.members")}
                 </Link>
               </li>
             </ul>
@@ -50,26 +53,26 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Resources</h3>
+            <h3 className="mb-4 font-semibold text-foreground">{t("footer.resources")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/performance" className="text-muted-foreground transition-colors hover:text-primary">
-                  Our Performance
+                  {t("nav.performance")}
                 </Link>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground transition-colors hover:text-primary">
-                  Privacy Policy
+                  {t("footer.privacy")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground transition-colors hover:text-primary">
-                  Terms of Service
+                  {t("footer.terms")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground transition-colors hover:text-primary">
-                  Disclaimer
+                  {t("footer.disclaimer")}
                 </a>
               </li>
             </ul>
@@ -77,20 +80,20 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Contact Us</h3>
+            <h3 className="mb-4 font-semibold text-foreground">{t("footer.contactTitle")}</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">Hong Kong</span>
+                <span className="text-muted-foreground">{t("footer.location")}</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 flex-shrink-0 text-primary" />
-                <span className="text-muted-foreground">+852 XXXX XXXX</span>
+                <span className="text-muted-foreground">{t("footer.phone")}</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
                 <a href="mailto:info@uan-district.com" className="text-muted-foreground hover:text-primary">
-                  info@uan-district.com
+                  {t("footer.email")}
                 </a>
               </li>
             </ul>
@@ -118,10 +121,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-8 border-t border-border pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} UAN District, AIA Hong Kong. All rights reserved.
+            {t("footer.copyright")}
           </p>
           <p className="mt-2 text-xs text-muted-foreground">
-            Disclaimer: This website is for informational purposes only and does not constitute an offer of insurance products or employment contract.
+            {t("footer.disclaimerText")}
           </p>
         </div>
       </div>

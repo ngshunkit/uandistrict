@@ -269,28 +269,17 @@
     "error": "请连接 Lovable Cloud 以启用认证"
   },
   "footer": {
-    "about": {
-      "title": "关于 UAN 团队",
-      "description": "友邦香港领先团队，致力通过全面培训、指导和支持，培育卓越保险专业人士。"
-    },
-    "quickLinks": {
-      "title": "快速链接"
-    },
-    "resources": {
-      "title": "资源",
-      "careers": "职位",
-      "training": "培训门户",
-      "news": "新闻及更新",
-      "privacy": "隐私政策",
-      "terms": "服务条款"
-    },
-    "contact": {
-      "title": "联系信息",
-      "address": "香港中环商业街 123 号",
-      "phone": "+852 1234 5678",
-      "email": "info@uandistrict.com"
-    },
-    "copyright": "© 2024 UAN 团队，友邦香港。版权所有。",
-    "disclaimer": "本网站仅供参考。保险产品和服务需经批准并受条款约束。"
+    "description": "致力于在香港建立职业并赋能代理，提供世界级培训和支持。",
+    "quickLinks": "快速链接",
+    "resources": "资源",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "disclaimer": "免责声明",
+    "contactTitle": "联系我们",
+    "location": "香港",
+    "phone": "+852 XXXX XXXX",
+    "email": "info@uan-district.com",
+    "copyright": "© 2025 UAN 团队，友邦香港。版权所有。",
+    "disclaimerText": "免责声明：本网站仅供参考，不构成保险产品或雇佣合约的要约。"
   }
 }
