@@ -204,6 +204,7 @@ const VideoPlayer = ({ video, index }: { video: { title: string; src: string }; 
             <video
               ref={videoRef}
               className="w-full h-full object-cover"
+              autoPlay
               muted
               loop
               playsInline
