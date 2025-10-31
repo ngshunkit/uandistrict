@@ -52,11 +52,45 @@
     }
   },
   "home": {
+    "badge": {
+      "empowering": "Empowering Insurance Professionals",
+      "whatWeOffer": "What We Offer",
+      "excellence": "Excellence Recognized",
+      "latestInsights": "Latest Insights"
+    },
     "hero": {
+      "district": "UAN District",
+      "subtitle2": "Join Hong Kong's premier insurance district. Build your career with world-class training, expert mentorship, and a community dedicated to your success.",
+      "joinUs": "Join Us",
+      "ourOfferings": "Our Offerings",
       "title": "Build Your Career with UAN District",
       "subtitle": "Join AIA Hong Kong's premier district offering world-class training, mentorship, and resources to help you succeed in the insurance industry.",
       "learnMore": "Learn More",
       "viewJobs": "View Jobs"
+    },
+    "trusted": {
+      "title": "Trusted by Leading Organizations"
+    },
+    "servicesSection": {
+      "title": "Customer base development\nProfessional training",
+      "subtitle": "Comprehensive support designed to accelerate your growth and maximize your potential."
+    },
+    "awards": {
+      "title": "Awards & Achievements",
+      "subtitle": "A legacy of excellence spanning nearly two decades.",
+      "note": "Note: This is only a partial list and does not include all the awards we have received."
+    },
+    "blog": {
+      "title": "From the Blog",
+      "title1": "Building a Sustainable Insurance Practice",
+      "excerpt1": "Learn the key strategies for creating long-term client relationships and recurring revenue.",
+      "date1": "Oct 15, 2025",
+      "title2": "The Power of Team Culture in Sales",
+      "excerpt2": "Discover how a supportive team environment accelerates individual and collective success.",
+      "date2": "Oct 10, 2025",
+      "title3": "Digital Marketing for Financial Advisors",
+      "excerpt3": "Master modern marketing techniques to attract and convert high-value clients online.",
+      "date3": "Oct 5, 2025"
     },
     "stats": {
       "mdrtMembers": "MDRT Members",

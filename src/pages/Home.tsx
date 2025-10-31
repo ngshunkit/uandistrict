@@ -167,28 +167,27 @@ const Home = () => {
           <div className="container relative mx-auto px-4">
             <div className="mx-auto max-w-4xl text-center">
               <Badge className="mb-6 bg-accent/20 text-accent border-accent/30 hover:bg-accent/30">
-                Empowering Insurance Professionals
+                {t("home.badge.empowering")}
               </Badge>
 
               <h1 className="mb-6 font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-7xl animate-fade-up">
-                UAN District
+                {t("home.hero.district")}
               </h1>
 
               <p className="mb-10 text-lg text-white/80 md:text-xl max-w-2xl mx-auto">
-                Join Hong Kong's premier insurance district. Build your career with world-class training, expert
-                mentorship, and a community dedicated to your success.
+                {t("home.hero.subtitle2")}
               </p>
 
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link to="/jobs">
                   <Button size="lg" className="group">
-                    Join Us
+                    {t("home.hero.joinUs")}
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
                 <Link to="/offerings">
                   <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm">
-                    Our Offerings
+                    {t("home.hero.ourOfferings")}
                   </Button>
                 </Link>
               </div>
@@ -219,7 +218,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/80" />
           <div className="container relative mx-auto px-4">
             <p className="text-center text-sm text-muted-foreground uppercase tracking-wider mb-8">
-              Trusted by Leading Organizations
+              {t("home.trusted.title")}
             </p>
             <div className="flex justify-center items-center gap-12 flex-wrap">
               <a href="https://www.mdrt.org" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300">
@@ -245,11 +244,11 @@ const Home = () => {
         <section className="py-20 md:py-32 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center max-w-3xl mx-auto">
-              <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">What We Offer</Badge>
-              <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl">Customer base development
+              <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">{t("home.badge.whatWeOffer")}</Badge>
+              <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl whitespace-pre-line">{t("home.servicesSection.title")}</h2>
 Professional training </h2>
               <p className="text-lg text-muted-foreground">
-                Comprehensive support designed to accelerate your growth and maximize your potential.
+                {t("home.servicesSection.subtitle")}
               </p>
             </div>
 
@@ -290,12 +289,12 @@ Professional training </h2>
           
           <div className="container relative mx-auto px-4">
             <div className="mb-16 text-center max-w-3xl mx-auto">
-              <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">Excellence Recognized</Badge>
+              <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">{t("home.badge.excellence")}</Badge>
               <h2 className="mb-6 font-display text-3xl font-bold bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200 bg-clip-text text-transparent md:text-5xl drop-shadow-[0_0_30px_rgba(234,179,8,0.5)]">
-                Awards & Achievements
+                {t("home.awards.title")}
               </h2>
               <p className="text-lg text-yellow-100/80">
-                A legacy of excellence spanning nearly two decades.
+                {t("home.awards.subtitle")}
               </p>
             </div>
 
@@ -319,7 +318,7 @@ Professional training </h2>
               </div>
               
               <p className="text-center text-yellow-200/60 text-sm mt-8 italic">
-                Note: This is only a partial list and does not include all the awards we have received.
+                {t("home.awards.note")}
               </p>
             </div>
           </div>
@@ -372,8 +371,8 @@ Professional training </h2>
         <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
             <div className="mb-12">
-              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">Latest Insights</Badge>
-              <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">From the Blog</h2>
+              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">{t("home.badge.latestInsights")}</Badge>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">{t("home.blog.title")}</h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">

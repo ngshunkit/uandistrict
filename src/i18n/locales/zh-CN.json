@@ -52,11 +52,45 @@
     }
   },
   "home": {
+    "badge": {
+      "empowering": "赋能保险专业人士",
+      "whatWeOffer": "我们提供的服务",
+      "excellence": "卓越获认可",
+      "latestInsights": "最新见解"
+    },
     "hero": {
+      "district": "UAN 团队",
+      "subtitle2": "加入香港首屈一指的保险团队。通过世界级培训、专业指导和致力于您成功的社区建立您的职业生涯。",
+      "joinUs": "加入我们",
+      "ourOfferings": "我们的服务",
       "title": "与 UAN 团队共创职业",
       "subtitle": "加入友邦香港首屈一指的团队，享受世界级培训、专业指导及资源，助您在保险行业取得成功。",
       "learnMore": "了解更多",
       "viewJobs": "查看职位"
+    },
+    "trusted": {
+      "title": "值得信赖的领先组织"
+    },
+    "servicesSection": {
+      "title": "客户群发展\n专业培训",
+      "subtitle": "全面支持，旨在加速您的成长并最大化您的潜力。"
+    },
+    "awards": {
+      "title": "奖项与成就",
+      "subtitle": "近二十年的卓越传承。",
+      "note": "注：这只是部分名单，不包括我们收到的所有奖项。"
+    },
+    "blog": {
+      "title": "博客文章",
+      "title1": "建立可持续的保险业务",
+      "excerpt1": "学习创建长期客户关系和经常性收入的关键策略。",
+      "date1": "2025年10月15日",
+      "title2": "团队文化在销售中的力量",
+      "excerpt2": "发现支持性的团队环境如何加速个人和集体的成功。",
+      "date2": "2025年10月10日",
+      "title3": "理财顾问的数字营销",
+      "excerpt3": "掌握现代营销技术，在线吸引和转化高价值客户。",
+      "date3": "2025年10月5日"
     },
     "stats": {
       "mdrtMembers": "MDRT 成员",

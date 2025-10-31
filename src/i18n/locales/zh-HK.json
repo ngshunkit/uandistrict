@@ -52,11 +52,45 @@
     }
   },
   "home": {
+    "badge": {
+      "empowering": "賦能保險專業人士",
+      "whatWeOffer": "我們提供的服務",
+      "excellence": "卓越獲認可",
+      "latestInsights": "最新見解"
+    },
     "hero": {
+      "district": "UAN 區域",
+      "subtitle2": "加入香港首屈一指的保險區域。透過世界級培訓、專業指導和致力於您成功的社區建立您的職業生涯。",
+      "joinUs": "加入我們",
+      "ourOfferings": "我們的服務",
       "title": "與 UAN 區域共創職涯",
       "subtitle": "加入友邦香港首屈一指的區域，享受世界級培訓、專業指導及資源，助您在保險行業取得成功。",
       "learnMore": "了解更多",
       "viewJobs": "查看職位"
+    },
+    "trusted": {
+      "title": "值得信賴的領先組織"
+    },
+    "servicesSection": {
+      "title": "客戶群發展\n專業培訓",
+      "subtitle": "全面支援，旨在加速您的成長並最大化您的潛力。"
+    },
+    "awards": {
+      "title": "獎項與成就",
+      "subtitle": "近二十年的卓越傳承。",
+      "note": "注：這只是部分名單，不包括我們收到的所有獎項。"
+    },
+    "blog": {
+      "title": "網誌文章",
+      "title1": "建立可持續的保險業務",
+      "excerpt1": "學習創建長期客戶關係和經常性收入的關鍵策略。",
+      "date1": "2025年10月15日",
+      "title2": "團隊文化在銷售中的力量",
+      "excerpt2": "發現支援性的團隊環境如何加速個人和集體的成功。",
+      "date2": "2025年10月10日",
+      "title3": "理財顧問的數碼營銷",
+      "excerpt3": "掌握現代營銷技術，在線吸引和轉化高價值客戶。",
+      "date3": "2025年10月5日"
     },
     "stats": {
       "mdrtMembers": "MDRT 成員",
