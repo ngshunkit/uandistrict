@@ -147,6 +147,12 @@ const SocialMediaSkills = () => {
                                 loop
                                 playsInline
                                 preload="auto"
+                                onError={(e) => {
+                                  console.error('Video failed to load:', video.src, e);
+                                }}
+                                onLoadedData={() => {
+                                  console.log('Video loaded successfully:', video.src);
+                                }}
                               >
                                 <source src={video.src} type="video/mp4" />
                                 <source src={video.src} type="video/quicktime" />
