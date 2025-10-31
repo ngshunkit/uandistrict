@@ -216,10 +216,38 @@ const Home = () => {
               Trusted by Leading Organizations
             </p>
             <div className="flex justify-center items-center gap-12 flex-wrap opacity-50">
-              <div className="text-2xl font-bold text-foreground">AIA</div>
-              <div className="text-2xl font-bold text-foreground">MDRT</div>
-              <div className="text-2xl font-bold text-foreground">IFPHK</div>
-              <div className="text-2xl font-bold text-foreground">CII</div>
+              <a 
+                href="https://www.aia.com.hk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-foreground hover:text-primary hover:opacity-100 transition-all duration-300"
+              >
+                AIA
+              </a>
+              <a 
+                href="https://www.mdrt.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-foreground hover:text-primary hover:opacity-100 transition-all duration-300"
+              >
+                MDRT
+              </a>
+              <a 
+                href="https://www.ifphk.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-foreground hover:text-primary hover:opacity-100 transition-all duration-300"
+              >
+                IFPHK
+              </a>
+              <a 
+                href="https://www.cii.co.uk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-foreground hover:text-primary hover:opacity-100 transition-all duration-300"
+              >
+                CII
+              </a>
             </div>
           </div>
         </section>
