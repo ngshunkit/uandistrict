@@ -17,7 +17,6 @@ import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
-import trophiesBackground from "@/assets/trophies-background.jpg";
 const Home = () => {
   const {
     t
@@ -56,23 +55,19 @@ const Home = () => {
     title: "Market Intelligence",
     description: "Ongoing briefings on investment trends from our investment team, cross‑company product comparisons, current social topics, and client‑base development support."
   }];
-  const awards = [
-    { year: "2006", title: "Districts of the Year, 1st Runner-up" },
-    { year: "2015", title: "Corporate Solutions, Top Districts, 1st Runner-up" },
-    { year: "2016", title: "AIA PT Top Sales, Retail Business, Top Agency Units, Champion" },
-    { year: "2017", title: "ULB Award, Top Districts by Case, 1st Runner-up" },
-    { year: "2018", title: "Corporate Solutions Award, District of the Year (with Agency Members from 50 to 100), 1st Runner-up" },
-    { year: "2019", title: "CS – Pension Produce District Award, Top Super Grand District of the Year, Champion" },
-    { year: "2025", title: "District Award (By ANP), UNI ANDY NG, 3rd Runner-up" },
-    { year: "2025", title: "District Award (By Case Count), UNI ANDY NG, 3rd Runner-up" },
-    { year: "2025", title: "District Award (By Distinct Producer), UNI ANDY NG, 2nd Runner-up" },
-    { year: "2025", title: "CS Monthly Ranking (Regional Director Group), UNI ANDY NG, 7th Runner-up" },
-    { year: "2025", title: "CS Monthly Ranking (Sales Manager Group, Individual Pension Business — FYC + Asset Transfer Total), ANDY NG — UNI ANDY NG, Champion" },
-    { year: "2025", title: "CS Monthly Ranking (Sales Manager Group, Individual Pension Business — Case Count), ANDY NG — UNI ANDY NG, Champion" },
-    { year: "2025", title: "CS Monthly Ranking (Sales Supervisor Group, Individual Pension Business — FYC + Asset Transfer Total), ANDY NG — UNI ANDY NG, 7th Runner-up" },
-    { year: "2025", title: "CS Monthly Ranking (Financial Planning Consultant Group, FYC + Asset Transfer Total), KATIE CHAN — UNI ANDY NG, 9th Runner-up" },
-    { year: "2025", title: "CS Monthly Ranking (Financial Planning Consultant Group, Case Count), KATIE CHAN — UNI ANDY NG, 3rd Runner-up" },
-  ];
+  const processSteps = [{
+    title: "Discovery Call",
+    description: "Book a consultation to discuss your career goals and learn about opportunities with UAN District."
+  }, {
+    title: "Assessment & Fit",
+    description: "We evaluate your background and aspirations to ensure mutual alignment for success."
+  }, {
+    title: "Training Program",
+    description: "Complete our comprehensive training covering products, sales techniques, and compliance."
+  }, {
+    title: "Launch & Grow",
+    description: "Start building your practice with ongoing mentorship and support from our leadership team."
+  }];
   const testimonials = [{
     quote: "Our team may not be large, but we are an MDRT district because we specialize in serving high-net-worth clients and providing group insurance. This focus enables higher commissions with a lighter workload.",
     name: "Sarah Chen",
@@ -252,49 +247,21 @@ Professional training </h2>
           <PhotoGallery images={galleryImages} />
         </section>
 
-        {/* Awards & Achievements */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${trophiesBackground})` }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
-          
-          <div className="container relative mx-auto px-4">
+        {/* Process Timeline */}
+        <section className="py-20 md:py-32 bg-gradient-subtle">
+          <div className="container mx-auto px-4">
             <div className="mb-16 text-center max-w-3xl mx-auto">
-              <Badge className="mb-4 bg-yellow-500/20 text-yellow-300 border-yellow-500/50">Excellence Recognized</Badge>
-              <h2 className="mb-6 font-display text-3xl font-bold bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200 bg-clip-text text-transparent md:text-5xl drop-shadow-[0_0_30px_rgba(234,179,8,0.5)]">
-                Awards & Achievements
+              <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">How It Works</Badge>
+              <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl">
+                Your Journey to Success
               </h2>
-              <p className="text-lg text-yellow-100/80">
-                A legacy of excellence spanning nearly two decades.
+              <p className="text-lg text-muted-foreground">
+                A proven 4-step process to launch and grow your insurance career.
               </p>
             </div>
 
-            <div className="max-w-4xl mx-auto">
-              <div className="grid gap-4 md:gap-6">
-                {awards.map((award, index) => (
-                  <div 
-                    key={index} 
-                    className="group relative bg-gradient-to-r from-yellow-900/30 via-yellow-800/20 to-yellow-900/30 backdrop-blur-sm border border-yellow-500/30 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]"
-                  >
-                    <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                      <div className="flex-shrink-0">
-                        <div className="text-3xl font-bold bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-600 bg-clip-text text-transparent font-display drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]">
-                          {award.year}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-yellow-50 text-base md:text-lg leading-relaxed group-hover:text-yellow-100 transition-colors">
-                          {award.title}
-                        </p>
-                      </div>
-                      <Award className="h-6 w-6 text-yellow-400/60 group-hover:text-yellow-300 transition-colors flex-shrink-0" />
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <p className="text-center text-yellow-200/60 text-sm mt-8 italic">
-                Note: This is only a partial list and does not include all the awards we have received.
-              </p>
+            <div className="max-w-3xl mx-auto">
+              <ProcessTimeline steps={processSteps} />
             </div>
           </div>
         </section>
@@ -326,10 +293,7 @@ Professional training </h2>
                   UAN District is more than a workplace—it's a community of driven professionals committed to
                   excellence, innovation, and making a meaningful impact in people's lives.
                 </p>
-                <p className="text-lg text-muted-foreground">
-                  Since our founding, we've helped hundreds of advisors build thriving practices while maintaining the
-                  highest standards of integrity and client service.
-                </p>
+                <p className="text-lg text-muted-foreground">Since our founding, we've helped many agents build thriving practices while maintaining the highest standards of integrity and client service.</p>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
