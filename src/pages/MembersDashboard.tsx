@@ -150,14 +150,18 @@ const MembersDashboard = () => {
             <Tabs defaultValue={isAdmin ? "admin" : "dashboard"} className="w-full">
               <TabsList className={isAdmin ? "grid w-full grid-cols-3 mb-8" : "hidden"}>
                 <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
-                <TabsTrigger value="admin">
-                  <Shield className="h-4 w-4 mr-2" />
-                  Admin Panel
-                </TabsTrigger>
-                <TabsTrigger value="applications">
-                  <FileText className="h-4 w-4 mr-2" />
-                  Job Applications
-                </TabsTrigger>
+                {isAdmin && (
+                  <>
+                    <TabsTrigger value="admin">
+                      <Shield className="h-4 w-4 mr-2" />
+                      Admin Panel
+                    </TabsTrigger>
+                    <TabsTrigger value="applications">
+                      <FileText className="h-4 w-4 mr-2" />
+                      Job Applications
+                    </TabsTrigger>
+                  </>
+                )}
               </TabsList>
 
               <TabsContent value="dashboard">
@@ -319,7 +323,7 @@ const MembersDashboard = () => {
           </TabsContent>
 
           <TabsContent value="applications">
-            <JobApplications />
+            {isAdmin && <JobApplications />}
           </TabsContent>
         </Tabs>
           </div>
