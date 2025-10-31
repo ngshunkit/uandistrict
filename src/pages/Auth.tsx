@@ -104,10 +104,12 @@ const Auth = () => {
       });
 
       if (error) {
+        // Generic error message to prevent account enumeration
+        console.error('Signup error:', error.message);
         if (error.message.includes('not authorized')) {
           toast.error("Your email is not authorized. Please contact an administrator for access.");
         } else {
-          toast.error(error.message);
+          toast.error("Unable to create account. Please check your email is authorized and try again.");
         }
         return;
       }
@@ -145,7 +147,9 @@ const Auth = () => {
       });
 
       if (error) {
-        toast.error(error.message);
+        // Generic error message to prevent account enumeration
+        console.error('Sign in error:', error.message);
+        toast.error("Invalid email or password. Please try again.");
         return;
       }
 
@@ -342,7 +346,7 @@ const Auth = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             className="pl-10"
                             required
-                            minLength={6}
+                            minLength={12}
                           />
                         </div>
                       </div>
@@ -403,11 +407,11 @@ const Auth = () => {
                             onChange={(e) => setPassword(e.target.value)}
                             className="pl-10"
                             required
-                            minLength={6}
+                            minLength={12}
                           />
                         </div>
-                        <p className="mt-1 text-xs text-muted-foreground">
-                          Must be at least 8 characters with uppercase, lowercase, and number
+                         <p className="mt-1 text-xs text-muted-foreground">
+                          Min 12 chars with uppercase, lowercase, number, and special character
                         </p>
                       </div>
 
