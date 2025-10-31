@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,6 +36,18 @@ const RednoteIcon = ({ className }: { className?: string }) => (
 const Contact = () => {
   const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    // Scroll to contact form if hash is present
+    if (window.location.hash === '#contact-form') {
+      setTimeout(() => {
+        const element = document.getElementById('contact-form');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
 
   const contactInfo = [
     {
