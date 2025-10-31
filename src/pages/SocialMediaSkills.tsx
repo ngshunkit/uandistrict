@@ -5,7 +5,6 @@ import { Sparkles, Video, Image, ChevronRight, ChevronLeft, Play } from "lucide-
 import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useEffect, useRef } from "react";
 
 const SocialMediaSkills = () => {
   const { t } = useTranslation();
@@ -177,22 +176,6 @@ const SocialMediaSkills = () => {
 };
 
 const VideoPlayer = ({ video, index }: { video: { title: string; src: string }; index: number }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const videoElement = videoRef.current;
-    if (videoElement) {
-      // Force play after component mounts
-      const playPromise = videoElement.play();
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.log("Autoplay prevented:", error);
-          // Autoplay was prevented, video will show play button
-        });
-      }
-    }
-  }, []);
-
   return (
     <div className="group animate-fade-in" style={{ animationDelay: `${700 + index * 100}ms` }}>
       <h3 className="mb-4 text-2xl font-semibold text-foreground">
@@ -202,14 +185,9 @@ const VideoPlayer = ({ video, index }: { video: { title: string; src: string }; 
         <CardContent className="p-0">
           <div className="relative aspect-video bg-muted overflow-hidden">
             <video
-              ref={videoRef}
               className="w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              src={`/uandistrict${video.src}`}
+              controls
+              preload="metadata"
             >
               <source src={`/uandistrict${video.src}`} type="video/mp4" />
               Your browser does not support the video tag.
