@@ -18,6 +18,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { jobApplicationSchema } from "@/lib/validation";
 
 const Jobs = () => {
   const { t } = useTranslation();
@@ -86,12 +87,48 @@ const Jobs = () => {
       const formData = new FormData(e.target as HTMLFormElement);
       const resumeFile = formData.get("resume") as File;
       
+      // Validate form data
+      const formValues = {
+        name: formData.get("name") as string,
+        email: formData.get("email") as string,
+        phone: formData.get("phone") as string,
+        message: formData.get("message") as string,
+      };
+
+      const validationResult = jobApplicationSchema.safeParse(formValues);
+      if (!validationResult.success) {
+        const firstError = validationResult.error.errors[0];
+        toast.error(firstError.message);
+        setUploading(false);
+        return;
+      }
+
+      // Validate resume file
+      if (resumeFile && resumeFile.size > 0) {
+        const maxSize = 5 * 1024 * 1024; // 5MB
+        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+        const fileExt = resumeFile.name.split('.').pop()?.toLowerCase();
+        const allowedExtensions = ['pdf', 'doc', 'docx'];
+
+        if (resumeFile.size > maxSize) {
+          toast.error("Resume file size must be less than 5MB");
+          setUploading(false);
+          return;
+        }
+
+        if (!allowedTypes.includes(resumeFile.type) && (!fileExt || !allowedExtensions.includes(fileExt))) {
+          toast.error("Resume must be a PDF, DOC, or DOCX file");
+          setUploading(false);
+          return;
+        }
+      }
+      
       let resumeUrl = null;
       
       // Upload resume if provided
       if (resumeFile && resumeFile.size > 0) {
         const fileExt = resumeFile.name.split('.').pop();
-        const fileName = `${Math.random()}.${fileExt}`;
+        const fileName = `${crypto.randomUUID()}.${fileExt}`;
         const filePath = `${fileName}`;
 
         const { error: uploadError } = await supabase.storage
@@ -102,15 +139,15 @@ const Jobs = () => {
         resumeUrl = filePath;
       }
 
-      // Insert application
+      // Insert application with validated data
       const { error: insertError } = await supabase
         .from('job_applications')
         .insert({
           job_title: selectedJob?.title,
-          full_name: formData.get("name") as string,
-          email: formData.get("email") as string,
-          phone: formData.get("phone") as string,
-          cover_letter: formData.get("message") as string,
+          full_name: validationResult.data.name,
+          email: validationResult.data.email,
+          phone: validationResult.data.phone,
+          cover_letter: validationResult.data.message || null,
           resume_url: resumeUrl,
         });
 

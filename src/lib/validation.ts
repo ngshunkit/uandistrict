@@ -32,7 +32,16 @@ export const authSigninSchema = z.object({
   password: z.string().min(1, "Password is required")
 });
 
+// Job application validation schema
+export const jobApplicationSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().min(1, "Phone is required").max(20, "Phone must be less than 20 characters"),
+  message: z.string().trim().max(2000, "Cover letter must be less than 2000 characters").optional().or(z.literal('')),
+});
+
 export type ContactFormData = z.infer<typeof contactSchema>;
 export type SignupRequestFormData = z.infer<typeof signupRequestSchema>;
 export type AuthSignupFormData = z.infer<typeof authSignupSchema>;
 export type AuthSigninFormData = z.infer<typeof authSigninSchema>;
+export type JobApplicationFormData = z.infer<typeof jobApplicationSchema>;
