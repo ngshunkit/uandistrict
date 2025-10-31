@@ -68,7 +68,7 @@ const Contact = () => {
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://instagram.com",
+      url: "https://www.instagram.com/uan.district/",
       color: "hover:text-pink-500",
       bgColor: "hover:bg-pink-500/10",
       delay: "0ms"
@@ -76,7 +76,7 @@ const Contact = () => {
     {
       name: "Facebook",
       icon: Facebook,
-      url: "https://facebook.com",
+      url: "https://www.facebook.com/p/UAN-District-100064070500817/",
       color: "hover:text-blue-600",
       bgColor: "hover:bg-blue-600/10",
       delay: "100ms"
@@ -92,7 +92,7 @@ const Contact = () => {
     {
       name: "YouTube",
       icon: Youtube,
-      url: "https://youtube.com",
+      url: "https://www.youtube.com/@uandistrict7120",
       color: "hover:text-red-600",
       bgColor: "hover:bg-red-600/10",
       delay: "300ms"

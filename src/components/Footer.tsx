@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Youtube, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import uanLogo from "@/assets/uan-logo.png";
 
@@ -101,18 +101,31 @@ const Footer = () => {
             {/* Social Links */}
             <div className="mt-4 flex space-x-3">
               <a
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-background transition-colors hover:border-primary hover:bg-primary/10"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-4 w-4 text-primary" />
-              </a>
-              <a
-                href="#"
+                href="https://www.facebook.com/p/UAN-District-100064070500817/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-background transition-colors hover:border-primary hover:bg-primary/10"
                 aria-label="Facebook"
               >
                 <Facebook className="h-4 w-4 text-primary" />
+              </a>
+              <a
+                href="https://www.youtube.com/@uandistrict7120"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-background transition-colors hover:border-primary hover:bg-primary/10"
+                aria-label="YouTube"
+              >
+                <Youtube className="h-4 w-4 text-primary" />
+              </a>
+              <a
+                href="https://www.instagram.com/uan.district/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-background transition-colors hover:border-primary hover:bg-primary/10"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4 text-primary" />
               </a>
             </div>
           </div>
