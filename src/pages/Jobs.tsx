@@ -128,12 +128,12 @@ const Jobs = () => {
       // Upload resume if provided
       if (resumeFile && resumeFile.size > 0) {
         const fileExt = resumeFile.name.split('.').pop();
-        const fileName = `${crypto.randomUUID()}.${fileExt}`;
-        const filePath = `${fileName}`;
+      const fileName = `${crypto.randomUUID()}.${fileExt}`;
+      const filePath = `applications/${fileName}`;
 
-        const { error: uploadError } = await supabase.storage
-          .from('resumes')
-          .upload(filePath, resumeFile);
+      const { error: uploadError } = await supabase.storage
+        .from('resumes')
+        .upload(filePath, resumeFile);
 
         if (uploadError) throw uploadError;
         resumeUrl = filePath;

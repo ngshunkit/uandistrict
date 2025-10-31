@@ -54,6 +54,7 @@ const JobApplications = () => {
 
   const downloadResume = async (resumeUrl: string, applicantName: string) => {
     try {
+      // Resume URL already contains the 'applications/' prefix from upload
       const { data, error } = await supabase.storage
         .from('resumes')
         .download(resumeUrl);
