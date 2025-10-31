@@ -209,8 +209,9 @@ const VideoPlayer = ({ video, index }: { video: { title: string; src: string }; 
               loop
               playsInline
               preload="auto"
+              src={`/uandistrict${video.src}`}
             >
-              <source src={video.src} type="video/mp4" />
+              <source src={`/uandistrict${video.src}`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
