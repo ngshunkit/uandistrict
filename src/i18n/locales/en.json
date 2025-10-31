@@ -218,8 +218,8 @@
           "title": "Training Schedule",
           "description": "Join us twice weekly for comprehensive sessions",
           "items": [
-            "Tuesday sessions: 7:00 PM - 9:00 PM",
-            "Thursday sessions: 7:00 PM - 9:00 PM",
+            "Tuesday sessions: 09:30  - 11:00 ",
+            "Thursday sessions: 09:30  - 11:00 ",
             "Hands-on practice and role-playing exercises",
             "Case studies and real-world scenarios",
             "Q&A with experienced advisors",
@@ -295,42 +295,22 @@
       "marketing": {
         "title": "Marketing Information",
         "description": "Stay ahead with the latest marketing campaigns, materials, and best practices.",
-        "points": [
-          "Campaign materials",
-          "Digital marketing resources",
-          "Social media strategies",
-          "Brand guidelines"
-        ]
+        "points": ["Campaign materials", "Digital marketing resources", "Social media strategies", "Brand guidelines"]
       },
       "tools": {
         "title": "Tools & Systems",
         "description": "Access powerful tools to manage your business and serve your clients.",
-        "points": [
-          "CRM system access",
-          "Lead generation tools",
-          "Client portal",
-          "Performance analytics"
-        ]
+        "points": ["CRM system access", "Lead generation tools", "Client portal", "Performance analytics"]
       },
       "support": {
         "title": "Administrative Support",
         "description": "Focus on sales while we handle the administrative tasks.",
-        "points": [
-          "Application processing",
-          "Documentation support",
-          "Compliance assistance",
-          "Back-office operations"
-        ]
+        "points": ["Application processing", "Documentation support", "Compliance assistance", "Back-office operations"]
       },
       "development": {
         "title": "Career Development",
         "description": "Clear pathways for growth with recognition and advancement opportunities.",
-        "points": [
-          "Performance recognition",
-          "Leadership development",
-          "Promotion pathways",
-          "Mentorship programs"
-        ]
+        "points": ["Performance recognition", "Leadership development", "Promotion pathways", "Mentorship programs"]
       }
     },
     "cta": {
@@ -428,27 +408,15 @@
       "title": "Achievements by Category",
       "sales": {
         "title": "Sales Excellence",
-        "items": [
-          "Top District in Hong Kong 2024",
-          "Highest Growth Rate - Q4 2024",
-          "Record Breaking Premium Volume"
-        ]
+        "items": ["Top District in Hong Kong 2024", "Highest Growth Rate - Q4 2024", "Record Breaking Premium Volume"]
       },
       "training": {
         "title": "Training & Development",
-        "items": [
-          "100% License Pass Rate",
-          "Advanced Certification Program",
-          "Monthly Leadership Workshops"
-        ]
+        "items": ["100% License Pass Rate", "Advanced Certification Program", "Monthly Leadership Workshops"]
       },
       "recognition": {
         "title": "Industry Recognition",
-        "items": [
-          "AIA Excellence Award 2024",
-          "Best District Culture Award",
-          "Innovation in Training Award"
-        ]
+        "items": ["AIA Excellence Award 2024", "Best District Culture Award", "Innovation in Training Award"]
       }
     },
     "milestones": {
