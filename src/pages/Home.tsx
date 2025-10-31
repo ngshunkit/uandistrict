@@ -172,7 +172,7 @@ const Home = () => {
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link to="/jobs">
                   <Button size="lg" className="group">
-                    Start a Project
+                    Join Us
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
