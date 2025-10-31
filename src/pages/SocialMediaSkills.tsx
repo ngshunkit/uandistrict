@@ -5,6 +5,7 @@ import { Sparkles, Video, Image, ChevronRight, ChevronLeft, Play } from "lucide-
 import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useEffect, useRef } from "react";
 
 const SocialMediaSkills = () => {
   const { t } = useTranslation();
@@ -132,32 +133,7 @@ const SocialMediaSkills = () => {
                 </h2>
                 <div className="space-y-8">
                   {videos.map((video, index) => (
-                    <div key={index} className="group animate-fade-in" style={{ animationDelay: `${700 + index * 100}ms` }}>
-                      <h3 className="mb-4 text-2xl font-semibold text-foreground">
-                        {video.title}
-                      </h3>
-                      <Card className="overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20">
-                        <CardContent className="p-0">
-                          <div className="relative aspect-video bg-muted overflow-hidden">
-                            <video
-                              key={video.src}
-                              className="w-full h-full object-cover"
-                              autoPlay
-                              muted
-                              loop
-                              playsInline
-                              preload="auto"
-                              controls
-                              onError={(e) => console.error('Video error:', video.src, e)}
-                              onLoadedData={() => console.log('Video loaded:', video.src)}
-                            >
-                              <source src={video.src} type="video/mp4" />
-                              Your browser does not support the video tag.
-                            </video>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
+                    <VideoPlayer key={index} video={video} index={index} />
                   ))}
                 </div>
               </div>
@@ -196,6 +172,49 @@ const SocialMediaSkills = () => {
       </main>
 
       <Footer />
+    </div>
+  );
+};
+
+const VideoPlayer = ({ video, index }: { video: { title: string; src: string }; index: number }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      // Force play after component mounts
+      const playPromise = videoElement.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log("Autoplay prevented:", error);
+          // Autoplay was prevented, video will show play button
+        });
+      }
+    }
+  }, []);
+
+  return (
+    <div className="group animate-fade-in" style={{ animationDelay: `${700 + index * 100}ms` }}>
+      <h3 className="mb-4 text-2xl font-semibold text-foreground">
+        {video.title}
+      </h3>
+      <Card className="overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20">
+        <CardContent className="p-0">
+          <div className="relative aspect-video bg-muted overflow-hidden">
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              <source src={video.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };
