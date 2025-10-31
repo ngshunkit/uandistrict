@@ -147,6 +147,9 @@ const SocialMediaSkills = () => {
                               loop
                               playsInline
                               preload="auto"
+                              controls
+                              onError={(e) => console.error('Video error:', video.src, e)}
+                              onLoadedData={() => console.log('Video loaded:', video.src)}
                             >
                               <source src={video.src} type="video/mp4" />
                               Your browser does not support the video tag.
