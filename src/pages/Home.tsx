@@ -161,7 +161,7 @@ const Home = () => {
               </Badge>
 
               <h1 className="mb-6 font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-7xl animate-fade-up">
-                UAN Districts
+                UAN District
               </h1>
 
               <p className="mb-10 text-lg text-white/80 md:text-xl max-w-2xl mx-auto">
