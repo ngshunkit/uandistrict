@@ -3,20 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import {
-  Target,
-  Users,
-  TrendingUp,
-  Award,
-  Briefcase,
-  Rocket,
-  Shield,
-  Zap,
-  ArrowRight,
-  Sparkles,
-  Heart,
-  CheckCircle2,
-} from "lucide-react";
+import { Target, Users, TrendingUp, Award, Briefcase, Rocket, Shield, Zap, ArrowRight, Sparkles, Heart, CheckCircle2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -25,118 +12,101 @@ import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { ProcessTimeline } from "@/components/home/ProcessTimeline";
 import { HexagonPattern, FloatingHexagon } from "@/components/home/HexagonPattern";
 import aiaBackground from "@/assets/aia-background.jpg";
-
 const Home = () => {
-  const { t } = useTranslation();
-
-  const stats = [
-    { value: "15+", label: "MDRT Members", icon: Award },
-    { value: "40+", label: "Team Members", icon: Users },
-    { value: "98%", label: "Client Satisfaction", icon: Target },
-    { value: "30+", label: "Years Excellence", icon: Briefcase },
-  ];
-
-  const services = [
-    {
-      icon: Rocket,
-      title: "Career Launch",
-      description: "Comprehensive onboarding and training to kickstart your insurance career with confidence.",
-    },
-    {
-      icon: Users,
-      title: "Expert Mentorship",
-      description: "Learn from industry leaders with proven track records in building successful practices.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Marketing Support",
-      description: "Access cutting-edge marketing tools and strategies to grow your client base.",
-    },
-    {
-      icon: Shield,
-      title: "Ongoing Support",
-      description: "Continuous professional development and resources to ensure long-term success.",
-    },
-  ];
-
-  const processSteps = [
-    {
-      title: "Discovery Call",
-      description: "Book a consultation to discuss your career goals and learn about opportunities with UAN District.",
-    },
-    {
-      title: "Assessment & Fit",
-      description: "We evaluate your background and aspirations to ensure mutual alignment for success.",
-    },
-    {
-      title: "Training Program",
-      description: "Complete our comprehensive training covering products, sales techniques, and compliance.",
-    },
-    {
-      title: "Launch & Grow",
-      description: "Start building your practice with ongoing mentorship and support from our leadership team.",
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote:
-        "Joining UAN District was the best career decision I've made. The mentorship and support have been exceptional.",
-      name: "Sarah Chen",
-      role: "Senior Advisor",
-      company: "UAN District",
-    },
-    {
-      quote:
-        "The training program equipped me with everything I needed to succeed. Within 6 months, I achieved MDRT qualification.",
-      name: "Michael Wong",
-      role: "Financial Consultant",
-      company: "UAN District",
-    },
-    {
-      quote: "The team culture here is incredible. Everyone genuinely wants to see each other succeed.",
-      name: "Emily Lau",
-      role: "Team Leader",
-      company: "UAN District",
-    },
-  ];
-
-  const galleryImages = [
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
-    "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
-    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
-    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80",
-    "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
-  ];
-
-  const values = [
-    { label: "Excellence", icon: Sparkles },
-    { label: "Integrity", icon: Shield },
-    { label: "Innovation", icon: Zap },
-    { label: "Community", icon: Heart },
-  ];
-
-  const blogPosts = [
-    {
-      title: "Building a Sustainable Insurance Practice",
-      excerpt: "Learn the key strategies for creating long-term client relationships and recurring revenue.",
-      date: "Oct 15, 2025",
-    },
-    {
-      title: "The Power of Team Culture in Sales",
-      excerpt: "Discover how a supportive team environment accelerates individual and collective success.",
-      date: "Oct 10, 2025",
-    },
-    {
-      title: "Digital Marketing for Financial Advisors",
-      excerpt: "Master modern marketing techniques to attract and convert high-value clients online.",
-      date: "Oct 5, 2025",
-    },
-  ];
-
-  return (
-    <div className="flex min-h-screen flex-col bg-background">
+  const {
+    t
+  } = useTranslation();
+  const stats = [{
+    value: "15+",
+    label: "MDRT Members",
+    icon: Award
+  }, {
+    value: "40+",
+    label: "Team Members",
+    icon: Users
+  }, {
+    value: "98%",
+    label: "Client Satisfaction",
+    icon: Target
+  }, {
+    value: "30+",
+    label: "Years Excellence",
+    icon: Briefcase
+  }];
+  const services = [{
+    icon: Rocket,
+    title: "Career Launch",
+    description: "Comprehensive onboarding and training to kickstart your insurance career with confidence."
+  }, {
+    icon: Users,
+    title: "Expert Mentorship",
+    description: "Learn from industry leaders with proven track records in building successful practices."
+  }, {
+    icon: TrendingUp,
+    title: "Marketing Support",
+    description: "Access cutting-edge marketing tools and strategies to grow your client base."
+  }, {
+    icon: Shield,
+    title: "Ongoing Support",
+    description: "Continuous professional development and resources to ensure long-term success."
+  }];
+  const processSteps = [{
+    title: "Discovery Call",
+    description: "Book a consultation to discuss your career goals and learn about opportunities with UAN District."
+  }, {
+    title: "Assessment & Fit",
+    description: "We evaluate your background and aspirations to ensure mutual alignment for success."
+  }, {
+    title: "Training Program",
+    description: "Complete our comprehensive training covering products, sales techniques, and compliance."
+  }, {
+    title: "Launch & Grow",
+    description: "Start building your practice with ongoing mentorship and support from our leadership team."
+  }];
+  const testimonials = [{
+    quote: "Joining UAN District was the best career decision I've made. The mentorship and support have been exceptional.",
+    name: "Sarah Chen",
+    role: "Senior Advisor",
+    company: "UAN District"
+  }, {
+    quote: "The training program equipped me with everything I needed to succeed. Within 6 months, I achieved MDRT qualification.",
+    name: "Michael Wong",
+    role: "Financial Consultant",
+    company: "UAN District"
+  }, {
+    quote: "The team culture here is incredible. Everyone genuinely wants to see each other succeed.",
+    name: "Emily Lau",
+    role: "Team Leader",
+    company: "UAN District"
+  }];
+  const galleryImages = ["https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80", "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80", "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80", "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80", "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80", "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"];
+  const values = [{
+    label: "Excellence",
+    icon: Sparkles
+  }, {
+    label: "Integrity",
+    icon: Shield
+  }, {
+    label: "Innovation",
+    icon: Zap
+  }, {
+    label: "Community",
+    icon: Heart
+  }];
+  const blogPosts = [{
+    title: "Building a Sustainable Insurance Practice",
+    excerpt: "Learn the key strategies for creating long-term client relationships and recurring revenue.",
+    date: "Oct 15, 2025"
+  }, {
+    title: "The Power of Team Culture in Sales",
+    excerpt: "Discover how a supportive team environment accelerates individual and collective success.",
+    date: "Oct 10, 2025"
+  }, {
+    title: "Digital Marketing for Financial Advisors",
+    excerpt: "Master modern marketing techniques to attract and convert high-value clients online.",
+    date: "Oct 5, 2025"
+  }];
+  return <div className="flex min-h-screen flex-col bg-background">
       <Header />
 
       <main className="flex-1">
@@ -178,11 +148,7 @@ const Home = () => {
                   </Button>
                 </Link>
                 <Link to="/offerings">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
-                  >
+                  <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm">
                     Our Offerings
                   </Button>
                 </Link>
@@ -191,12 +157,9 @@ const Home = () => {
 
             {/* Stats Bar */}
             <div className="mx-auto mt-20 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="group text-center animate-fade-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              {stats.map((stat, index) => <div key={index} className="group text-center animate-fade-up" style={{
+              animationDelay: `${index * 100}ms`
+            }}>
                   <div className="mb-3 flex justify-center">
                     <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-sm group-hover:bg-white/20 transition-all">
                       <stat.icon className="h-8 w-8 text-accent" />
@@ -204,59 +167,35 @@ const Home = () => {
                   </div>
                   <div className="text-4xl font-bold text-white font-display tabular-nums">{stat.value}</div>
                   <div className="text-sm text-white/70 uppercase tracking-wider mt-1">{stat.label}</div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
 
         {/* Trusted By / Logo Strip */}
         <section className="relative py-12 border-y border-border overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${aiaBackground})` }} />
+          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
+          backgroundImage: `url(${aiaBackground})`
+        }} />
           <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/80" />
           <div className="container relative mx-auto px-4">
             <p className="text-center text-sm text-muted-foreground uppercase tracking-wider mb-8">
               Trusted by Leading Organizations
             </p>
             <div className="flex justify-center items-center gap-12 flex-wrap">
-              <a 
-                href="https://www.mdrt.org" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
-              >
+              <a href="https://www.mdrt.org" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300">
                 MDRT
               </a>
-              <a 
-                href="https://members.mdrt.org/zh-cht/about-MDRT/for-companies/top-25-companies-by-cot-members/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
-              >
+              <a href="https://members.mdrt.org/zh-cht/about-MDRT/for-companies/top-25-companies-by-cot-members/" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300">
                 COT
               </a>
-              <a 
-                href="https://www.aia.com.hk" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-4xl font-bold text-primary transition-all duration-300 hover:scale-110"
-              >
+              <a href="https://www.aia.com.hk" target="_blank" rel="noopener noreferrer" className="text-4xl font-bold text-primary transition-all duration-300 hover:scale-110">
                 AIA
               </a>
-              <a 
-                href="https://www.mdrt.org/tot" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
-              >
+              <a href="https://www.mdrt.org/tot" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300">
                 TOT
               </a>
-              <a 
-                href="https://www.ia.org.hk" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
-              >
+              <a href="https://www.ia.org.hk" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300">
                 IA
               </a>
             </div>
@@ -268,20 +207,15 @@ const Home = () => {
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center max-w-3xl mx-auto">
               <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">What We Offer</Badge>
-              <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl">
-                Services That Drive Success
-              </h2>
+              <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl">Customer base development
+Professional training </h2>
               <p className="text-lg text-muted-foreground">
                 Comprehensive support designed to accelerate your growth and maximize your potential.
               </p>
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              {services.map((service, index) => (
-                <Card
-                  key={index}
-                  className="group border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                >
+              {services.map((service, index) => <Card key={index} className="group border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                   <CardHeader>
                     <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-ocean shadow-md group-hover:shadow-glow transition-all">
                       <service.icon className="h-7 w-7 text-white" />
@@ -291,8 +225,7 @@ const Home = () => {
                   <CardContent>
                     <CardDescription className="text-base">{service.description}</CardDescription>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -362,15 +295,10 @@ const Home = () => {
               </div>
 
               <div className="grid grid-cols-2 gap-6">
-                {values.map((value, index) => (
-                  <Card
-                    key={index}
-                    className="border-accent-warm/30 bg-accent-warm/20 hover:bg-accent-warm/30 transition-all duration-300 text-center p-6"
-                  >
+                {values.map((value, index) => <Card key={index} className="border-accent-warm/30 bg-accent-warm/20 hover:bg-accent-warm/30 transition-all duration-300 text-center p-6">
                     <value.icon className="h-10 w-10 text-primary mx-auto mb-3" />
                     <h3 className="font-display font-semibold text-lg text-foreground">{value.label}</h3>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </div>
@@ -390,11 +318,7 @@ const Home = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {blogPosts.map((post, index) => (
-                <Card
-                  key={index}
-                  className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer"
-                >
+              {blogPosts.map((post, index) => <Card key={index} className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer">
                   <CardHeader>
                     <div className="text-sm text-muted-foreground mb-2">{post.date}</div>
                     <CardTitle className="font-display text-xl group-hover:text-accent transition-colors">
@@ -408,8 +332,7 @@ const Home = () => {
                       <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -454,11 +377,7 @@ const Home = () => {
                 </Button>
               </Link>
               <Link to="/members">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary"
-                >
+                <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">
                   See the Work
                 </Button>
               </Link>
@@ -468,8 +387,6 @@ const Home = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
