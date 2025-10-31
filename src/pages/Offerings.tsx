@@ -124,16 +124,21 @@ const Offerings = () => {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {subPages.map((subPage, index) => (
                 <Link key={index} to={subPage.link}>
-                  <Card className="h-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1">
+                  <Card className="group h-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                     <CardContent className="p-6">
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-primary">
-                        <subPage.icon className="h-6 w-6 text-primary-foreground" />
+                      <div className="mb-6 flex items-center justify-center">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-lg opacity-0 transition-opacity duration-500 group-hover:opacity-60" />
+                          <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                            <subPage.icon className="h-8 w-8 text-white transition-all duration-500 group-hover:scale-110" />
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="mb-2 text-xl font-semibold">{subPage.title}</h3>
-                      <p className="mb-4 text-sm text-muted-foreground">{subPage.description}</p>
-                      <div className="flex items-center text-sm font-medium text-primary">
+                      <h3 className="mb-2 text-xl font-semibold transition-colors duration-300 group-hover:text-primary">{subPage.title}</h3>
+                      <p className="mb-4 text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{subPage.description}</p>
+                      <div className="flex items-center text-sm font-medium text-primary transition-all duration-300 group-hover:translate-x-1">
                         {t("offerings.subpages.learnMore")}
-                        <ChevronRight className="ml-1 h-4 w-4" />
+                        <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </div>
                     </CardContent>
                   </Card>
