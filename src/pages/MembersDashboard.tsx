@@ -21,6 +21,7 @@ import MembersHeader from "@/components/MembersHeader";
 import Footer from "@/components/Footer";
 import { SignupRequests } from "@/components/admin/SignupRequests";
 import { verifyAdminStatus } from "@/lib/adminCheck";
+import JobApplications from "@/components/admin/JobApplications";
 
 interface Profile {
   full_name: string | null;
@@ -147,11 +148,15 @@ const MembersDashboard = () => {
         <section className="py-12">
           <div className="container mx-auto px-4">
             <Tabs defaultValue={isAdmin ? "admin" : "dashboard"} className="w-full">
-              <TabsList className={isAdmin ? "grid w-full grid-cols-2 mb-8" : "hidden"}>
+              <TabsList className={isAdmin ? "grid w-full grid-cols-3 mb-8" : "hidden"}>
                 <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
                 <TabsTrigger value="admin">
                   <Shield className="h-4 w-4 mr-2" />
                   Admin Panel
+                </TabsTrigger>
+                <TabsTrigger value="applications">
+                  <FileText className="h-4 w-4 mr-2" />
+                  Job Applications
                 </TabsTrigger>
               </TabsList>
 
@@ -311,6 +316,10 @@ const MembersDashboard = () => {
 
           <TabsContent value="admin">
             {isAdmin && <SignupRequests />}
+          </TabsContent>
+
+          <TabsContent value="applications">
+            <JobApplications />
           </TabsContent>
         </Tabs>
           </div>

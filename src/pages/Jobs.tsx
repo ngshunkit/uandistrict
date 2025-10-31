@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -13,11 +12,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Briefcase, MapPin, Clock, DollarSign, ChevronRight, Send } from "lucide-react";
+import { Briefcase, MapPin, DollarSign, ChevronRight, Send, Upload } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const Jobs = () => {
   const { t } = useTranslation();
@@ -72,16 +72,60 @@ const Jobs = () => {
     },
   ];
 
-  const handleApply = (job: any) => {
+  const [uploading, setUploading] = useState(false);
+
+  const handleViewDetails = (job: any) => {
     setSelectedJob(job);
-    setShowApplicationForm(true);
   };
 
-  const handleSubmitApplication = (e: React.FormEvent) => {
+  const handleSubmitApplication = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(t("jobs.form.success"));
-    setShowApplicationForm(false);
-    setSelectedJob(null);
+    setUploading(true);
+
+    try {
+      const formData = new FormData(e.target as HTMLFormElement);
+      const resumeFile = formData.get("resume") as File;
+      
+      let resumeUrl = null;
+      
+      // Upload resume if provided
+      if (resumeFile && resumeFile.size > 0) {
+        const fileExt = resumeFile.name.split('.').pop();
+        const fileName = `${Math.random()}.${fileExt}`;
+        const filePath = `${fileName}`;
+
+        const { error: uploadError } = await supabase.storage
+          .from('resumes')
+          .upload(filePath, resumeFile);
+
+        if (uploadError) throw uploadError;
+        resumeUrl = filePath;
+      }
+
+      // Insert application
+      const { error: insertError } = await supabase
+        .from('job_applications')
+        .insert({
+          job_title: selectedJob?.title,
+          full_name: formData.get("name") as string,
+          email: formData.get("email") as string,
+          phone: formData.get("phone") as string,
+          cover_letter: formData.get("message") as string,
+          resume_url: resumeUrl,
+        });
+
+      if (insertError) throw insertError;
+
+      toast.success(t("jobs.form.success"));
+      setShowApplicationForm(false);
+      setSelectedJob(null);
+      (e.target as HTMLFormElement).reset();
+    } catch (error: any) {
+      console.error("Error submitting application:", error);
+      toast.error("Failed to submit application. Please try again.");
+    } finally {
+      setUploading(false);
+    }
   };
 
   return (
@@ -132,7 +176,7 @@ const Jobs = () => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="mb-6 grid gap-3 text-sm md:grid-cols-2 lg:grid-cols-4">
+                    <div className="mb-6 grid gap-3 text-sm md:grid-cols-3">
                       <div className="flex items-center text-muted-foreground">
                         <MapPin className="mr-2 h-4 w-4 text-primary" />
                         {job.location}
@@ -145,90 +189,15 @@ const Jobs = () => {
                         <DollarSign className="mr-2 h-4 w-4 text-primary" />
                         {job.salary}
                       </div>
-                      <div className="flex items-center text-muted-foreground">
-                        <Clock className="mr-2 h-4 w-4 text-primary" />
-                        Posted {job.postedDate}
-                      </div>
                     </div>
                     
-                    <div className="flex flex-col gap-3 sm:flex-row">
-                      <Dialog>
-                        <Button
-                          className="flex-1"
-                          onClick={() => setSelectedJob(job)}
-                        >
-                          {t("jobs.apply")}
-                          <ChevronRight className="ml-2 h-4 w-4" />
-                        </Button>
-                        <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
-                          <DialogHeader>
-                            <DialogTitle className="text-2xl">{selectedJob?.title}</DialogTitle>
-                            <DialogDescription>
-                              {selectedJob?.location} • {selectedJob?.type} • {selectedJob?.experience}
-                            </DialogDescription>
-                          </DialogHeader>
-                          
-                          {selectedJob && (
-                            <div className="space-y-6">
-                              <div>
-                                <h3 className="mb-2 font-semibold text-foreground">About the Role</h3>
-                                <p className="text-muted-foreground">{selectedJob.description}</p>
-                              </div>
-
-                              <div>
-                                <h3 className="mb-2 font-semibold text-foreground">Key Responsibilities</h3>
-                                <ul className="space-y-1">
-                                  {selectedJob.responsibilities.map((item: string, idx: number) => (
-                                    <li key={idx} className="flex items-start">
-                                      <ChevronRight className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                                      <span className="text-sm text-muted-foreground">{item}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-
-                              <div>
-                                <h3 className="mb-2 font-semibold text-foreground">Requirements</h3>
-                                <ul className="space-y-1">
-                                  {selectedJob.requirements.map((item: string, idx: number) => (
-                                    <li key={idx} className="flex items-start">
-                                      <ChevronRight className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                                      <span className="text-sm text-muted-foreground">{item}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-
-                              <div>
-                                <h3 className="mb-2 font-semibold text-foreground">Benefits</h3>
-                                <ul className="space-y-1">
-                                  {selectedJob.benefits.map((item: string, idx: number) => (
-                                    <li key={idx} className="flex items-start">
-                                      <ChevronRight className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                                      <span className="text-sm text-muted-foreground">{item}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-
-                              <Button
-                                className="w-full"
-                                onClick={() => {
-                                  setShowApplicationForm(true);
-                                }}
-                              >
-                                {t("jobs.apply")}
-                                <Send className="ml-2 h-4 w-4" />
-                              </Button>
-                            </div>
-                          )}
-                        </DialogContent>
-                      </Dialog>
-                      
-                      <Button variant="outline" onClick={() => handleApply(job)}>
-                        {t("jobs.apply")}
-                      </Button>
-                    </div>
+                    <Button
+                      className="w-full"
+                      onClick={() => handleViewDetails(job)}
+                    >
+                      {t("jobs.apply")}
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
@@ -236,42 +205,114 @@ const Jobs = () => {
           </div>
         </section>
 
+        {/* Job Details Dialog */}
+        <Dialog open={!!selectedJob} onOpenChange={(open) => !open && setSelectedJob(null)}>
+          <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-2xl">
+            <DialogHeader>
+              <DialogTitle className="text-2xl">{selectedJob?.title}</DialogTitle>
+              <DialogDescription>
+                {selectedJob?.location} • {selectedJob?.type} • {selectedJob?.experience}
+              </DialogDescription>
+            </DialogHeader>
+            
+            {selectedJob && (
+              <div className="space-y-6">
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">About the Role</h3>
+                  <p className="text-muted-foreground">{selectedJob.description}</p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">Key Responsibilities</h3>
+                  <ul className="space-y-1">
+                    {selectedJob.responsibilities.map((item: string, idx: number) => (
+                      <li key={idx} className="flex items-start">
+                        <ChevronRight className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                        <span className="text-sm text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">Requirements</h3>
+                  <ul className="space-y-1">
+                    {selectedJob.requirements.map((item: string, idx: number) => (
+                      <li key={idx} className="flex items-start">
+                        <ChevronRight className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                        <span className="text-sm text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">Benefits</h3>
+                  <ul className="space-y-1">
+                    {selectedJob.benefits.map((item: string, idx: number) => (
+                      <li key={idx} className="flex items-start">
+                        <ChevronRight className="mr-2 mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+                        <span className="text-sm text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Button
+                  className="w-full"
+                  onClick={() => {
+                    setShowApplicationForm(true);
+                  }}
+                >
+                  {t("jobs.apply")}
+                  <Send className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
+
         {/* Application Form Dialog */}
         <Dialog open={showApplicationForm} onOpenChange={setShowApplicationForm}>
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-md">
             <DialogHeader>
               <DialogTitle>{t("jobs.form.title")} {selectedJob?.title}</DialogTitle>
               <DialogDescription>
-                {t("jobs.hero.subtitle")}
+                Fill in your details and upload your resume
               </DialogDescription>
             </DialogHeader>
             
             <form onSubmit={handleSubmitApplication} className="space-y-4">
               <div>
                 <Label htmlFor="name">{t("jobs.form.name")}</Label>
-                <Input id="name" required placeholder={t("jobs.form.name")} />
+                <Input id="name" name="name" required placeholder={t("jobs.form.name")} />
               </div>
               
               <div>
                 <Label htmlFor="email">{t("jobs.form.email")}</Label>
-                <Input id="email" type="email" required placeholder={t("jobs.form.email")} />
+                <Input id="email" name="email" type="email" required placeholder={t("jobs.form.email")} />
               </div>
               
               <div>
                 <Label htmlFor="phone">{t("jobs.form.phone")}</Label>
-                <Input id="phone" type="tel" required placeholder={t("jobs.form.phone")} />
+                <Input id="phone" name="phone" type="tel" required placeholder={t("jobs.form.phone")} />
               </div>
               
               <div>
                 <Label htmlFor="resume">{t("jobs.form.resume")}</Label>
-                <Input id="resume" type="file" required accept=".pdf,.doc,.docx" />
+                <div className="flex items-center gap-2">
+                  <Input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" />
+                  <Upload className="h-4 w-4 text-muted-foreground" />
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">PDF, DOC, or DOCX (Max 10MB)</p>
               </div>
               
               <div>
                 <Label htmlFor="message">{t("jobs.form.message")}</Label>
                 <Textarea
                   id="message"
-                  placeholder={t("jobs.form.message")}
+                  name="message"
+                  placeholder="Tell us why you're interested in this position..."
                   rows={4}
                 />
               </div>
@@ -280,8 +321,8 @@ const Jobs = () => {
                 {t("jobs.form.consent")}
               </div>
               
-              <Button type="submit" className="w-full">
-                {t("jobs.form.submit")}
+              <Button type="submit" className="w-full" disabled={uploading}>
+                {uploading ? "Submitting..." : t("jobs.form.submit")}
                 <Send className="ml-2 h-4 w-4" />
               </Button>
             </form>
