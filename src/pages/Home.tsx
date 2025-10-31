@@ -56,23 +56,52 @@ const Home = () => {
     title: "Market Intelligence",
     description: "Ongoing briefings on investment trends from our investment team, cross‑company product comparisons, current social topics, and client‑base development support."
   }];
-  const awards = [
-    { year: "2006", title: "Districts of the Year, 1st Runner-up" },
-    { year: "2015", title: "Corporate Solutions, Top Districts, 1st Runner-up" },
-    { year: "2016", title: "AIA PT Top Sales, Retail Business, Top Agency Units, Champion" },
-    { year: "2017", title: "ULB Award, Top Districts by Case, 1st Runner-up" },
-    { year: "2018", title: "Corporate Solutions Award, District of the Year (with Agency Members from 50 to 100), 1st Runner-up" },
-    { year: "2019", title: "CS – Pension Produce District Award, Top Super Grand District of the Year, Champion" },
-    { year: "2025", title: "District Award (By ANP), UNI ANDY NG, 3rd Runner-up" },
-    { year: "2025", title: "District Award (By Case Count), UNI ANDY NG, 3rd Runner-up" },
-    { year: "2025", title: "District Award (By Distinct Producer), UNI ANDY NG, 2nd Runner-up" },
-    { year: "2025", title: "CS Monthly Ranking (Regional Director Group), UNI ANDY NG, 7th Runner-up" },
-    { year: "2025", title: "CS Monthly Ranking (Sales Manager Group, Individual Pension Business — FYC + Asset Transfer Total), ANDY NG — UNI ANDY NG, Champion" },
-    { year: "2025", title: "CS Monthly Ranking (Sales Manager Group, Individual Pension Business — Case Count), ANDY NG — UNI ANDY NG, Champion" },
-    { year: "2025", title: "CS Monthly Ranking (Sales Supervisor Group, Individual Pension Business — FYC + Asset Transfer Total), ANDY NG — UNI ANDY NG, 7th Runner-up" },
-    { year: "2025", title: "CS Monthly Ranking (Financial Planning Consultant Group, FYC + Asset Transfer Total), KATIE CHAN — UNI ANDY NG, 9th Runner-up" },
-    { year: "2025", title: "CS Monthly Ranking (Financial Planning Consultant Group, Case Count), KATIE CHAN — UNI ANDY NG, 3rd Runner-up" },
-  ];
+  const awards = [{
+    year: "2006",
+    title: "Districts of the Year, 1st Runner-up"
+  }, {
+    year: "2015",
+    title: "Corporate Solutions, Top Districts, 1st Runner-up"
+  }, {
+    year: "2016",
+    title: "AIA PT Top Sales, Retail Business, Top Agency Units, Champion"
+  }, {
+    year: "2017",
+    title: "ULB Award, Top Districts by Case, 1st Runner-up"
+  }, {
+    year: "2018",
+    title: "Corporate Solutions Award, District of the Year (with Agency Members from 50 to 100), 1st Runner-up"
+  }, {
+    year: "2019",
+    title: "CS – Pension Produce District Award, Top Super Grand District of the Year, Champion"
+  }, {
+    year: "2025",
+    title: "District Award (By ANP), UNI ANDY NG, 3rd Runner-up"
+  }, {
+    year: "2025",
+    title: "District Award (By Case Count), UNI ANDY NG, 3rd Runner-up"
+  }, {
+    year: "2025",
+    title: "District Award (By Distinct Producer), UNI ANDY NG, 2nd Runner-up"
+  }, {
+    year: "2025",
+    title: "CS Monthly Ranking (Regional Director Group), UNI ANDY NG, 7th Runner-up"
+  }, {
+    year: "2025",
+    title: "CS Monthly Ranking (Sales Manager Group, Individual Pension Business — FYC + Asset Transfer Total), ANDY NG — UNI ANDY NG, Champion"
+  }, {
+    year: "2025",
+    title: "CS Monthly Ranking (Sales Manager Group, Individual Pension Business — Case Count), ANDY NG — UNI ANDY NG, Champion"
+  }, {
+    year: "2025",
+    title: "CS Monthly Ranking (Sales Supervisor Group, Individual Pension Business — FYC + Asset Transfer Total), ANDY NG — UNI ANDY NG, 7th Runner-up"
+  }, {
+    year: "2025",
+    title: "CS Monthly Ranking (Financial Planning Consultant Group, FYC + Asset Transfer Total), KATIE CHAN — UNI ANDY NG, 9th Runner-up"
+  }, {
+    year: "2025",
+    title: "CS Monthly Ranking (Financial Planning Consultant Group, Case Count), KATIE CHAN — UNI ANDY NG, 3rd Runner-up"
+  }];
   const testimonials = [{
     quote: "Our team may not be large, but we are an MDRT district because we specialize in serving high-net-worth clients and providing group insurance. This focus enables higher commissions with a lighter workload.",
     name: "Sarah Chen",
@@ -254,7 +283,9 @@ Professional training </h2>
 
         {/* Awards & Achievements */}
         <section className="relative py-20 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${trophiesBackground})` }} />
+          <div className="absolute inset-0 bg-cover bg-center" style={{
+          backgroundImage: `url(${trophiesBackground})`
+        }} />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
           
           <div className="container relative mx-auto px-4">
@@ -270,11 +301,7 @@ Professional training </h2>
 
             <div className="max-w-4xl mx-auto">
               <div className="grid gap-4 md:gap-6">
-                {awards.map((award, index) => (
-                  <div 
-                    key={index} 
-                    className="group relative bg-gradient-to-r from-yellow-900/30 via-yellow-800/20 to-yellow-900/30 backdrop-blur-sm border border-yellow-500/30 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]"
-                  >
+                {awards.map((award, index) => <div key={index} className="group relative bg-gradient-to-r from-yellow-900/30 via-yellow-800/20 to-yellow-900/30 backdrop-blur-sm border border-yellow-500/30 rounded-xl p-6 hover:border-yellow-400/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)]">
                     <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                       <div className="flex-shrink-0">
                         <div className="text-3xl font-bold bg-gradient-to-br from-yellow-200 via-yellow-400 to-yellow-600 bg-clip-text text-transparent font-display drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]">
@@ -288,8 +315,7 @@ Professional training </h2>
                       </div>
                       <Award className="h-6 w-6 text-yellow-400/60 group-hover:text-yellow-300 transition-colors flex-shrink-0" />
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               
               <p className="text-center text-yellow-200/60 text-sm mt-8 italic">
@@ -428,9 +454,7 @@ Professional training </h2>
                 </Button>
               </Link>
               <Link to="/members">
-                <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">
-                  See the Work
-                </Button>
+                <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">Member Portal</Button>
               </Link>
             </div>
           </div>
