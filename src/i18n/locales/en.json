@@ -56,7 +56,10 @@
       "empowering": "Empowering Insurance Professionals",
       "whatWeOffer": "What We Offer",
       "excellence": "Excellence Recognized",
-      "latestInsights": "Latest Insights"
+      "latestInsights": "Latest Insights",
+      "ourCommunity": "Our Community",
+      "successStories": "Success Stories",
+      "ourStory": "Our Story"
     },
     "hero": {
       "district": "UAN District",
@@ -80,8 +83,19 @@
       "subtitle": "A legacy of excellence spanning nearly two decades.",
       "note": "Note: This is only a partial list and does not include all the awards we have received."
     },
+    "gallery": {
+      "title": "Life at UAN District"
+    },
+    "teamSays": {
+      "title": "What Our Team Says"
+    },
+    "about": {
+      "title": "Building the Future of Insurance Together",
+      "paragraph1": "UAN District is more than a workplace—it's a community of driven professionals committed to excellence, innovation, and making a meaningful impact in people's lives.",
+      "paragraph2": "Since our founding, we've helped hundreds of advisors build thriving practices while maintaining the highest standards of integrity and client service."
+    },
     "blog": {
-      "title": "From the Blog",
+      "title": "Home Blog Tittle",
       "title1": "Building a Sustainable Insurance Practice",
       "excerpt1": "Learn the key strategies for creating long-term client relationships and recurring revenue.",
       "date1": "Oct 15, 2025",

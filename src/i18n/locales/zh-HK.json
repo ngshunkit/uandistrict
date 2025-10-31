@@ -56,7 +56,10 @@
       "empowering": "賦能保險專業人士",
       "whatWeOffer": "我們提供的服務",
       "excellence": "卓越獲認可",
-      "latestInsights": "最新見解"
+      "latestInsights": "最新見解",
+      "ourCommunity": "我們的社區",
+      "successStories": "成功故事",
+      "ourStory": "我們的故事"
     },
     "hero": {
       "district": "UAN 區域",
@@ -80,8 +83,19 @@
       "subtitle": "近二十年的卓越傳承。",
       "note": "注：這只是部分名單，不包括我們收到的所有獎項。"
     },
+    "gallery": {
+      "title": "UAN區的生活"
+    },
+    "teamSays": {
+      "title": "團隊成員的心聲"
+    },
+    "about": {
+      "title": "共同建設保險業的未來",
+      "paragraph1": "UAN區不僅僅是一個工作場所——它是一個由充滿動力的專業人士組成的社區，致力於卓越、創新，並在人們的生活中產生有意義的影響。",
+      "paragraph2": "自成立以來，我們幫助數百名顧問建立了蓬勃發展的業務，同時保持最高的誠信和客戶服務標準。"
+    },
     "blog": {
-      "title": "網誌文章",
+      "title": "主頁網誌標題",
       "title1": "建立可持續的保險業務",
       "excerpt1": "學習創建長期客戶關係和經常性收入的關鍵策略。",
       "date1": "2025年10月15日",

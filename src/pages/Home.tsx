@@ -271,8 +271,8 @@ const Home = () => {
         <section className="py-20 md:py-32 bg-background overflow-hidden">
           <div className="container mx-auto px-4 mb-12">
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">Our Community</Badge>
-              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">Life at UAN District</h2>
+              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">{t("home.badge.ourCommunity")}</Badge>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">{t("home.gallery.title")}</h2>
             </div>
           </div>
 
@@ -327,8 +327,8 @@ const Home = () => {
         <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center max-w-3xl mx-auto">
-              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">Success Stories</Badge>
-              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">What Our Team Says</h2>
+              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">{t("home.badge.successStories")}</Badge>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">{t("home.teamSays.title")}</h2>
             </div>
 
             <div className="max-w-4xl mx-auto">
@@ -342,17 +342,15 @@ const Home = () => {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">Our Story</Badge>
+                <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">{t("home.badge.ourStory")}</Badge>
                 <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-4xl">
-                  Building the Future of Insurance Together
+                  {t("home.about.title")}
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  UAN District is more than a workplace—it's a community of driven professionals committed to
-                  excellence, innovation, and making a meaningful impact in people's lives.
+                  {t("home.about.paragraph1")}
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  Since our founding, we've helped hundreds of advisors build thriving practices while maintaining the
-                  highest standards of integrity and client service.
+                  {t("home.about.paragraph2")}
                 </p>
               </div>
 

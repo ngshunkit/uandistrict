@@ -56,7 +56,10 @@
       "empowering": "赋能保险专业人士",
       "whatWeOffer": "我们提供的服务",
       "excellence": "卓越获认可",
-      "latestInsights": "最新见解"
+      "latestInsights": "最新见解",
+      "ourCommunity": "我们的社区",
+      "successStories": "成功故事",
+      "ourStory": "我们的故事"
     },
     "hero": {
       "district": "UAN 团队",
@@ -80,8 +83,19 @@
       "subtitle": "近二十年的卓越传承。",
       "note": "注：这只是部分名单，不包括我们收到的所有奖项。"
     },
+    "gallery": {
+      "title": "UAN区的生活"
+    },
+    "teamSays": {
+      "title": "团队成员的心声"
+    },
+    "about": {
+      "title": "共同建设保险业的未来",
+      "paragraph1": "UAN区不仅仅是一个工作场所——它是一个由充满动力的专业人士组成的社区，致力于卓越、创新，并在人们的生活中产生有意义的影响。",
+      "paragraph2": "自成立以来，我们帮助数百名顾问建立了蓬勃发展的业务，同时保持最高的诚信和客户服务标准。"
+    },
     "blog": {
-      "title": "博客文章",
+      "title": "主页博客标题",
       "title1": "建立可持续的保险业务",
       "excerpt1": "学习创建长期客户关系和经常性收入的关键策略。",
       "date1": "2025年10月15日",
