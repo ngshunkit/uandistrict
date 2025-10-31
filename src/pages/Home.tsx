@@ -12,11 +12,11 @@ import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { ProcessTimeline } from "@/components/home/ProcessTimeline";
 import { HexagonPattern, FloatingHexagon } from "@/components/home/HexagonPattern";
 import aiaBackground from "@/assets/aia-background.jpg";
-import aiaHallway from "@/assets/aia-hallway.png";
-import aiaLogoCloseup from "@/assets/aia-logo-closeup.png";
-import office2 from "@/assets/office-2.png";
-import office3 from "@/assets/office-3.png";
-import office4 from "@/assets/office-4.png";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
 const Home = () => {
   const {
     t
@@ -84,7 +84,7 @@ const Home = () => {
     role: "Team Leader",
     company: "UAN District"
   }];
-  const galleryImages = [office2, office3, aiaHallway, aiaLogoCloseup, office4, aiaLogoCloseup];
+  const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5];
   const values = [{
     label: "Excellence",
     icon: Sparkles
