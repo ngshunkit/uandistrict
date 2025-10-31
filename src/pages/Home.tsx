@@ -375,24 +375,6 @@ Professional training </h2>
           </div>
         </section>
 
-        {/* Newsletter */}
-        <section className="py-16 md:py-20 bg-gradient-subtle border-y border-border">
-          <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto text-center">
-              <h3 className="font-display text-2xl font-bold text-foreground mb-4">Stay Updated</h3>
-              <p className="text-muted-foreground mb-6">
-                Get the latest insights, tips, and opportunities delivered to your inbox.
-              </p>
-              <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <Input type="email" placeholder="Enter your email" className="flex-1 rounded-xl border-2 h-12" />
-                <Button type="submit" size="lg">
-                  Subscribe
-                </Button>
-              </form>
-              <p className="text-xs text-muted-foreground mt-3">We respect your privacy. Unsubscribe at any time.</p>
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className="relative overflow-hidden bg-gradient-ocean py-20 md:py-32">
