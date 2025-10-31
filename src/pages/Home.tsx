@@ -421,9 +421,9 @@ Professional training </h2>
             </p>
 
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <Link to="/jobs">
+              <Link to="/contact">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-                  Book a Call
+                  Send Us a Message
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
