@@ -297,24 +297,24 @@ const Contact = () => {
                   <CardContent className="p-0">
                     <div className="relative h-80 overflow-hidden">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.3892842727947!2d114.20197857599486!3d22.30892884167803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400f9c8f7e5e5%3A0x3c8e9c4e4f0e9c8e!2sAIRSIDE!5e0!3m2!1sen!2shk!4v1234567890"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.389!2d114.2043!3d22.3089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400f1e823e54b%3A0x8b3c3e8c8f8e8e8e!2sAIRSIDE%2C%202%20Concorde%20Rd%2C%20Kai%20Tak!5e0!3m2!1sen!2shk!4v1234567890"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        title="Office Location"
+                        title="Office Location - AIRSIDE"
                         className="absolute inset-0"
                       />
                       <a
-                        href="https://www.google.com/maps/place/AIRSIDE,+2+Concorde+Rd,+Kai+Tak/@22.3089288,114.2019786,17z"
+                        href="https://www.google.com/maps/dir/?api=1&destination=AIRSIDE,+2+Concorde+Road,+Kai+Tak,+Kowloon,+Hong+Kong"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
                       >
                         <MapPin className="h-4 w-4" />
-                        Open in Google Maps
+                        Get Directions
                       </a>
                     </div>
                   </CardContent>
