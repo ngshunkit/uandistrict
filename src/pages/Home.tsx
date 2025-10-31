@@ -24,6 +24,7 @@ import { PhotoGallery } from "@/components/home/PhotoGallery";
 import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { ProcessTimeline } from "@/components/home/ProcessTimeline";
 import { HexagonPattern, FloatingHexagon } from "@/components/home/HexagonPattern";
+import aiaBackground from "@/assets/aia-background.jpg";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -210,8 +211,10 @@ const Home = () => {
         </section>
 
         {/* Trusted By / Logo Strip */}
-        <section className="py-12 border-y border-border bg-muted/30">
-          <div className="container mx-auto px-4">
+        <section className="relative py-12 border-y border-border overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${aiaBackground})` }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-background/80" />
+          <div className="container relative mx-auto px-4">
             <p className="text-center text-sm text-muted-foreground uppercase tracking-wider mb-8">
               Trusted by Leading Organizations
             </p>
@@ -225,7 +228,7 @@ const Home = () => {
                 MDRT
               </a>
               <a 
-                href="https://www.mdrt.org/cot" 
+                href="https://members.mdrt.org/zh-cht/about-MDRT/for-companies/top-25-companies-by-cot-members/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
@@ -249,7 +252,7 @@ const Home = () => {
                 TOT
               </a>
               <a 
-                href="https://www.iarfc.org" 
+                href="https://www.ia.org.hk" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
