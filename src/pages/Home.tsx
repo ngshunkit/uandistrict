@@ -351,7 +351,7 @@ Professional training </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <a href="https://www.unepfi.org/industries/insurance/the-global-state-of-sustainable-insurance-understanding-and-integrating-environmental-social-and-governance-factors-in-insurance/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.ia.org.hk/en/infocenter/files/China_ASEAN_Summit_Forum_presentation.pdf" target="_blank" rel="noopener noreferrer">
                 <Card className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer h-full">
                   <CardHeader>
                     <div className="text-sm text-muted-foreground mb-2">Oct 15, 2025</div>
