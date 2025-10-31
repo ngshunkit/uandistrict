@@ -5,6 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Offerings from "./pages/Offerings";
+import RetirementWorkshops from "./pages/RetirementWorkshops";
+import SocialMediaSkills from "./pages/SocialMediaSkills";
+import CoreAgentTraining from "./pages/CoreAgentTraining";
+import MarketIntelligence from "./pages/MarketIntelligence";
 import Jobs from "./pages/Jobs";
 import Members from "./pages/Members";
 import Contact from "./pages/Contact";
@@ -25,6 +29,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/offerings" element={<Offerings />} />
+          <Route path="/offerings/retirement-workshops" element={<RetirementWorkshops />} />
+          <Route path="/offerings/social-media-skills" element={<SocialMediaSkills />} />
+          <Route path="/offerings/core-agent-training" element={<CoreAgentTraining />} />
+          <Route path="/offerings/market-intelligence" element={<MarketIntelligence />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/members-team" element={<Members />} />
           <Route path="/contact" element={<Contact />} />

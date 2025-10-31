@@ -64,6 +64,33 @@ const Offerings = () => {
     },
   ];
 
+  const subPages = [
+    {
+      icon: Users2,
+      title: t("offerings.subpages.retirement.title"),
+      description: t("offerings.subpages.retirement.subtitle"),
+      link: "/offerings/retirement-workshops"
+    },
+    {
+      icon: Megaphone,
+      title: t("offerings.subpages.social.title"),
+      description: t("offerings.subpages.social.subtitle"),
+      link: "/offerings/social-media-skills"
+    },
+    {
+      icon: BookOpen,
+      title: t("offerings.subpages.training.title"),
+      description: t("offerings.subpages.training.subtitle"),
+      link: "/offerings/core-agent-training"
+    },
+    {
+      icon: BarChart,
+      title: t("offerings.subpages.market.title"),
+      description: t("offerings.subpages.market.subtitle"),
+      link: "/offerings/market-intelligence"
+    }
+  ];
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -79,6 +106,39 @@ const Offerings = () => {
               <p className="text-lg text-primary-foreground/90 md:text-xl">
                 {t("offerings.hero.subtitle")}
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Programs Section */}
+        <section className="py-16 md:py-24 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                {t("offerings.subpages.sectionTitle")}
+              </h2>
+              <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+                {t("offerings.subpages.sectionSubtitle")}
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {subPages.map((subPage, index) => (
+                <Link key={index} to={subPage.link}>
+                  <Card className="h-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1">
+                    <CardContent className="p-6">
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-primary">
+                        <subPage.icon className="h-6 w-6 text-primary-foreground" />
+                      </div>
+                      <h3 className="mb-2 text-xl font-semibold">{subPage.title}</h3>
+                      <p className="mb-4 text-sm text-muted-foreground">{subPage.description}</p>
+                      <div className="flex items-center text-sm font-medium text-primary">
+                        {t("offerings.subpages.learnMore")}
+                        <ChevronRight className="ml-1 h-4 w-4" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

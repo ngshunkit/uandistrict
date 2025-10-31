@@ -100,6 +100,177 @@
       "title": "What We Offer",
       "subtitle": "Comprehensive support and resources to help you succeed"
     },
+    "subpages": {
+      "sectionTitle": "Featured Programs",
+      "sectionSubtitle": "Specialized training and support programs designed to accelerate your success",
+      "learnMore": "Learn More",
+      "back": "Back to What We Offer",
+      "retirement": {
+        "title": "Retirement Workshops",
+        "subtitle": "Regular lectures and high-motivation workshops on retirement planning to attract senior clients and deliver steady monthly leads for agents.",
+        "overview": {
+          "title": "Program Overview",
+          "description": "Our comprehensive retirement planning workshops are designed to help you connect with senior clients and build a sustainable pipeline of qualified leads through expert-led sessions and practical strategies."
+        },
+        "features": {
+          "regular": {
+            "title": "Regular Sessions",
+            "description": "Weekly workshops and monthly lectures on retirement planning topics"
+          },
+          "senior": {
+            "title": "Senior Focus",
+            "description": "Targeted content to attract and engage senior clients"
+          },
+          "leads": {
+            "title": "Steady Leads",
+            "description": "Consistent monthly lead generation opportunities"
+          }
+        },
+        "benefits": {
+          "title": "What You'll Gain",
+          "items": [
+            "Expert-led workshops on retirement planning strategies",
+            "Direct access to qualified senior client prospects",
+            "Monthly lead generation opportunities",
+            "Comprehensive materials and presentation templates",
+            "Ongoing support and coaching from experienced advisors",
+            "Network with other agents serving senior markets"
+          ]
+        },
+        "cta": {
+          "description": "Join our retirement planning program and start building your senior client base today."
+        }
+      },
+      "social": {
+        "title": "Social Media Skills",
+        "subtitle": "Practical training in vibe coding, prompt engineering, AI-powered video editing, and image/video generation to create standout posts and posters.",
+        "overview": {
+          "title": "Program Overview",
+          "description": "Master modern digital marketing tools and AI-powered content creation to build your personal brand and engage clients effectively across social media platforms."
+        },
+        "features": {
+          "vibe": {
+            "title": "Vibe Coding",
+            "description": "Learn to create engaging, on-brand content that resonates"
+          },
+          "prompt": {
+            "title": "Prompt Engineering",
+            "description": "Master AI tools to generate compelling copy and ideas"
+          },
+          "video": {
+            "title": "Video Editing",
+            "description": "AI-powered tools to create professional video content"
+          },
+          "image": {
+            "title": "Image Generation",
+            "description": "Create stunning visuals and graphics with AI assistance"
+          }
+        },
+        "benefits": {
+          "title": "What You'll Learn",
+          "items": [
+            "Create engaging social media content that stands out",
+            "Use AI tools to streamline content creation workflows",
+            "Design professional posters and marketing materials",
+            "Edit videos quickly with AI-powered tools",
+            "Develop a consistent personal brand across platforms",
+            "Generate ideas and copy using prompt engineering techniques"
+          ]
+        },
+        "cta": {
+          "description": "Transform your social media presence with cutting-edge AI tools and strategies."
+        }
+      },
+      "training": {
+        "title": "Core Agent Training",
+        "subtitle": "Twice-weekly sessions covering underwriting rules, product knowledge, needs analysis, client psychology, objection handling, claims, and essential tools.",
+        "overview": {
+          "title": "Program Overview",
+          "description": "Our comprehensive core training program provides foundational knowledge and advanced techniques across all critical aspects of financial advisory work."
+        },
+        "features": {
+          "underwriting": {
+            "title": "Underwriting Rules",
+            "description": "Master the principles and guidelines for risk assessment"
+          },
+          "product": {
+            "title": "Product Knowledge",
+            "description": "In-depth understanding of all insurance and investment products"
+          },
+          "needs": {
+            "title": "Needs Analysis",
+            "description": "Techniques to identify and address client financial needs"
+          },
+          "psychology": {
+            "title": "Client Psychology",
+            "description": "Understanding client behavior and decision-making patterns"
+          },
+          "objection": {
+            "title": "Objection Handling",
+            "description": "Professional strategies to address concerns and build trust"
+          },
+          "claims": {
+            "title": "Claims Process",
+            "description": "Support clients through the claims process effectively"
+          }
+        },
+        "schedule": {
+          "title": "Training Schedule",
+          "description": "Join us twice weekly for comprehensive sessions",
+          "items": [
+            "Tuesday sessions: 7:00 PM - 9:00 PM",
+            "Thursday sessions: 7:00 PM - 9:00 PM",
+            "Hands-on practice and role-playing exercises",
+            "Case studies and real-world scenarios",
+            "Q&A with experienced advisors",
+            "Access to recorded sessions and materials"
+          ]
+        },
+        "cta": {
+          "description": "Build a solid foundation for your career with our comprehensive core training program."
+        }
+      },
+      "market": {
+        "title": "Market Intelligence",
+        "subtitle": "Ongoing briefings on investment trends from our investment team, cross-company product comparisons, current social topics, and client-base development support.",
+        "overview": {
+          "title": "Program Overview",
+          "description": "Stay ahead of market trends and competitive landscapes with regular intelligence briefings and strategic insights from our expert investment team."
+        },
+        "features": {
+          "investment": {
+            "title": "Investment Trends",
+            "description": "Regular updates from our investment team on market movements"
+          },
+          "comparison": {
+            "title": "Product Comparisons",
+            "description": "Detailed analysis of products across different companies"
+          },
+          "social": {
+            "title": "Social Topics",
+            "description": "Insights on current events and trending social discussions"
+          },
+          "clientbase": {
+            "title": "Client Development",
+            "description": "Strategic support for building and expanding your client base"
+          }
+        },
+        "benefits": {
+          "title": "What You'll Receive",
+          "items": [
+            "Weekly market intelligence briefings from investment experts",
+            "Comprehensive cross-company product comparison reports",
+            "Insights on trending social topics relevant to clients",
+            "Strategic guidance on client base development",
+            "Access to proprietary market research and analysis",
+            "Networking opportunities with investment professionals"
+          ]
+        },
+        "cta": {
+          "description": "Stay informed and competitive with our comprehensive market intelligence program."
+        }
+      }
+    },
     "categories": {
       "coaching": {
         "title": "Sales Coaching",
