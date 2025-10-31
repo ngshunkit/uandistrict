@@ -142,8 +142,11 @@ const SocialMediaSkills = () => {
                             <div className="relative aspect-video bg-muted overflow-hidden">
                               <video
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                controls
-                                preload="metadata"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                preload="auto"
                               >
                                 <source src={video.src} type="video/mp4" />
                                 <source src={video.src} type="video/quicktime" />
