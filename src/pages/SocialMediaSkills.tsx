@@ -146,7 +146,7 @@ const SocialMediaSkills = () => {
                               muted
                               loop
                               playsInline
-                              controls
+                              preload="auto"
                             >
                               <source src={video.src} type="video/mp4" />
                               Your browser does not support the video tag.
