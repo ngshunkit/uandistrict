@@ -130,36 +130,32 @@ const SocialMediaSkills = () => {
                 <h2 className="mb-8 text-3xl font-bold text-center animate-fade-in" style={{ animationDelay: '600ms' }}>
                   Feature Demonstrations
                 </h2>
-                <div className="grid gap-8 md:grid-cols-3">
+                <div className="space-y-8">
                   {videos.map((video, index) => (
                     <div key={index} className="group animate-fade-in" style={{ animationDelay: `${700 + index * 100}ms` }}>
-                      <Card className="overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2">
+                      <h3 className="mb-4 text-2xl font-semibold text-foreground">
+                        {video.title}
+                      </h3>
+                      <Card className="overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20">
                         <CardContent className="p-0">
-                          <div className="relative">
-                            <h3 className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/80 to-transparent p-4 text-lg font-semibold text-white">
-                              {video.title}
-                            </h3>
-                            <div className="relative aspect-video bg-muted overflow-hidden">
-                              <video
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                preload="auto"
-                                onError={(e) => {
-                                  console.error('Video failed to load:', video.src, e);
-                                }}
-                                onLoadedData={() => {
-                                  console.log('Video loaded successfully:', video.src);
-                                }}
-                              >
-                                <source src={video.src} type="video/mp4" />
-                                <source src={video.src} type="video/quicktime" />
-                                Your browser does not support the video tag.
-                              </video>
-                              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
-                            </div>
+                          <div className="relative aspect-video bg-muted overflow-hidden">
+                            <video
+                              className="w-full h-full object-cover"
+                              autoPlay
+                              muted
+                              loop
+                              playsInline
+                              preload="auto"
+                              onError={(e) => {
+                                console.error('Video failed to load:', video.src, e);
+                              }}
+                              onLoadedData={() => {
+                                console.log('Video loaded successfully:', video.src);
+                              }}
+                            >
+                              <source src={video.src} type="video/mp4" />
+                              Your browser does not support the video tag.
+                            </video>
                           </div>
                         </CardContent>
                       </Card>
