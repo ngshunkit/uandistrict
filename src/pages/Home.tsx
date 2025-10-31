@@ -246,7 +246,6 @@ const Home = () => {
             <div className="mb-16 text-center max-w-3xl mx-auto">
               <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">{t("home.badge.whatWeOffer")}</Badge>
               <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl whitespace-pre-line">{t("home.servicesSection.title")}</h2>
-Professional training </h2>
               <p className="text-lg text-muted-foreground">
                 {t("home.servicesSection.subtitle")}
               </p>
