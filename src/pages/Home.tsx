@@ -74,9 +74,9 @@ const Home = () => {
     role: "Senior Advisor",
     company: "UAN District"
   }, {
-    quote: "The training program equipped me with everything I needed to succeed. Within 6 months, I achieved MDRT qualification.",
-    name: "Michael Wong",
-    role: "Financial Consultant",
+    quote: "The training program provides a practical and systematic approach that helps agents pick up skills and follow market trends. The trainers are specialists in their respective areas. Therefore, I find the training highly practical and useful.",
+    name: "Michael Leung",
+    role: "Wealth Management Manager",
     company: "UAN District"
   }, {
     quote: "The team culture here is incredible. Everyone genuinely wants to see each other succeed.",
