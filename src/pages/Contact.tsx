@@ -297,7 +297,7 @@ const Contact = () => {
                   <CardContent className="p-0">
                     <div className="relative h-80 overflow-hidden">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.389!2d114.2043!3d22.3089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400f1e823e54b%3A0x8b3c3e8c8f8e8e8e!2sAIRSIDE%2C%202%20Concorde%20Rd%2C%20Kai%20Tak!5e0!3m2!1sen!2shk!4v1234567890"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.3875556724734!2d114.20190857599488!3d22.30900164167661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400f1e823e54b%3A0xdec849dd45f2c8ab!2sAIRSIDE!5e0!3m2!1sen!2shk!4v1709876543210!5m2!1sen!2shk"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
@@ -308,7 +308,7 @@ const Contact = () => {
                         className="absolute inset-0"
                       />
                       <a
-                        href="https://www.google.com/maps/dir/?api=1&destination=AIRSIDE,+2+Concorde+Road,+Kai+Tak,+Kowloon,+Hong+Kong"
+                        href="https://www.google.com/maps/dir/?api=1&destination=22.3090016,114.2044972&destination_place_id=ChIJS-Uj6PHhAzQRq8jyRd1JSN4"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
