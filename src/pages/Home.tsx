@@ -34,21 +34,21 @@ const Home = () => {
     icon: Briefcase
   }];
   const services = [{
-    icon: Rocket,
-    title: "Career Launch",
-    description: "Comprehensive onboarding and training to kickstart your insurance career with confidence."
-  }, {
     icon: Users,
-    title: "Expert Mentorship",
-    description: "Learn from industry leaders with proven track records in building successful practices."
+    title: "Retirement Workshops",
+    description: "Regular lectures and high‑motivation workshops on retirement planning to attract senior clients and deliver steady monthly leads for agents."
+  }, {
+    icon: Sparkles,
+    title: "Social Media Skills",
+    description: "Practical training in vibe coding, prompt engineering, AI‑powered video editing, and image/video generation to create standout posts and posters."
+  }, {
+    icon: Award,
+    title: "Core Agent Training",
+    description: "Twice‑weekly sessions covering underwriting rules, product knowledge, needs analysis, client psychology, objection handling, claims, and essential tools."
   }, {
     icon: TrendingUp,
-    title: "Marketing Support",
-    description: "Access cutting-edge marketing tools and strategies to grow your client base."
-  }, {
-    icon: Shield,
-    title: "Ongoing Support",
-    description: "Continuous professional development and resources to ensure long-term success."
+    title: "Market Intelligence",
+    description: "Ongoing briefings on investment trends from our investment team, cross‑company product comparisons, current social topics, and client‑base development support."
   }];
   const processSteps = [{
     title: "Discovery Call",
