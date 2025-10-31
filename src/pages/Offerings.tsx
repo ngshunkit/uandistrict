@@ -148,17 +148,23 @@ const Offerings = () => {
           <div className="container mx-auto px-4">
             <div className="grid gap-8 lg:gap-12">
               {offerings.map((offering, index) => (
-                <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                <Card 
+                  key={index} 
+                  className="group overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2 animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <div className="grid md:grid-cols-[auto_1fr] md:gap-8">
-                    <div className="flex items-center justify-center bg-gradient-primary p-8 md:w-48">
-                      <offering.icon className="h-16 w-16 text-primary-foreground md:h-20 md:w-20" />
+                    <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary to-accent p-8 md:w-48 transition-all duration-500 group-hover:scale-110">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/5 to-white/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <offering.icon className="relative h-16 w-16 text-white md:h-20 md:w-20 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 drop-shadow-lg" />
+                      <div className="absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100 animate-pulse" />
                     </div>
                     <div className="p-6 md:py-8 md:pr-8">
                       <CardHeader className="p-0 pb-4">
-                        <div className="mb-2 text-sm font-medium text-primary">
+                        <div className="mb-2 text-sm font-medium text-primary transition-all duration-300 group-hover:text-accent">
                           {offering.subtitle}
                         </div>
-                        <CardTitle className="text-2xl md:text-3xl">
+                        <CardTitle className="text-2xl md:text-3xl transition-colors duration-300 group-hover:text-primary">
                           {offering.title}
                         </CardTitle>
                         <CardDescription className="text-base">
@@ -168,9 +174,13 @@ const Offerings = () => {
                       <CardContent className="p-0">
                         <ul className="space-y-2">
                           {offering.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <ChevronRight className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                              <span className="text-muted-foreground">{feature}</span>
+                            <li 
+                              key={idx} 
+                              className="flex items-start transition-all duration-300 group-hover:translate-x-1"
+                              style={{ transitionDelay: `${idx * 50}ms` }}
+                            >
+                              <ChevronRight className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-primary transition-all duration-300 group-hover:text-accent group-hover:scale-125" />
+                              <span className="text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{feature}</span>
                             </li>
                           ))}
                         </ul>
