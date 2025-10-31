@@ -417,7 +417,7 @@ const RetirementWorkshops = () => {
                       <ChevronRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
-                  <Link to="/contact">
+                  <Link to="/contact#contact-form">
                     <Button size="lg" className="border-2 border-white/90 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white">
                       {t("offerings.cta.contact")}
                     </Button>
