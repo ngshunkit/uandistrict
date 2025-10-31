@@ -69,9 +69,9 @@ const Home = () => {
     description: "Start building your practice with ongoing mentorship and support from our leadership team."
   }];
   const testimonials = [{
-    quote: "Joining UAN District was the best career decision I've made. The mentorship and support have been exceptional.",
+    quote: "Our team may not be large, but we are an MDRT district because we specialize in serving high-net-worth clients and providing group insurance. This focus enables higher commissions with a lighter workload.",
     name: "Sarah Chen",
-    role: "Senior Advisor",
+    role: "Senior Unit Manager",
     company: "UAN District"
   }, {
     quote: "The training program provides a practical and systematic approach that helps agents pick up skills and follow market trends. The trainers are specialists in their respective areas. Therefore, I find the training highly practical and useful.",
