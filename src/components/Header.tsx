@@ -25,9 +25,6 @@ const Header = () => {
     path: "/members-team",
     label: t("nav.members")
   }, {
-    path: "/performance",
-    label: t("nav.performance")
-  }, {
     path: "/contact",
     label: t("nav.contact")
   }];
