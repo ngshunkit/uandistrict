@@ -356,21 +356,57 @@ Professional training </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {blogPosts.map((post, index) => <Card key={index} className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer">
+              <a href="https://www.mdrt.org/article/building-sustainable-insurance-practice" target="_blank" rel="noopener noreferrer">
+                <Card className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer h-full">
                   <CardHeader>
-                    <div className="text-sm text-muted-foreground mb-2">{post.date}</div>
+                    <div className="text-sm text-muted-foreground mb-2">Oct 15, 2025</div>
                     <CardTitle className="font-display text-xl group-hover:text-accent transition-colors">
-                      {post.title}
+                      Building a Sustainable Insurance Practice
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="mb-4">{post.excerpt}</CardDescription>
+                    <CardDescription className="mb-4">Learn the key strategies for creating long-term client relationships and recurring revenue.</CardDescription>
                     <div className="flex items-center text-accent font-medium text-sm">
                       Read More
                       <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </CardContent>
-                </Card>)}
+                </Card>
+              </a>
+              <a href="https://www.forbes.com/advisor/business/team-culture-sales/" target="_blank" rel="noopener noreferrer">
+                <Card className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer h-full">
+                  <CardHeader>
+                    <div className="text-sm text-muted-foreground mb-2">Oct 10, 2025</div>
+                    <CardTitle className="font-display text-xl group-hover:text-accent transition-colors">
+                      The Power of Team Culture in Sales
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="mb-4">Discover how a supportive team environment accelerates individual and collective success.</CardDescription>
+                    <div className="flex items-center text-accent font-medium text-sm">
+                      Read More
+                      <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
+              <a href="https://www.investopedia.com/financial-advisor/digital-marketing-financial-advisors/" target="_blank" rel="noopener noreferrer">
+                <Card className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer h-full">
+                  <CardHeader>
+                    <div className="text-sm text-muted-foreground mb-2">Oct 5, 2025</div>
+                    <CardTitle className="font-display text-xl group-hover:text-accent transition-colors">
+                      Digital Marketing for Financial Advisors
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="mb-4">Master modern marketing techniques to attract and convert high-value clients online.</CardDescription>
+                    <div className="flex items-center text-accent font-medium text-sm">
+                      Read More
+                      <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
             </div>
           </div>
         </section>
