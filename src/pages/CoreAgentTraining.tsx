@@ -109,25 +109,25 @@ const CoreAgentTraining = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-muted/30 py-16 md:py-24">
+        <section className="bg-gradient-to-br from-primary/5 to-accent/5 py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <Card className="bg-gradient-primary text-primary-foreground">
+            <Card className="border-primary/20 bg-gradient-to-br from-primary via-primary to-accent shadow-elegant">
               <CardContent className="p-8 text-center md:p-12">
-                <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+                <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
                   {t("offerings.cta.title")}
                 </h2>
-                <p className="mb-8 text-lg text-primary-foreground/90">
+                <p className="mb-8 text-lg text-white/95">
                   {t("offerings.subpages.training.cta.description")}
                 </p>
                 <div className="flex flex-col justify-center gap-4 sm:flex-row">
                   <Link to="/jobs">
-                    <Button size="lg" className="bg-background text-primary hover:bg-background/90">
+                    <Button size="lg" className="bg-white text-primary shadow-lg hover:bg-white/95 hover:shadow-xl hover:scale-105">
                       {t("offerings.cta.apply")}
                       <ChevronRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Link to="/contact">
-                    <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                    <Button size="lg" className="border-2 border-white/90 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white">
                       {t("offerings.cta.contact")}
                     </Button>
                   </Link>
