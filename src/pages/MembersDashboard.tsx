@@ -34,6 +34,7 @@ const MembersDashboard = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isVerifyingAdmin, setIsVerifyingAdmin] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
@@ -51,42 +52,39 @@ const MembersDashboard = () => {
           setUser(session.user);
           
           // Check if user is admin using server-side verification
-          setTimeout(async () => {
-            try {
-              const { data, error } = await supabase.functions.invoke('verify-admin');
-              
-              if (isMounted) {
-                setIsAdmin(!error && !!data?.isAdmin);
-              }
-            } catch (err) {
-              console.error('Error verifying admin status:', err);
-              if (isMounted) {
-                setIsAdmin(false);
-              }
-            }
-            
-            // Fetch user profile
-            const { data, error } = await supabase
-              .from('profiles')
-              .select('full_name, email')
-              .eq('id', session.user.id)
-              .maybeSingle();
-
-            if (error) {
-              console.error('Error fetching profile:', error);
-            } else if (data && isMounted) {
-              setProfile(data);
-            }
+          try {
+            const { data, error } = await supabase.functions.invoke('verify-admin');
             
             if (isMounted) {
-              setIsLoading(false);
+              setIsAdmin(!error && !!data?.isAdmin);
+              setIsVerifyingAdmin(false);
             }
-          }, 0);
+          } catch (err) {
+            if (isMounted) {
+              setIsAdmin(false);
+              setIsVerifyingAdmin(false);
+            }
+          }
+          
+          // Fetch user profile
+          const { data, error } = await supabase
+            .from('profiles')
+            .select('full_name, email')
+            .eq('id', session.user.id)
+            .maybeSingle();
+
+          if (isMounted && data) {
+            setProfile(data);
+          }
+          
+          if (isMounted) {
+            setIsLoading(false);
+          }
         }
       } catch (error) {
-        console.error('Auth check error:', error);
         if (isMounted) {
           setIsLoading(false);
+          setIsVerifyingAdmin(false);
         }
       }
     };
@@ -115,7 +113,7 @@ const MembersDashboard = () => {
     }
   };
 
-  if (isLoading) {
+  if (isLoading || isVerifyingAdmin) {
     return (
       <div className="flex min-h-screen items-center justify-center">
         <div className="text-center">

@@ -38,7 +38,6 @@ const Auth = () => {
           const { data, error } = await supabase.functions.invoke('verify-admin');
           
           if (error) {
-            console.error('Error verifying admin status:', error);
             setIsAdmin(false);
           } else {
             setIsAdmin(!!data?.isAdmin);
@@ -55,7 +54,6 @@ const Auth = () => {
             }
           }
         } catch (err) {
-          console.error('Error in admin check:', err);
           setIsAdmin(false);
         }
       }
@@ -409,7 +407,7 @@ const Auth = () => {
                           />
                         </div>
                         <p className="mt-1 text-xs text-muted-foreground">
-                          Minimum 6 characters
+                          Must be at least 8 characters with uppercase, lowercase, and number
                         </p>
                       </div>
 

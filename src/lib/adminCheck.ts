@@ -19,13 +19,11 @@ export const verifyAdminStatus = async (): Promise<boolean> => {
     });
 
     if (error) {
-      console.error('Admin verification error:', error);
       return false;
     }
 
     return data?.isAdmin === true;
   } catch (error) {
-    console.error('Failed to verify admin status:', error);
     return false;
   }
 };

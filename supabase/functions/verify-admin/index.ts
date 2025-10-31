@@ -16,7 +16,19 @@ Deno.serve(async (req) => {
     const authHeader = req.headers.get('Authorization');
     if (!authHeader) {
       return new Response(
-        JSON.stringify({ error: 'Missing authorization header', isAdmin: false }), 
+        JSON.stringify({ error: 'Unauthorized', isAdmin: false }), 
+        { 
+          status: 401, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
+
+    // Validate authorization header format (must be 'Bearer <token>')
+    const bearerPattern = /^Bearer\s+[\w-]+\.[\w-]+\.[\w-]+$/;
+    if (!bearerPattern.test(authHeader)) {
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized', isAdmin: false }), 
         { 
           status: 401, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
@@ -39,7 +51,6 @@ Deno.serve(async (req) => {
     const { data: { user }, error: userError } = await supabaseClient.auth.getUser();
     
     if (userError || !user) {
-      console.error('User authentication error:', userError);
       return new Response(
         JSON.stringify({ error: 'Unauthorized', isAdmin: false }), 
         { 
@@ -57,9 +68,8 @@ Deno.serve(async (req) => {
       });
 
     if (roleError) {
-      console.error('Error checking admin role:', roleError);
       return new Response(
-        JSON.stringify({ error: 'Error verifying admin status', isAdmin: false }), 
+        JSON.stringify({ error: 'Internal server error', isAdmin: false }), 
         { 
           status: 500, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
@@ -79,10 +89,9 @@ Deno.serve(async (req) => {
     );
 
   } catch (error) {
-    console.error('Verify admin error:', error);
     return new Response(
       JSON.stringify({ 
-        error: error instanceof Error ? error.message : 'Unknown error',
+        error: 'Internal server error',
         isAdmin: false 
       }), 
       { 
