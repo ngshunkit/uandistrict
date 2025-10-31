@@ -80,7 +80,8 @@ export const SignupRequests = () => {
       
       fetchRequests();
     } catch (error: any) {
-      toast.error("Failed to approve request");
+      console.error('Error approving request:', error);
+      toast.error("Failed to approve request. Please try again.");
     } finally {
       setProcessingId(null);
     }
@@ -101,7 +102,8 @@ export const SignupRequests = () => {
       toast.success(`Rejected request from ${request.email}`);
       fetchRequests();
     } catch (error: any) {
-      toast.error("Failed to reject request");
+      console.error('Error rejecting request:', error);
+      toast.error("Failed to reject request. Please try again.");
     } finally {
       setProcessingId(null);
     }

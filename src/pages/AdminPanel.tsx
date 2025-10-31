@@ -66,7 +66,8 @@ const AdminPanel = () => {
 
       setRequests(data || []);
     } catch (error: any) {
-      toast.error("Failed to load requests: " + error.message);
+      console.error('Error loading requests:', error);
+      toast.error("Failed to load requests. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -105,7 +106,8 @@ const AdminPanel = () => {
 
       // TODO: Send confirmation email to the user
     } catch (error: any) {
-      toast.error("Failed to approve request: " + error.message);
+      console.error('Error approving request:', error);
+      toast.error("Failed to approve request. Please try again.");
     }
   };
 
@@ -123,7 +125,8 @@ const AdminPanel = () => {
       toast.success(`Rejected request from ${request.full_name}`);
       loadRequests();
     } catch (error: any) {
-      toast.error("Failed to reject request: " + error.message);
+      console.error('Error rejecting request:', error);
+      toast.error("Failed to reject request. Please try again.");
     }
   };
 
