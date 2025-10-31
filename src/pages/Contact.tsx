@@ -291,18 +291,31 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                {/* Map Placeholder */}
+                {/* Google Map */}
                 <Card className="overflow-hidden shadow-lg animate-fade-in" style={{ animationDelay: "400ms" }}>
                   <div className="h-2 bg-gradient-primary" />
                   <CardContent className="p-0">
-                    <div className="relative h-64 bg-gradient-subtle">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center">
-                          <MapPin className="mx-auto mb-2 h-12 w-12 text-primary" />
-                          <p className="font-semibold text-foreground">{t("contact.info.address.title")}</p>
-                          <p className="text-sm text-muted-foreground">{t("contact.info.address.content")}</p>
-                        </div>
-                      </div>
+                    <div className="relative h-80 overflow-hidden">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.3892842727947!2d114.20197857599486!3d22.30892884167803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400f9c8f7e5e5%3A0x3c8e9c4e4f0e9c8e!2sAIRSIDE!5e0!3m2!1sen!2shk!4v1234567890"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Office Location"
+                        className="absolute inset-0"
+                      />
+                      <a
+                        href="https://www.google.com/maps/place/AIRSIDE,+2+Concorde+Rd,+Kai+Tak/@22.3089288,114.2019786,17z"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                      >
+                        <MapPin className="h-4 w-4" />
+                        Open in Google Maps
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
