@@ -1,118 +1,256 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, Users, TrendingUp, Award, Briefcase, Target, ChevronRight } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import {
+  Target,
+  Users,
+  TrendingUp,
+  Award,
+  Briefcase,
+  Rocket,
+  Shield,
+  Zap,
+  ArrowRight,
+  Sparkles,
+  Heart,
+  CheckCircle2,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { PhotoGallery } from "@/components/home/PhotoGallery";
+import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
+import { ProcessTimeline } from "@/components/home/ProcessTimeline";
+import { HexagonPattern, FloatingHexagon } from "@/components/home/HexagonPattern";
 
 const Home = () => {
   const { t } = useTranslation();
 
-  const highlights = [
+  const stats = [
+    { value: "15+", label: "MDRT Members", icon: Award },
+    { value: "30+", label: "Team Members", icon: Users },
+    { value: "98%", label: "Client Satisfaction", icon: Target },
+    { value: "10+", label: "Years Excellence", icon: Briefcase },
+  ];
+
+  const services = [
     {
-      icon: GraduationCap,
-      title: t("home.highlights.training.title"),
-      description: t("home.highlights.training.description"),
+      icon: Rocket,
+      title: "Career Launch",
+      description: "Comprehensive onboarding and training to kickstart your insurance career with confidence.",
     },
     {
       icon: Users,
-      title: t("home.highlights.mentorship.title"),
-      description: t("home.highlights.mentorship.description"),
+      title: "Expert Mentorship",
+      description: "Learn from industry leaders with proven track records in building successful practices.",
     },
     {
       icon: TrendingUp,
-      title: t("home.highlights.marketing.title"),
-      description: t("home.highlights.marketing.description"),
+      title: "Marketing Support",
+      description: "Access cutting-edge marketing tools and strategies to grow your client base.",
     },
     {
-      icon: Award,
-      title: t("home.highlights.career.title"),
-      description: t("home.highlights.career.description"),
+      icon: Shield,
+      title: "Ongoing Support",
+      description: "Continuous professional development and resources to ensure long-term success.",
     },
   ];
 
-  const stats = [
-    { value: "15+", label: t("home.stats.mdrt"), icon: Award },
-    { value: "30+", label: t("home.stats.members"), icon: Users },
-    { value: "98%", label: t("home.stats.awards"), icon: Target },
-    { value: "10+", label: t("home.stats.growth"), icon: Briefcase },
+  const processSteps = [
+    {
+      title: "Discovery Call",
+      description: "Book a consultation to discuss your career goals and learn about opportunities with UAN District.",
+    },
+    {
+      title: "Assessment & Fit",
+      description: "We evaluate your background and aspirations to ensure mutual alignment for success.",
+    },
+    {
+      title: "Training Program",
+      description: "Complete our comprehensive training covering products, sales techniques, and compliance.",
+    },
+    {
+      title: "Launch & Grow",
+      description: "Start building your practice with ongoing mentorship and support from our leadership team.",
+    },
+  ];
+
+  const testimonials = [
+    {
+      quote: "Joining UAN District was the best career decision I've made. The mentorship and support have been exceptional.",
+      name: "Sarah Chen",
+      role: "Senior Advisor",
+      company: "UAN District",
+    },
+    {
+      quote: "The training program equipped me with everything I needed to succeed. Within 6 months, I achieved MDRT qualification.",
+      name: "Michael Wong",
+      role: "Financial Consultant",
+      company: "UAN District",
+    },
+    {
+      quote: "The team culture here is incredible. Everyone genuinely wants to see each other succeed.",
+      name: "Emily Lau",
+      role: "Team Leader",
+      company: "UAN District",
+    },
+  ];
+
+  const galleryImages = [
+    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
+    "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
+    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80",
+    "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+  ];
+
+  const values = [
+    { label: "Excellence", icon: Sparkles },
+    { label: "Integrity", icon: Shield },
+    { label: "Innovation", icon: Zap },
+    { label: "Community", icon: Heart },
+  ];
+
+  const blogPosts = [
+    {
+      title: "Building a Sustainable Insurance Practice",
+      excerpt: "Learn the key strategies for creating long-term client relationships and recurring revenue.",
+      date: "Oct 15, 2025",
+    },
+    {
+      title: "The Power of Team Culture in Sales",
+      excerpt: "Discover how a supportive team environment accelerates individual and collective success.",
+      date: "Oct 10, 2025",
+    },
+    {
+      title: "Digital Marketing for Financial Advisors",
+      excerpt: "Master modern marketing techniques to attract and convert high-value clients online.",
+      date: "Oct 5, 2025",
+    },
   ];
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-background">
       <Header />
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-hero py-20 text-primary-foreground md:py-32">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
+        <section className="relative overflow-hidden bg-gradient-dusk py-24 md:py-32 lg:py-40">
+          <HexagonPattern />
+          
+          {/* Floating Hexagons */}
+          <div className="absolute top-20 right-10">
+            <FloatingHexagon delay={0} />
+          </div>
+          <div className="absolute bottom-32 left-20">
+            <FloatingHexagon delay={1} />
+          </div>
+          <div className="absolute top-40 right-1/4">
+            <FloatingHexagon delay={2} />
+          </div>
 
           <div className="container relative mx-auto px-4">
             <div className="mx-auto max-w-4xl text-center">
-              <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">{t("home.hero.title")}</h1>
-              <p className="mb-8 text-lg text-primary-foreground/90 md:text-xl">{t("home.hero.subtitle")}</p>
+              <Badge className="mb-6 bg-accent/20 text-accent border-accent/30 hover:bg-accent/30">
+                Empowering Insurance Professionals
+              </Badge>
+              
+              <h1 className="mb-6 font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-7xl animate-fade-up">
+                Designing Spaces Where Ideas Become Districts
+              </h1>
+              
+              <p className="mb-10 text-lg text-white/80 md:text-xl max-w-2xl mx-auto">
+                Join Hong Kong's premier insurance district. Build your career with world-class training, 
+                expert mentorship, and a community dedicated to your success.
+              </p>
+              
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link to="/jobs">
-                  <Button size="lg" className="bg-background text-primary hover:bg-background/90">
-                    {t("home.hero.viewJobs")}
-                    <ChevronRight className="ml-2 h-4 w-4" />
+                  <Button size="lg" className="group">
+                    Start a Project
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
                 <Link to="/offerings">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-                  >
-                    {t("home.hero.learnMore")}
+                  <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm">
+                    View Work
                   </Button>
                 </Link>
               </div>
             </div>
 
             {/* Stats Bar */}
-            <div className="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-4">
+            <div className="mx-auto mt-20 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="mb-2 flex justify-center">
-                    <stat.icon className="h-8 w-8 text-primary-foreground/80" />
+                <div
+                  key={index}
+                  className="group text-center animate-fade-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="mb-3 flex justify-center">
+                    <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-sm group-hover:bg-white/20 transition-all">
+                      <stat.icon className="h-8 w-8 text-accent" />
+                    </div>
                   </div>
-                  <div className="text-3xl font-bold">{stat.value}</div>
-                  <div className="text-sm text-primary-foreground/80">{stat.label}</div>
+                  <div className="text-4xl font-bold text-white font-display tabular-nums">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-white/70 uppercase tracking-wider mt-1">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* About Section */}
-        <section className="bg-gradient-subtle py-16 md:py-24">
+        {/* Trusted By / Logo Strip */}
+        <section className="py-12 border-y border-border bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl">{t("home.hero.title")}</h2>
-              <p className="text-lg text-muted-foreground">{t("home.hero.subtitle")}</p>
+            <p className="text-center text-sm text-muted-foreground uppercase tracking-wider mb-8">
+              Trusted by Leading Organizations
+            </p>
+            <div className="flex justify-center items-center gap-12 flex-wrap opacity-50">
+              <div className="text-2xl font-bold text-foreground">AIA</div>
+              <div className="text-2xl font-bold text-foreground">MDRT</div>
+              <div className="text-2xl font-bold text-foreground">IFPHK</div>
+              <div className="text-2xl font-bold text-foreground">CII</div>
             </div>
           </div>
         </section>
 
-        {/* Highlights Section */}
-        <section className="py-16 md:py-24">
+        {/* Services Section */}
+        <section className="py-20 md:py-32 bg-gradient-subtle">
           <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">{t("home.highlights.title")}</h2>
-              <p className="mx-auto max-w-2xl text-muted-foreground">{t("home.hero.subtitle")}</p>
+            <div className="mb-16 text-center max-w-3xl mx-auto">
+              <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">
+                What We Offer
+              </Badge>
+              <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl">
+                Services That Drive Success
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Comprehensive support designed to accelerate your growth and maximize your potential.
+              </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {highlights.map((highlight, index) => (
-                <Card key={index} className="group transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                  <CardContent className="p-6">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary">
-                      <highlight.icon className="h-6 w-6 text-primary transition-colors group-hover:text-primary-foreground" />
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {services.map((service, index) => (
+                <Card
+                  key={index}
+                  className="group border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                >
+                  <CardHeader>
+                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-ocean shadow-md group-hover:shadow-glow transition-all">
+                      <service.icon className="h-7 w-7 text-white" />
                     </div>
-                    <h3 className="mb-2 text-lg font-semibold text-foreground">{highlight.title}</h3>
-                    <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                    <CardTitle className="font-display text-xl">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base">{service.description}</CardDescription>
                   </CardContent>
                 </Card>
               ))}
@@ -120,50 +258,199 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Testimonial Section */}
-        <section className="bg-muted/30 py-16 md:py-24">
+        {/* Photo Rolling Gallery */}
+        <section className="py-20 md:py-32 bg-background overflow-hidden">
+          <div className="container mx-auto px-4 mb-12">
+            <div className="text-center max-w-3xl mx-auto">
+              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
+                Our Community
+              </Badge>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">
+                Life at UAN District
+              </h2>
+            </div>
+          </div>
+          
+          <PhotoGallery images={galleryImages} />
+        </section>
+
+        {/* Process Timeline */}
+        <section className="py-20 md:py-32 bg-gradient-subtle">
           <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-4xl">
-              <Card className="border-primary/20 shadow-lg">
-                <CardContent className="p-8 md:p-12">
-                  <div className="mb-6 text-6xl text-primary">"</div>
-                  <blockquote className="mb-6 text-lg italic text-foreground md:text-xl">
-                    {t("home.testimonial.quote")}
-                  </blockquote>
-                  <div className="flex items-center">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-primary text-lg font-bold text-primary-foreground">
-                      {t("home.testimonial.name").charAt(0)}
+            <div className="mb-16 text-center max-w-3xl mx-auto">
+              <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">
+                How It Works
+              </Badge>
+              <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl">
+                Your Journey to Success
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                A proven 4-step process to launch and grow your insurance career.
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto">
+              <ProcessTimeline steps={processSteps} />
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Carousel */}
+        <section className="py-20 md:py-32 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="mb-12 text-center max-w-3xl mx-auto">
+              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
+                Success Stories
+              </Badge>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">
+                What Our Team Says
+              </h2>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <TestimonialCarousel testimonials={testimonials} />
+            </div>
+          </div>
+        </section>
+
+        {/* About / Values */}
+        <section className="py-20 md:py-32 bg-gradient-subtle">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">
+                  Our Story
+                </Badge>
+                <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-4xl">
+                  Building the Future of Insurance Together
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  UAN District is more than a workplace—it's a community of driven professionals 
+                  committed to excellence, innovation, and making a meaningful impact in people's lives.
+                </p>
+                <p className="text-lg text-muted-foreground">
+                  Since our founding, we've helped hundreds of advisors build thriving practices 
+                  while maintaining the highest standards of integrity and client service.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-6">
+                {values.map((value, index) => (
+                  <Card
+                    key={index}
+                    className="border-accent-warm/30 bg-accent-warm/20 hover:bg-accent-warm/30 transition-all duration-300 text-center p-6"
+                  >
+                    <value.icon className="h-10 w-10 text-primary mx-auto mb-3" />
+                    <h3 className="font-display font-semibold text-lg text-foreground">
+                      {value.label}
+                    </h3>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Blog/Insights */}
+        <section className="py-20 md:py-32 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="mb-12 flex items-end justify-between">
+              <div>
+                <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
+                  Latest Insights
+                </Badge>
+                <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
+                  From the Blog
+                </h2>
+              </div>
+              <Link to="/blog" className="text-accent hover:text-accent/80 font-medium hidden sm:block">
+                View All →
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {blogPosts.map((post, index) => (
+                <Card
+                  key={index}
+                  className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer"
+                >
+                  <CardHeader>
+                    <div className="text-sm text-muted-foreground mb-2">{post.date}</div>
+                    <CardTitle className="font-display text-xl group-hover:text-accent transition-colors">
+                      {post.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="mb-4">{post.excerpt}</CardDescription>
+                    <div className="flex items-center text-accent font-medium text-sm">
+                      Read More
+                      <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
-                    <div className="ml-4">
-                      <div className="font-semibold text-foreground">{t("home.testimonial.name")}</div>
-                      <div className="text-sm text-muted-foreground">{t("home.testimonial.role")}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter */}
+        <section className="py-16 md:py-20 bg-gradient-subtle border-y border-border">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto text-center">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-4">
+                Stay Updated
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Get the latest insights, tips, and opportunities delivered to your inbox.
+              </p>
+              <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 rounded-xl border-2 h-12"
+                />
+                <Button type="submit" size="lg">
+                  Subscribe
+                </Button>
+              </form>
+              <p className="text-xs text-muted-foreground mt-3">
+                We respect your privacy. Unsubscribe at any time.
+              </p>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-primary py-16 text-primary-foreground md:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">{t("home.cta.title")}</h2>
-            <p className="mb-8 text-lg text-primary-foreground/90">{t("home.cta.subtitle")}</p>
+        <section className="relative overflow-hidden bg-gradient-ocean py-20 md:py-32">
+          <HexagonPattern />
+          
+          <div className="container relative mx-auto px-4 text-center">
+            <Badge className="mb-6 bg-white/20 text-white border-white/30">
+              Ready to Begin?
+            </Badge>
+            
+            <h2 className="mb-6 font-display text-3xl font-bold text-white md:text-5xl">
+              Launch Your Career With Us
+            </h2>
+            
+            <p className="mb-10 text-lg text-white/90 max-w-2xl mx-auto">
+              Join a community of high-achievers and start building the career you've always wanted.
+            </p>
+            
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link to="/jobs">
-                <Button size="lg" className="bg-background text-primary hover:bg-background/90">
-                  {t("home.hero.viewJobs")}
-                  <ChevronRight className="ml-2 h-4 w-4" />
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+                  Book a Call
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/members">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary"
                 >
-                  {t("home.cta.contact")}
+                  See the Work
                 </Button>
               </Link>
             </div>
