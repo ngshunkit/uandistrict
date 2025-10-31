@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe, LogOut, User } from "lucide-react";
+import { Menu, X, Globe, LogOut, User, Shield } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { supabase } from "@/integrations/supabase/client";
@@ -11,9 +11,23 @@ import uanLogo from "@/assets/uan-logo.png";
 
 const MembersHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    checkAdminStatus();
+  }, []);
+
+  const checkAdminStatus = async () => {
+    try {
+      const { data } = await supabase.functions.invoke('verify-admin');
+      setIsAdmin(data?.isAdmin === true);
+    } catch {
+      setIsAdmin(false);
+    }
+  };
 
   const navItems = [
     { path: "/members", label: t("members.nav.dashboard") },
@@ -66,6 +80,16 @@ const MembersHeader = () => {
 
         {/* Right Side Actions */}
         <div className="flex items-center space-x-2">
+          {/* Admin Panel Button - Only visible to admins */}
+          {isAdmin && (
+            <Link to="/admin">
+              <Button variant="outline" size="sm" className="hidden md:flex items-center gap-2">
+                <Shield className="h-4 w-4" />
+                Admin Panel
+              </Button>
+            </Link>
+          )}
+
           {/* Language Switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -94,6 +118,12 @@ const MembersHeader = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
+              {isAdmin && (
+                <DropdownMenuItem onClick={() => navigate("/admin")}>
+                  <Shield className="mr-2 h-4 w-4" />
+                  Admin Panel
+                </DropdownMenuItem>
+              )}
               <DropdownMenuItem onClick={() => navigate("/members/profile")}>
                 <User className="mr-2 h-4 w-4" />
                 {t("members.nav.profile")}
@@ -122,6 +152,14 @@ const MembersHeader = () => {
       {mobileMenuOpen && (
         <div className="border-t border-border bg-background lg:hidden">
           <div className="container mx-auto space-y-1 px-4 py-4">
+            {isAdmin && (
+              <Link to="/admin" onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="ghost" className="w-full justify-start">
+                  <Shield className="mr-2 h-4 w-4" />
+                  Admin Panel
+                </Button>
+              </Link>
+            )}
             {navItems.map(item => (
               <Link key={item.path} to={item.path} onClick={() => setMobileMenuOpen(false)}>
                 <Button variant={isActive(item.path) ? "default" : "ghost"} className="w-full justify-start">
