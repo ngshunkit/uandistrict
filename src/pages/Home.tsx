@@ -79,9 +79,9 @@ const Home = () => {
     role: "Wealth Management Manager",
     company: "UAN District"
   }, {
-    quote: "The team culture here is incredible. Everyone genuinely wants to see each other succeed.",
-    name: "Emily Lau",
-    role: "Team Leader",
+    quote: "Our district provides comprehensive training and support for agents. We also have a regional secretary to assist with administrative processing, management tasks, and inquiries. While delivering training, my goal is to offer a high degree of flexibility; therefore, our district does not require official working hours.",
+    name: "Andy Ng",
+    role: "District Director",
     company: "UAN District"
   }];
   const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5];
