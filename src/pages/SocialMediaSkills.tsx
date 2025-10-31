@@ -17,6 +17,10 @@ const SocialMediaSkills = () => {
     {
       title: "Vibe Coding",
       src: "/videos/vibe-coding.mp4"
+    },
+    {
+      title: "Video Editing",
+      src: "/videos/video-editing.mp4"
     }
   ];
 
@@ -136,18 +140,13 @@ const SocialMediaSkills = () => {
                         <CardContent className="p-0">
                           <div className="relative aspect-video bg-muted overflow-hidden">
                             <video
+                              key={video.src}
                               className="w-full h-full object-cover"
                               autoPlay
                               muted
                               loop
                               playsInline
-                              preload="auto"
-                              onError={(e) => {
-                                console.error('Video failed to load:', video.src, e);
-                              }}
-                              onLoadedData={() => {
-                                console.log('Video loaded successfully:', video.src);
-                              }}
+                              controls
                             >
                               <source src={video.src} type="video/mp4" />
                               Your browser does not support the video tag.
