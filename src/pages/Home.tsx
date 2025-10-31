@@ -79,13 +79,15 @@ const Home = () => {
 
   const testimonials = [
     {
-      quote: "Joining UAN District was the best career decision I've made. The mentorship and support have been exceptional.",
+      quote:
+        "Joining UAN District was the best career decision I've made. The mentorship and support have been exceptional.",
       name: "Sarah Chen",
       role: "Senior Advisor",
       company: "UAN District",
     },
     {
-      quote: "The training program equipped me with everything I needed to succeed. Within 6 months, I achieved MDRT qualification.",
+      quote:
+        "The training program equipped me with everything I needed to succeed. Within 6 months, I achieved MDRT qualification.",
       name: "Michael Wong",
       role: "Financial Consultant",
       company: "UAN District",
@@ -140,7 +142,7 @@ const Home = () => {
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-dusk py-24 md:py-32 lg:py-40">
           <HexagonPattern />
-          
+
           {/* Floating Hexagons */}
           <div className="absolute top-20 right-10">
             <FloatingHexagon delay={0} />
@@ -157,16 +159,16 @@ const Home = () => {
               <Badge className="mb-6 bg-accent/20 text-accent border-accent/30 hover:bg-accent/30">
                 Empowering Insurance Professionals
               </Badge>
-              
+
               <h1 className="mb-6 font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-7xl animate-fade-up">
-                Designing Spaces Where Ideas Become Districts
+                UAN Districts
               </h1>
-              
+
               <p className="mb-10 text-lg text-white/80 md:text-xl max-w-2xl mx-auto">
-                Join Hong Kong's premier insurance district. Build your career with world-class training, 
-                expert mentorship, and a community dedicated to your success.
+                Join Hong Kong's premier insurance district. Build your career with world-class training, expert
+                mentorship, and a community dedicated to your success.
               </p>
-              
+
               <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <Link to="/jobs">
                   <Button size="lg" className="group">
@@ -175,7 +177,11 @@ const Home = () => {
                   </Button>
                 </Link>
                 <Link to="/offerings">
-                  <Button size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
+                  >
                     View Work
                   </Button>
                 </Link>
@@ -195,12 +201,8 @@ const Home = () => {
                       <stat.icon className="h-8 w-8 text-accent" />
                     </div>
                   </div>
-                  <div className="text-4xl font-bold text-white font-display tabular-nums">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-white/70 uppercase tracking-wider mt-1">
-                    {stat.label}
-                  </div>
+                  <div className="text-4xl font-bold text-white font-display tabular-nums">{stat.value}</div>
+                  <div className="text-sm text-white/70 uppercase tracking-wider mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -226,9 +228,7 @@ const Home = () => {
         <section className="py-20 md:py-32 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center max-w-3xl mx-auto">
-              <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">
-                What We Offer
-              </Badge>
+              <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">What We Offer</Badge>
               <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl">
                 Services That Drive Success
               </h2>
@@ -262,15 +262,11 @@ const Home = () => {
         <section className="py-20 md:py-32 bg-background overflow-hidden">
           <div className="container mx-auto px-4 mb-12">
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
-                Our Community
-              </Badge>
-              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">
-                Life at UAN District
-              </h2>
+              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">Our Community</Badge>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">Life at UAN District</h2>
             </div>
           </div>
-          
+
           <PhotoGallery images={galleryImages} />
         </section>
 
@@ -278,9 +274,7 @@ const Home = () => {
         <section className="py-20 md:py-32 bg-gradient-subtle">
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center max-w-3xl mx-auto">
-              <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">
-                How It Works
-              </Badge>
+              <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">How It Works</Badge>
               <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-5xl">
                 Your Journey to Success
               </h2>
@@ -299,12 +293,8 @@ const Home = () => {
         <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center max-w-3xl mx-auto">
-              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
-                Success Stories
-              </Badge>
-              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">
-                What Our Team Says
-              </h2>
+              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">Success Stories</Badge>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-5xl">What Our Team Says</h2>
             </div>
 
             <div className="max-w-4xl mx-auto">
@@ -318,19 +308,17 @@ const Home = () => {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">
-                  Our Story
-                </Badge>
+                <Badge className="mb-4 bg-accent-warm/50 text-foreground border-accent-warm">Our Story</Badge>
                 <h2 className="mb-6 font-display text-3xl font-bold text-foreground md:text-4xl">
                   Building the Future of Insurance Together
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8">
-                  UAN District is more than a workplace—it's a community of driven professionals 
-                  committed to excellence, innovation, and making a meaningful impact in people's lives.
+                  UAN District is more than a workplace—it's a community of driven professionals committed to
+                  excellence, innovation, and making a meaningful impact in people's lives.
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  Since our founding, we've helped hundreds of advisors build thriving practices 
-                  while maintaining the highest standards of integrity and client service.
+                  Since our founding, we've helped hundreds of advisors build thriving practices while maintaining the
+                  highest standards of integrity and client service.
                 </p>
               </div>
 
@@ -341,9 +329,7 @@ const Home = () => {
                     className="border-accent-warm/30 bg-accent-warm/20 hover:bg-accent-warm/30 transition-all duration-300 text-center p-6"
                   >
                     <value.icon className="h-10 w-10 text-primary mx-auto mb-3" />
-                    <h3 className="font-display font-semibold text-lg text-foreground">
-                      {value.label}
-                    </h3>
+                    <h3 className="font-display font-semibold text-lg text-foreground">{value.label}</h3>
                   </Card>
                 ))}
               </div>
@@ -356,12 +342,8 @@ const Home = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 flex items-end justify-between">
               <div>
-                <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">
-                  Latest Insights
-                </Badge>
-                <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">
-                  From the Blog
-                </h2>
+                <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">Latest Insights</Badge>
+                <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">From the Blog</h2>
               </div>
               <Link to="/blog" className="text-accent hover:text-accent/80 font-medium hidden sm:block">
                 View All →
@@ -397,25 +379,17 @@ const Home = () => {
         <section className="py-16 md:py-20 bg-gradient-subtle border-y border-border">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
-              <h3 className="font-display text-2xl font-bold text-foreground mb-4">
-                Stay Updated
-              </h3>
+              <h3 className="font-display text-2xl font-bold text-foreground mb-4">Stay Updated</h3>
               <p className="text-muted-foreground mb-6">
                 Get the latest insights, tips, and opportunities delivered to your inbox.
               </p>
               <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 rounded-xl border-2 h-12"
-                />
+                <Input type="email" placeholder="Enter your email" className="flex-1 rounded-xl border-2 h-12" />
                 <Button type="submit" size="lg">
                   Subscribe
                 </Button>
               </form>
-              <p className="text-xs text-muted-foreground mt-3">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
+              <p className="text-xs text-muted-foreground mt-3">We respect your privacy. Unsubscribe at any time.</p>
             </div>
           </div>
         </section>
@@ -423,20 +397,16 @@ const Home = () => {
         {/* CTA Section */}
         <section className="relative overflow-hidden bg-gradient-ocean py-20 md:py-32">
           <HexagonPattern />
-          
+
           <div className="container relative mx-auto px-4 text-center">
-            <Badge className="mb-6 bg-white/20 text-white border-white/30">
-              Ready to Begin?
-            </Badge>
-            
-            <h2 className="mb-6 font-display text-3xl font-bold text-white md:text-5xl">
-              Launch Your Career With Us
-            </h2>
-            
+            <Badge className="mb-6 bg-white/20 text-white border-white/30">Ready to Begin?</Badge>
+
+            <h2 className="mb-6 font-display text-3xl font-bold text-white md:text-5xl">Launch Your Career With Us</h2>
+
             <p className="mb-10 text-lg text-white/90 max-w-2xl mx-auto">
               Join a community of high-achievers and start building the career you've always wanted.
             </p>
-            
+
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link to="/jobs">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90">
