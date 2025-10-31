@@ -322,35 +322,35 @@
   "jobs": {
     "hero": {
       "title": "Career Opportunities",
-      "subtitle": "Join our team and build a rewarding career"
+      "subtitle": "Join our team and build a rewarding career in finance"
     },
     "positions": {
       "advisor": {
-        "title": "Financial Advisor",
+        "title": "Investment & Advisory Trainee",
         "type": "Full-time",
-        "location": "Hong Kong",
-        "summary": "Join our team as a Financial Advisor and help clients achieve their financial goals.",
-        "responsibilities": "Provide financial planning and insurance solutions to clients, Build and maintain client relationships, Meet sales targets and performance metrics, Stay current with industry trends and regulations",
-        "requirements": "Bachelor's degree preferred, Strong communication and interpersonal skills, Self-motivated with entrepreneurial mindset, Willingness to obtain required licenses",
-        "benefits": "Competitive commission structure, Comprehensive training program, Marketing and administrative support, Career advancement opportunities"
+        "location": "Kai Tak District",
+        "summary": "Our client is a distinguished financial services firm dedicated to serving high-net-worth individuals with bespoke investment strategies and financial advisory services. Committed to excellence, we provide tailored wealth management solutions designed to preserve and grow our clients' assets across generations.",
+        "responsibilities": "Engage with clients to understand their financial objectives and assist in crafting personalized investment strategies, Support investment advisors in monitoring analyzing and optimizing wealth portfolios, Conduct research on financial markets trends and opportunities to provide strategic recommendations, Work alongside legal tax and investment specialists to offer holistic wealth management services, Receive mentorship and hands-on training to develop expertise in private wealth advisory and financial strategies",
+        "requirements": "A Bachelor's degree in any field. A degree in Finance Economics Accounting or a related field is a plus, Demonstrated analytical and problem-solving abilities with comfort working with data, Exceptional communication and interpersonal skills with a proven ability to collaborate effectively within a team, Proficiency in Microsoft Office Suite with a particular emphasis on Excel and PowerPoint, Proficient in English Cantonese and Mandarin languages. Fluency in additional languages especially Asian languages is highly desirable",
+        "benefits": "Work directly with high-net-worth clients in a prestigious financial services firm, Gain hands-on investment & portfolio management experience, Receive structured training & mentorship from financial industry experts, Clear career progression toward portfolio management and private wealth leadership, Competitive salary of $18,000 – $22,000 per month"
       },
       "senior": {
-        "title": "Senior Financial Consultant",
+        "title": "Finance & Investment Trainee (Fresh Graduates Welcome)",
         "type": "Full-time",
-        "location": "Hong Kong",
-        "summary": "Experienced professionals wanted to join our elite team of senior consultants.",
-        "responsibilities": "Manage high-net-worth client portfolios, Develop sophisticated financial strategies, Mentor junior advisors, Represent UAN District at industry events",
-        "requirements": "Minimum 3 years in financial services, Proven track record of success, MDRT qualification preferred, Strong leadership abilities",
-        "benefits": "Premium commission rates, Leadership development opportunities, International conference attendance, Executive support team"
+        "location": "Kai Tak District",
+        "summary": "We are seeking motivated and ambitious fresh graduates to join our Finance & Investment Trainee Program. This is an exciting opportunity to gain hands-on experience in corporate finance, investment banking, and wealth management. You will work alongside industry experts, develop critical skills, and contribute to high-impact projects in a dynamic and fast-paced environment.",
+        "responsibilities": "Assist in financial modeling valuation and investment recommendations for clients, Conduct in-depth research on industry trends competitive landscapes and economic developments, Support senior advisors in building and maintaining client relationships, Prepare high-quality pitch decks reports and presentations for stakeholders, Contribute to strategic initiatives and identify new opportunities for growth",
+        "requirements": "A recently completed degree in Finance Economics Accounting or a related field, Strong analytical and problem-solving skills with the ability to interpret financial data, Excellent communication and interpersonal skills with a team-oriented mindset, A keen interest in financial markets investment strategies and wealth management, Proficiency in Microsoft Office Suite (Excel PowerPoint Word), Proficient in English Cantonese and Mandarin languages. Fluency in additional languages especially Asian languages is highly desirable",
+        "benefits": "Competitive salary with performance-based bonuses, 5-day work week and a supportive collaborative work environment, Comprehensive training & mentorship from industry leaders, Fast-track career advancement opportunities in finance and investment, Medical benefits & study allowance for professional development, Exposure to high-net-worth clients and global financial markets, Salary range: $18,000 – $22,000 per month"
       },
       "manager": {
-        "title": "Unit Manager",
+        "title": "Senior Investment Advisor",
         "type": "Full-time",
-        "location": "Hong Kong",
-        "summary": "Lead and develop a team of financial advisors while growing your own business.",
-        "responsibilities": "Recruit and develop team members, Provide coaching and mentorship, Drive team performance and culture, Strategic business planning",
-        "requirements": "5+ years industry experience, Demonstrated leadership success, Strong business acumen, MDRT or COT qualifier",
-        "benefits": "Override commissions, Management bonuses, Leadership training, Strategic planning support"
+        "location": "Kai Tak District",
+        "summary": "Lead client portfolios and mentor junior advisors while developing sophisticated investment strategies for high-net-worth individuals.",
+        "responsibilities": "Manage and grow high-net-worth client portfolios with personalized investment strategies, Develop and implement sophisticated financial planning and wealth management solutions, Mentor and guide junior advisors and trainees in client consultation and portfolio management, Lead strategic client meetings and present investment recommendations to stakeholders, Collaborate with cross-functional teams including legal tax and investment specialists",
+        "requirements": "Minimum 3-5 years of experience in financial advisory wealth management or investment banking, Proven track record of managing client portfolios and achieving investment targets, Strong analytical skills with expertise in financial modeling valuation and market analysis, Excellent leadership and mentorship abilities with experience guiding junior team members, Professional certifications (CFA CFP or equivalent) are highly preferred, Fluency in English Cantonese and Mandarin",
+        "benefits": "Premium compensation package with performance-based incentives, Leadership development opportunities and career progression pathways, Access to high-net-worth client networks and exclusive investment opportunities, Comprehensive benefits including medical coverage professional development allowance, Collaborative work environment with industry-leading experts, International exposure and networking opportunities"
       }
     },
     "apply": "Apply Now",
@@ -360,7 +360,7 @@
       "email": "Email Address",
       "phone": "Phone Number",
       "resume": "Upload Resume",
-      "message": "Why do you want to join UAN District?",
+      "message": "Cover Letter - Tell us why you're interested in this role",
       "consent": "I consent to the collection and use of my personal data in accordance with the Privacy Policy",
       "submit": "Submit Application",
       "cancel": "Cancel",
