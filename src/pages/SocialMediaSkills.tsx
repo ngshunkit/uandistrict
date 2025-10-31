@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Sparkles, Video, Image, ChevronRight, ChevronLeft } from "lucide-react";
+import { Sparkles, Video, Image, ChevronRight, ChevronLeft, Play } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,13 +9,28 @@ import Footer from "@/components/Footer";
 const SocialMediaSkills = () => {
   const { t } = useTranslation();
 
+  const videos = [
+    {
+      title: "Video Editing",
+      src: "/videos/video-editing.mov"
+    },
+    {
+      title: "Poster Generation",
+      src: "/videos/poster-generation.mp4"
+    },
+    {
+      title: "Vibe Coding",
+      src: "/videos/vibe-coding.mp4"
+    }
+  ];
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-hero py-16 text-primary-foreground md:py-24">
+        <section className="bg-gradient-hero py-16 text-primary-foreground md:py-24 animate-fade-in">
           <div className="container mx-auto px-4">
             <Link to="/offerings" className="mb-6 inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground">
               <ChevronLeft className="mr-2 h-4 w-4" />
@@ -44,51 +59,105 @@ const SocialMediaSkills = () => {
               </div>
 
               <div className="grid gap-8 md:grid-cols-4 mb-12">
-                <Card>
+                <Card className="group overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '0ms' }}>
                   <CardContent className="p-6 text-center">
-                    <Sparkles className="mx-auto mb-4 h-12 w-12 text-primary" />
-                    <h3 className="mb-2 text-xl font-semibold">{t("offerings.subpages.social.features.vibe.title")}</h3>
-                    <p className="text-sm text-muted-foreground">{t("offerings.subpages.social.features.vibe.description")}</p>
+                    <div className="relative mb-4 inline-block">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-lg opacity-0 transition-opacity duration-500 group-hover:opacity-60" />
+                      <div className="relative flex h-16 w-16 mx-auto items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <Sparkles className="h-8 w-8 text-white transition-all duration-500 group-hover:scale-110" />
+                      </div>
+                    </div>
+                    <h3 className="mb-2 text-xl font-semibold transition-colors duration-300 group-hover:text-primary">{t("offerings.subpages.social.features.vibe.title")}</h3>
+                    <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{t("offerings.subpages.social.features.vibe.description")}</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="group overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '100ms' }}>
                   <CardContent className="p-6 text-center">
-                    <Sparkles className="mx-auto mb-4 h-12 w-12 text-primary" />
-                    <h3 className="mb-2 text-xl font-semibold">{t("offerings.subpages.social.features.prompt.title")}</h3>
-                    <p className="text-sm text-muted-foreground">{t("offerings.subpages.social.features.prompt.description")}</p>
+                    <div className="relative mb-4 inline-block">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-lg opacity-0 transition-opacity duration-500 group-hover:opacity-60" />
+                      <div className="relative flex h-16 w-16 mx-auto items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <Sparkles className="h-8 w-8 text-white transition-all duration-500 group-hover:scale-110" />
+                      </div>
+                    </div>
+                    <h3 className="mb-2 text-xl font-semibold transition-colors duration-300 group-hover:text-primary">{t("offerings.subpages.social.features.prompt.title")}</h3>
+                    <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{t("offerings.subpages.social.features.prompt.description")}</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="group overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '200ms' }}>
                   <CardContent className="p-6 text-center">
-                    <Video className="mx-auto mb-4 h-12 w-12 text-primary" />
-                    <h3 className="mb-2 text-xl font-semibold">{t("offerings.subpages.social.features.video.title")}</h3>
-                    <p className="text-sm text-muted-foreground">{t("offerings.subpages.social.features.video.description")}</p>
+                    <div className="relative mb-4 inline-block">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-lg opacity-0 transition-opacity duration-500 group-hover:opacity-60" />
+                      <div className="relative flex h-16 w-16 mx-auto items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <Video className="h-8 w-8 text-white transition-all duration-500 group-hover:scale-110" />
+                      </div>
+                    </div>
+                    <h3 className="mb-2 text-xl font-semibold transition-colors duration-300 group-hover:text-primary">{t("offerings.subpages.social.features.video.title")}</h3>
+                    <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{t("offerings.subpages.social.features.video.description")}</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="group overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '300ms' }}>
                   <CardContent className="p-6 text-center">
-                    <Image className="mx-auto mb-4 h-12 w-12 text-primary" />
-                    <h3 className="mb-2 text-xl font-semibold">{t("offerings.subpages.social.features.image.title")}</h3>
-                    <p className="text-sm text-muted-foreground">{t("offerings.subpages.social.features.image.description")}</p>
+                    <div className="relative mb-4 inline-block">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-2xl blur-lg opacity-0 transition-opacity duration-500 group-hover:opacity-60" />
+                      <div className="relative flex h-16 w-16 mx-auto items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-primary to-accent shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                        <Image className="h-8 w-8 text-white transition-all duration-500 group-hover:scale-110" />
+                      </div>
+                    </div>
+                    <h3 className="mb-2 text-xl font-semibold transition-colors duration-300 group-hover:text-primary">{t("offerings.subpages.social.features.image.title")}</h3>
+                    <p className="text-sm text-muted-foreground transition-colors duration-300 group-hover:text-foreground">{t("offerings.subpages.social.features.image.description")}</p>
                   </CardContent>
                 </Card>
               </div>
 
-              <Card className="mb-8">
+              <Card className="mb-12 animate-fade-in overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/10" style={{ animationDelay: '400ms' }}>
                 <CardHeader>
                   <CardTitle>{t("offerings.subpages.social.benefits.title")}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     {(t("offerings.subpages.social.benefits.items", { returnObjects: true }) as string[]).map((benefit, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <ChevronRight className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                        <span>{benefit}</span>
+                      <li key={idx} className="flex items-start animate-fade-in" style={{ animationDelay: `${500 + idx * 50}ms` }}>
+                        <ChevronRight className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-primary transition-transform duration-300 hover:translate-x-1" />
+                        <span className="transition-colors duration-300 hover:text-primary">{benefit}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
               </Card>
+
+              {/* Video Demonstrations */}
+              <div className="mb-12">
+                <h2 className="mb-8 text-3xl font-bold text-center animate-fade-in" style={{ animationDelay: '600ms' }}>
+                  Feature Demonstrations
+                </h2>
+                <div className="grid gap-8 md:grid-cols-3">
+                  {videos.map((video, index) => (
+                    <div key={index} className="group animate-fade-in" style={{ animationDelay: `${700 + index * 100}ms` }}>
+                      <Card className="overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2">
+                        <CardContent className="p-0">
+                          <div className="relative">
+                            <h3 className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/80 to-transparent p-4 text-lg font-semibold text-white">
+                              {video.title}
+                            </h3>
+                            <div className="relative aspect-video bg-muted overflow-hidden">
+                              <video
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                controls
+                                preload="metadata"
+                              >
+                                <source src={video.src} type="video/mp4" />
+                                <source src={video.src} type="video/quicktime" />
+                                Your browser does not support the video tag.
+                              </video>
+                              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
