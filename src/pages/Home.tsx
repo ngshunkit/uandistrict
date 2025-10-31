@@ -351,7 +351,7 @@ Professional training </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <a href="https://www.mdrt.org/article/building-sustainable-insurance-practice" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.cisl.cam.ac.uk/system/files/documents/The_Global_State_of_Sustainable_Insurance.pdf" target="_blank" rel="noopener noreferrer">
                 <Card className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer h-full">
                   <CardHeader>
                     <div className="text-sm text-muted-foreground mb-2">Oct 15, 2025</div>
@@ -368,7 +368,7 @@ Professional training </h2>
                   </CardContent>
                 </Card>
               </a>
-              <a href="https://www.forbes.com/advisor/business/team-culture-sales/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.pipedrive.com/en/blog/sales-culture" target="_blank" rel="noopener noreferrer">
                 <Card className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer h-full">
                   <CardHeader>
                     <div className="text-sm text-muted-foreground mb-2">Oct 10, 2025</div>
@@ -385,7 +385,7 @@ Professional training </h2>
                   </CardContent>
                 </Card>
               </a>
-              <a href="https://www.investopedia.com/financial-advisor/digital-marketing-financial-advisors/" target="_blank" rel="noopener noreferrer">
+              <a href="https://business.fintuity.com/blog/the-ultimate-guide-to-digital-marketing-for-financial-advisors" target="_blank" rel="noopener noreferrer">
                 <Card className="group border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg cursor-pointer h-full">
                   <CardHeader>
                     <div className="text-sm text-muted-foreground mb-2">Oct 5, 2025</div>
