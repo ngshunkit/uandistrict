@@ -215,38 +215,46 @@ const Home = () => {
             <p className="text-center text-sm text-muted-foreground uppercase tracking-wider mb-8">
               Trusted by Leading Organizations
             </p>
-            <div className="flex justify-center items-center gap-12 flex-wrap opacity-50">
-              <a 
-                href="https://www.aia.com.hk" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-2xl font-bold text-foreground hover:text-primary hover:opacity-100 transition-all duration-300"
-              >
-                AIA
-              </a>
+            <div className="flex justify-center items-center gap-12 flex-wrap">
               <a 
                 href="https://www.mdrt.org" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-2xl font-bold text-foreground hover:text-primary hover:opacity-100 transition-all duration-300"
+                className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
               >
                 MDRT
               </a>
               <a 
-                href="https://www.ifphk.org" 
+                href="https://www.mdrt.org/cot" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-2xl font-bold text-foreground hover:text-primary hover:opacity-100 transition-all duration-300"
+                className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
               >
-                IFPHK
+                COT
               </a>
               <a 
-                href="https://www.cii.co.uk" 
+                href="https://www.aia.com.hk" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-2xl font-bold text-foreground hover:text-primary hover:opacity-100 transition-all duration-300"
+                className="text-4xl font-bold text-primary transition-all duration-300 hover:scale-110"
               >
-                CII
+                AIA
+              </a>
+              <a 
+                href="https://www.mdrt.org/tot" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
+              >
+                TOT
+              </a>
+              <a 
+                href="https://www.iarfc.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-foreground hover:text-primary opacity-50 hover:opacity-100 transition-all duration-300"
+              >
+                IA
               </a>
             </div>
           </div>
