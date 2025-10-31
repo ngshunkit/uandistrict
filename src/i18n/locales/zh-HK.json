@@ -59,10 +59,30 @@
       "viewJobs": "查看職位"
     },
     "stats": {
+      "mdrtMembers": "MDRT 成員",
+      "teamMembers": "團隊成員",
+      "clientSatisfaction": "客戶滿意度",
+      "yearsExcellence": "卓越年數",
       "members": "活躍成員",
       "mdrt": "MDRT 資格",
       "awards": "行業獎項",
       "growth": "年增長率"
+    },
+    "services": {
+      "retirementTitle": "退休規劃工作坊",
+      "retirementDesc": "定期講座及高動力工作坊，協助吸引年長客戶並為代理提供穩定的每月潛在客戶。",
+      "socialTitle": "社交媒體技能",
+      "socialDesc": "實用培訓包括氛圍編碼、提示工程、AI 影片編輯及圖像/影片生成，製作出色的帖文和海報。",
+      "trainingTitle": "核心代理培訓",
+      "trainingDesc": "每週兩次課程涵蓋核保規則、產品知識、需求分析、客戶心理、異議處理、索賠及必備工具。",
+      "marketTitle": "市場情報",
+      "marketDesc": "由投資團隊提供的持續投資趨勢簡報、跨公司產品比較、當前社會議題及客戶群發展支援。"
+    },
+    "values": {
+      "excellence": "卓越",
+      "integrity": "誠信",
+      "innovation": "創新",
+      "community": "社區"
     },
     "highlights": {
       "title": "選擇 UAN 區域的理由",
@@ -82,6 +102,29 @@
         "title": "職涯發展",
         "description": "清晰的晉升途徑，包括認可計劃及基於表現的機會。"
       }
+    },
+    "testimonials": {
+      "quote1": "我們的區域可能不大，但我們是MDRT區域，因為我們專注於服務高淨值客戶和提供團體保險。這種專注使我們能夠以更輕的工作量獲得更高的佣金。",
+      "name1": "陳小姐",
+      "role1": "高級組別經理",
+      "quote2": "培訓課程提供了實用和系統化的方法，幫助代理掌握技能並跟上市場趨勢。培訓師都是各自領域的專家。因此，我發現培訓非常實用和有用。",
+      "name2": "梁先生",
+      "role2": "財富管理經理",
+      "quote3": "我們的區域為代理提供全面的培訓和支援。我們還有區域秘書協助行政處理、管理任務和查詢。在提供培訓時，我的目標是提供高度的靈活性；因此，我們的區域不要求正式工作時間。",
+      "name3": "吳先生",
+      "role3": "區域總監",
+      "company": "UAN 區域"
+    },
+    "blog": {
+      "title1": "建立可持續的保險業務",
+      "excerpt1": "學習創建長期客戶關係和經常性收入的關鍵策略。",
+      "date1": "2025年10月15日",
+      "title2": "團隊文化在銷售中的力量",
+      "excerpt2": "發現支援性的團隊環境如何加速個人和集體的成功。",
+      "date2": "2025年10月10日",
+      "title3": "理財顧問的數碼營銷",
+      "excerpt3": "掌握現代營銷技術，在線吸引和轉化高價值客戶。",
+      "date3": "2025年10月5日"
     },
     "testimonial": {
       "quote": "加入 UAN 區域是我職涯中最好的決定。培訓和支援都非常出色。",
@@ -395,20 +438,47 @@
     },
     "leadership": {
       "title": "領導團隊",
+      "davidTitle": "區域經理",
+      "davidBio": "在保險行業擁有超過15年的經驗，David將UAN區域打造成友邦香港表現最佳的區域之一。他是10次MDRT資格獲得者和3次COT成就者，熱衷於培養未來的領導者。",
+      "sarahTitle": "高級組別經理",
+      "sarahBio": "Sarah領導我們的旗艦培訓課程，並親自指導了50多名代理獲得MDRT資格。她的創新銷售輔導方法已成為整個組織的榜樣。",
+      "michaelTitle": "高級組別經理",
+      "michaelBio": "專注於高淨值客戶，Michael在複雜的財務規劃和財富管理方面擁有專業知識。作為持續的COT資格獲得者，他與團隊分享自己的策略。",
       "specialty": {
         "mdrt": "MDRT",
         "cot": "COT",
         "tot": "TOT",
-        "leadership": "領導力"
+        "leadership": "領導力",
+        "teamBuilding": "團隊建設",
+        "training": "培訓",
+        "mentorship": "指導",
+        "businessDev": "業務發展",
+        "highNetWorth": "高淨值"
       }
     },
     "team": {
       "title": "我們的團隊成員",
+      "jenniferRole": "高級理財顧問",
+      "jenniferTeam": "銷售卓越",
+      "kevinRole": "理財顧問",
+      "kevinTeam": "成長團隊",
+      "amyRole": "高級理財顧問",
+      "amyTeam": "專業發展",
+      "raymondRole": "組別經理",
+      "raymondTeam": "領導力培養",
+      "graceRole": "理財顧問",
+      "graceTeam": "客戶服務",
+      "peterRole": "高級理財顧問",
+      "peterTeam": "業務發展",
       "achievements": {
         "newAgent": "新人獎",
         "topSales": "2024 年銷售冠軍",
         "mdrt": "MDRT 資格",
-        "rising": "新星"
+        "rising": "新星",
+        "topRecruiter": "頂級招聘者",
+        "mentorAward": "導師獎",
+        "teamLeader": "團隊領袖",
+        "outstanding": "傑出表現"
       }
     }
   },

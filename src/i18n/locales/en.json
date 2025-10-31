@@ -59,10 +59,30 @@
       "viewJobs": "View Jobs"
     },
     "stats": {
+      "mdrtMembers": "MDRT Members",
+      "teamMembers": "Team Members",
+      "clientSatisfaction": "Client Satisfaction",
+      "yearsExcellence": "Years Excellence",
       "members": "Active Members",
       "mdrt": "MDRT Qualifiers",
       "awards": "Industry Awards",
       "growth": "YoY Growth"
+    },
+    "services": {
+      "retirementTitle": "Retirement Workshops",
+      "retirementDesc": "Regular lectures and high‑motivation workshops on retirement planning to attract senior clients and deliver steady monthly leads for agents.",
+      "socialTitle": "Social Media Skills",
+      "socialDesc": "Practical training in vibe coding, prompt engineering, AI‑powered video editing, and image/video generation to create standout posts and posters.",
+      "trainingTitle": "Core Agent Training",
+      "trainingDesc": "Twice‑weekly sessions covering underwriting rules, product knowledge, needs analysis, client psychology, objection handling, claims, and essential tools.",
+      "marketTitle": "Market Intelligence",
+      "marketDesc": "Ongoing briefings on investment trends from our investment team, cross‑company product comparisons, current social topics, and client‑base development support."
+    },
+    "values": {
+      "excellence": "Excellence",
+      "integrity": "Integrity",
+      "innovation": "Innovation",
+      "community": "Community"
     },
     "highlights": {
       "title": "Why Choose UAN District",
@@ -82,6 +102,29 @@
         "title": "Career Growth",
         "description": "Clear pathways for advancement with recognition programs and performance-based opportunities."
       }
+    },
+    "testimonials": {
+      "quote1": "Our team may not be large, but we are an MDRT district because we specialize in serving high-net-worth clients and providing group insurance. This focus enables higher commissions with a lighter workload.",
+      "name1": "Sarah Chen",
+      "role1": "Senior Unit Manager",
+      "quote2": "The training program provides a practical and systematic approach that helps agents pick up skills and follow market trends. The trainers are specialists in their respective areas. Therefore, I find the training highly practical and useful.",
+      "name2": "Michael Leung",
+      "role2": "Wealth Management Manager",
+      "quote3": "Our district provides comprehensive training and support for agents. We also have a regional secretary to assist with administrative processing, management tasks, and inquiries. While delivering training, my goal is to offer a high degree of flexibility; therefore, our district does not require official working hours.",
+      "name3": "Andy Ng",
+      "role3": "District Director",
+      "company": "UAN District"
+    },
+    "blog": {
+      "title1": "Building a Sustainable Insurance Practice",
+      "excerpt1": "Learn the key strategies for creating long-term client relationships and recurring revenue.",
+      "date1": "Oct 15, 2025",
+      "title2": "The Power of Team Culture in Sales",
+      "excerpt2": "Discover how a supportive team environment accelerates individual and collective success.",
+      "date2": "Oct 10, 2025",
+      "title3": "Digital Marketing for Financial Advisors",
+      "excerpt3": "Master modern marketing techniques to attract and convert high-value clients online.",
+      "date3": "Oct 5, 2025"
     },
     "testimonial": {
       "quote": "Joining UAN District was the best career decision I've made. The training and support have been exceptional.",

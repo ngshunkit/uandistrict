@@ -11,27 +11,27 @@ const Members = () => {
   const leadership = [
     {
       name: "David Wong",
-      title: "District Manager",
-      specialties: [t("members.leadership.specialty.leadership"), "Team Building", t("members.leadership.specialty.mdrt")],
-      bio: "With over 15 years in the insurance industry, David has built UAN District into one of AIA Hong Kong's top-performing districts. A 10-time MDRT qualifier and 3-time COT achiever, he is passionate about developing future leaders.",
+      title: t("membersTeam.leadership.davidTitle"),
+      specialties: [t("membersTeam.leadership.specialty.leadership"), t("membersTeam.leadership.specialty.teamBuilding"), t("membersTeam.leadership.specialty.mdrt")],
+      bio: t("membersTeam.leadership.davidBio"),
       initials: "DW",
       linkedin: "#",
       email: "david.wong@example.com",
     },
     {
       name: "Sarah Chen",
-      title: "Senior Unit Manager",
-      specialties: ["Training", "Mentorship", t("members.leadership.specialty.mdrt")],
-      bio: "Sarah leads our flagship training programs and has personally mentored over 50 agents to MDRT qualification. Her innovative approach to sales coaching has become a model across the organization.",
+      title: t("membersTeam.leadership.sarahTitle"),
+      specialties: [t("membersTeam.leadership.specialty.training"), t("membersTeam.leadership.specialty.mentorship"), t("membersTeam.leadership.specialty.mdrt")],
+      bio: t("membersTeam.leadership.sarahBio"),
       initials: "SC",
       linkedin: "#",
       email: "sarah.chen@example.com",
     },
     {
       name: "Michael Lee",
-      title: "Senior Unit Manager",
-      specialties: ["Business Development", "High Net Worth", t("members.leadership.specialty.cot")],
-      bio: "Specializing in high-net-worth clientele, Michael brings expertise in sophisticated financial planning and wealth management. A consistent COT qualifier, he shares his strategies with the team.",
+      title: t("membersTeam.leadership.michaelTitle"),
+      specialties: [t("membersTeam.leadership.specialty.businessDev"), t("membersTeam.leadership.specialty.highNetWorth"), t("membersTeam.leadership.specialty.cot")],
+      bio: t("membersTeam.leadership.michaelBio"),
       initials: "ML",
       linkedin: "#",
       email: "michael.lee@example.com",
@@ -41,44 +41,44 @@ const Members = () => {
   const members = [
     {
       name: "Jennifer Chan",
-      role: "Senior Financial Consultant",
-      team: "Sales Excellence",
-      achievements: [t("members.team.achievements.mdrt"), "Top Recruiter"],
+      role: t("membersTeam.team.jenniferRole"),
+      team: t("membersTeam.team.jenniferTeam"),
+      achievements: [t("membersTeam.team.achievements.mdrt"), t("membersTeam.team.achievements.topRecruiter")],
       initials: "JC",
     },
     {
       name: "Kevin Tam",
-      role: "Financial Consultant",
-      team: "Growth Team",
-      achievements: [t("members.team.achievements.rising")],
+      role: t("membersTeam.team.kevinRole"),
+      team: t("membersTeam.team.kevinTeam"),
+      achievements: [t("membersTeam.team.achievements.rising")],
       initials: "KT",
     },
     {
       name: "Amy Liu",
-      role: "Senior Financial Consultant",
-      team: "Professional Development",
-      achievements: [t("members.team.achievements.mdrt"), "Mentor Award"],
+      role: t("membersTeam.team.amyRole"),
+      team: t("membersTeam.team.amyTeam"),
+      achievements: [t("membersTeam.team.achievements.mdrt"), t("membersTeam.team.achievements.mentorAward")],
       initials: "AL",
     },
     {
       name: "Raymond Ng",
-      role: "Unit Manager",
-      team: "Leadership Track",
-      achievements: [t("members.leadership.specialty.cot"), "Team Leader"],
+      role: t("membersTeam.team.raymondRole"),
+      team: t("membersTeam.team.raymondTeam"),
+      achievements: [t("membersTeam.leadership.specialty.cot"), t("membersTeam.team.achievements.teamLeader")],
       initials: "RN",
     },
     {
       name: "Grace Cheung",
-      role: "Financial Consultant",
-      team: "Client Services",
-      achievements: ["Outstanding Performance"],
+      role: t("membersTeam.team.graceRole"),
+      team: t("membersTeam.team.graceTeam"),
+      achievements: [t("membersTeam.team.achievements.outstanding")],
       initials: "GC",
     },
     {
       name: "Peter Lam",
-      role: "Senior Financial Consultant",
-      team: "Business Development",
-      achievements: [t("members.team.achievements.mdrt")],
+      role: t("membersTeam.team.peterRole"),
+      team: t("membersTeam.team.peterTeam"),
+      achievements: [t("membersTeam.team.achievements.mdrt")],
       initials: "PL",
     },
   ];
@@ -93,10 +93,10 @@ const Members = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="mb-6 text-4xl font-bold md:text-5xl">
-                {t("members.hero.title")}
+                {t("membersTeam.hero.title")}
               </h1>
               <p className="text-lg text-primary-foreground/90 md:text-xl">
-                {t("members.hero.subtitle")}
+                {t("membersTeam.hero.subtitle")}
               </p>
             </div>
           </div>
@@ -107,10 +107,10 @@ const Members = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                {t("members.leadership.title")}
+                {t("membersTeam.leadership.title")}
               </h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                {t("members.hero.subtitle")}
+                {t("membersTeam.hero.subtitle")}
               </p>
             </div>
 
@@ -168,10 +168,10 @@ const Members = () => {
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                {t("members.team.title")}
+                {t("membersTeam.team.title")}
               </h2>
               <p className="mx-auto max-w-2xl text-muted-foreground">
-                {t("members.hero.subtitle")}
+                {t("membersTeam.hero.subtitle")}
               </p>
             </div>
 

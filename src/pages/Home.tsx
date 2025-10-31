@@ -24,37 +24,37 @@ const Home = () => {
   } = useTranslation();
   const stats = [{
     value: "15+",
-    label: "MDRT Members",
+    label: t("home.stats.mdrtMembers"),
     icon: Award
   }, {
     value: "40+",
-    label: "Team Members",
+    label: t("home.stats.teamMembers"),
     icon: Users
   }, {
     value: "98%",
-    label: "Client Satisfaction",
+    label: t("home.stats.clientSatisfaction"),
     icon: Target
   }, {
     value: "30+",
-    label: "Years Excellence",
+    label: t("home.stats.yearsExcellence"),
     icon: Briefcase
   }];
   const services = [{
     icon: Users,
-    title: "Retirement Workshops",
-    description: "Regular lectures and high‑motivation workshops on retirement planning to attract senior clients and deliver steady monthly leads for agents."
+    title: t("home.services.retirementTitle"),
+    description: t("home.services.retirementDesc")
   }, {
     icon: Sparkles,
-    title: "Social Media Skills",
-    description: "Practical training in vibe coding, prompt engineering, AI‑powered video editing, and image/video generation to create standout posts and posters."
+    title: t("home.services.socialTitle"),
+    description: t("home.services.socialDesc")
   }, {
     icon: Award,
-    title: "Core Agent Training",
-    description: "Twice‑weekly sessions covering underwriting rules, product knowledge, needs analysis, client psychology, objection handling, claims, and essential tools."
+    title: t("home.services.trainingTitle"),
+    description: t("home.services.trainingDesc")
   }, {
     icon: TrendingUp,
-    title: "Market Intelligence",
-    description: "Ongoing briefings on investment trends from our investment team, cross‑company product comparisons, current social topics, and client‑base development support."
+    title: t("home.services.marketTitle"),
+    description: t("home.services.marketDesc")
   }];
   const awards = [{
     year: "2006",
@@ -103,47 +103,47 @@ const Home = () => {
     title: "CS Monthly Ranking (Financial Planning Consultant Group, Case Count), KATIE CHAN — UNI ANDY NG, 3rd Runner-up"
   }];
   const testimonials = [{
-    quote: "Our team may not be large, but we are an MDRT district because we specialize in serving high-net-worth clients and providing group insurance. This focus enables higher commissions with a lighter workload.",
-    name: "Sarah Chen",
-    role: "Senior Unit Manager",
-    company: "UAN District"
+    quote: t("home.testimonials.quote1"),
+    name: t("home.testimonials.name1"),
+    role: t("home.testimonials.role1"),
+    company: t("home.testimonials.company")
   }, {
-    quote: "The training program provides a practical and systematic approach that helps agents pick up skills and follow market trends. The trainers are specialists in their respective areas. Therefore, I find the training highly practical and useful.",
-    name: "Michael Leung",
-    role: "Wealth Management Manager",
-    company: "UAN District"
+    quote: t("home.testimonials.quote2"),
+    name: t("home.testimonials.name2"),
+    role: t("home.testimonials.role2"),
+    company: t("home.testimonials.company")
   }, {
-    quote: "Our district provides comprehensive training and support for agents. We also have a regional secretary to assist with administrative processing, management tasks, and inquiries. While delivering training, my goal is to offer a high degree of flexibility; therefore, our district does not require official working hours.",
-    name: "Andy Ng",
-    role: "District Director",
-    company: "UAN District"
+    quote: t("home.testimonials.quote3"),
+    name: t("home.testimonials.name3"),
+    role: t("home.testimonials.role3"),
+    company: t("home.testimonials.company")
   }];
   const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5];
   const values = [{
-    label: "Excellence",
+    label: t("home.values.excellence"),
     icon: Sparkles
   }, {
-    label: "Integrity",
+    label: t("home.values.integrity"),
     icon: Shield
   }, {
-    label: "Innovation",
+    label: t("home.values.innovation"),
     icon: Zap
   }, {
-    label: "Community",
+    label: t("home.values.community"),
     icon: Heart
   }];
   const blogPosts = [{
-    title: "Building a Sustainable Insurance Practice",
-    excerpt: "Learn the key strategies for creating long-term client relationships and recurring revenue.",
-    date: "Oct 15, 2025"
+    title: t("home.blog.title1"),
+    excerpt: t("home.blog.excerpt1"),
+    date: t("home.blog.date1")
   }, {
-    title: "The Power of Team Culture in Sales",
-    excerpt: "Discover how a supportive team environment accelerates individual and collective success.",
-    date: "Oct 10, 2025"
+    title: t("home.blog.title2"),
+    excerpt: t("home.blog.excerpt2"),
+    date: t("home.blog.date2")
   }, {
-    title: "Digital Marketing for Financial Advisors",
-    excerpt: "Master modern marketing techniques to attract and convert high-value clients online.",
-    date: "Oct 5, 2025"
+    title: t("home.blog.title3"),
+    excerpt: t("home.blog.excerpt3"),
+    date: t("home.blog.date3")
   }];
   return <div className="flex min-h-screen flex-col bg-background">
       <Header />
