@@ -12,6 +12,11 @@ import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { ProcessTimeline } from "@/components/home/ProcessTimeline";
 import { HexagonPattern, FloatingHexagon } from "@/components/home/HexagonPattern";
 import aiaBackground from "@/assets/aia-background.jpg";
+import aiaHallway from "@/assets/aia-hallway.png";
+import aiaLogoCloseup from "@/assets/aia-logo-closeup.png";
+import office2 from "@/assets/office-2.png";
+import office3 from "@/assets/office-3.png";
+import office4 from "@/assets/office-4.png";
 const Home = () => {
   const {
     t
@@ -79,7 +84,7 @@ const Home = () => {
     role: "Team Leader",
     company: "UAN District"
   }];
-  const galleryImages = ["https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80", "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80", "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80", "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80", "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80", "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"];
+  const galleryImages = [office2, office3, aiaHallway, aiaLogoCloseup, office4, aiaLogoCloseup];
   const values = [{
     label: "Excellence",
     icon: Sparkles
