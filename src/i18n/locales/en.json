@@ -163,16 +163,14 @@
       "role3": "District Director",
       "company": "UAN District"
     },
-    "testimonial": {
-      "quote": "Joining UAN District was the best career decision I've made. The training and support have been exceptional.",
-      "name": "Sarah Chen",
-      "role": "Senior Financial Advisor"
-    },
     "cta": {
-      "title": "Ready to Start Your Journey?",
-      "subtitle": "Join our team of dedicated professionals and build a rewarding career in insurance.",
-      "contact": "Contact Us",
-      "apply": "Apply Now"
+      "badge": "Ready to Begin?",
+      "title": "Launch Your Career With Us",
+      "subtitle": "Join a community of high-achievers and start building the career you've always wanted.",
+      "contact": "Send Us a Message",
+      "member": "Member Portal"
+    },
+    "testimonial": {
     }
   },
   "offerings": {

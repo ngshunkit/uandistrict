@@ -434,23 +434,23 @@ const Home = () => {
           <HexagonPattern />
 
           <div className="container relative mx-auto px-4 text-center">
-            <Badge className="mb-6 bg-white/20 text-white border-white/30">Ready to Begin?</Badge>
+            <Badge className="mb-6 bg-white/20 text-white border-white/30">{t("home.cta.badge")}</Badge>
 
-            <h2 className="mb-6 font-display text-3xl font-bold text-white md:text-5xl">Launch Your Career With Us</h2>
+            <h2 className="mb-6 font-display text-3xl font-bold text-white md:text-5xl">{t("home.cta.title")}</h2>
 
             <p className="mb-10 text-lg text-white/90 max-w-2xl mx-auto">
-              Join a community of high-achievers and start building the career you've always wanted.
+              {t("home.cta.subtitle")}
             </p>
 
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link to="/contact">
                 <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-                  Send Us a Message
+                  {t("home.cta.contact")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/members">
-                <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">Member Portal</Button>
+                <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">{t("home.cta.member")}</Button>
               </Link>
             </div>
           </div>
