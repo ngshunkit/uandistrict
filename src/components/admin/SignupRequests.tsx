@@ -33,7 +33,6 @@ export const SignupRequests = () => {
       setRequests(data || []);
     } catch (error: any) {
       toast.error("Failed to load signup requests");
-      console.error(error);
     } finally {
       setIsLoading(false);
     }
@@ -81,8 +80,7 @@ export const SignupRequests = () => {
       
       fetchRequests();
     } catch (error: any) {
-      toast.error(error.message || "Failed to approve request");
-      console.error(error);
+      toast.error("Failed to approve request");
     } finally {
       setProcessingId(null);
     }
@@ -104,7 +102,6 @@ export const SignupRequests = () => {
       fetchRequests();
     } catch (error: any) {
       toast.error("Failed to reject request");
-      console.error(error);
     } finally {
       setProcessingId(null);
     }

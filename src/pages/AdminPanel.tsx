@@ -25,7 +25,7 @@ const AdminPanel = () => {
   const navigate = useNavigate();
   const [requests, setRequests] = useState<SignupRequest[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
 
   useEffect(() => {
     checkAdminAccess();
@@ -50,7 +50,6 @@ const AdminPanel = () => {
 
       setIsAdmin(true);
     } catch (err) {
-      console.error('Error verifying admin access:', err);
       toast.error("Access denied. Admin privileges required.");
       navigate("/members");
     }
@@ -127,6 +126,17 @@ const AdminPanel = () => {
       toast.error("Failed to reject request: " + error.message);
     }
   };
+
+  if (isAdmin === null) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="text-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent mx-auto mb-4" />
+          <p className="text-muted-foreground">Verifying access...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!isAdmin) {
     return null;

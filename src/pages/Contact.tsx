@@ -134,7 +134,6 @@ const Contact = () => {
         const firstError = (error as any).issues[0];
         toast.error(firstError?.message || "Invalid form data");
       } else {
-        console.error("Error submitting contact form:", error);
         toast.error(t("contact.form.error"));
       }
     } finally {
