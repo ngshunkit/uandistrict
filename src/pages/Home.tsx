@@ -30,9 +30,9 @@ const Home = () => {
 
   const stats = [
     { value: "15+", label: "MDRT Members", icon: Award },
-    { value: "30+", label: "Team Members", icon: Users },
+    { value: "40+", label: "Team Members", icon: Users },
     { value: "98%", label: "Client Satisfaction", icon: Target },
-    { value: "10+", label: "Years Excellence", icon: Briefcase },
+    { value: "30+", label: "Years Excellence", icon: Briefcase },
   ];
 
   const services = [
