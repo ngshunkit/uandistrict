@@ -182,7 +182,7 @@ const Home = () => {
                     variant="outline"
                     className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
                   >
-                    View Work
+                    Our Offerings
                   </Button>
                 </Link>
               </div>
