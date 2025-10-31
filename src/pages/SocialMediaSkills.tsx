@@ -11,10 +11,6 @@ const SocialMediaSkills = () => {
 
   const videos = [
     {
-      title: "Video Editing",
-      src: "/videos/video-editing.mov"
-    },
-    {
       title: "Poster Generation",
       src: "/videos/poster-generation.mp4"
     },
