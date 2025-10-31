@@ -345,14 +345,9 @@ Professional training </h2>
         {/* Blog/Insights */}
         <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
-            <div className="mb-12 flex items-end justify-between">
-              <div>
-                <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">Latest Insights</Badge>
-                <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">From the Blog</h2>
-              </div>
-              <Link to="/blog" className="text-accent hover:text-accent/80 font-medium hidden sm:block">
-                View All →
-              </Link>
+            <div className="mb-12">
+              <Badge className="mb-4 bg-accent/20 text-accent border-accent/30">Latest Insights</Badge>
+              <h2 className="font-display text-3xl font-bold text-foreground md:text-4xl">From the Blog</h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
